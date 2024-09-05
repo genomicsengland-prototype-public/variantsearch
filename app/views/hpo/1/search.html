@@ -20,34 +20,25 @@
 
       <form action="/templates/check-your-answers" method="post" class="form">
 
-        {{ radios({
-          "idPrefix": "example",
-          "name": "example",
-          "fieldset": {
-            "legend": {
-              "text": "Heading or question goes here",
-              "classes": "nhsuk-fieldset__legend--l",
-              "isPageHeading": true
-            }
-          },
-          "items": [
-            {
-              "value": "yes",
-              "text": "Yes"
-            },
-            {
-              "value": "no",
-              "text": "No"
-            }
-          ]
-        }) }}
+        <select id="hpo-picker">
+          <option value="">Enter an HPO term</option>
+          <option value="fr">Renal Cyst [code]</option>
+          <option value="de">Renal Hypoplasia [code]</option>
+          <option value="gb">Renal plasia [code]</option>
+        </select>
 
-        {{ button({
-          "text": "Continue",
-          "id": "btn_submit"
-        }) }}
+        <script type="text/javascript" src="/public/javascript/accessible-autocomplete.min.js">
+        </script>
 
-        <p>[See the <a href="https://service-manual.nhs.uk/design-system/componnets">NHS digital service manual</a> for examples.]</p>
+        <script>
+          accessibleAutocomplete.enhanceSelectElement({
+            defaultValue: '',
+            selectElement: document.querySelector('#hpo-picker')
+          }) 
+        </script>
+
+
+
 
       </form>
 
