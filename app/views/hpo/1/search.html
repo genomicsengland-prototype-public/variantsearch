@@ -18,29 +18,48 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="/templates/check-your-answers" method="post" class="form">
-
-        <select id="hpo-picker">
-          <option value="">Enter an HPO term</option>
-          <option value="fr">Renal Cyst [code]</option>
-          <option value="de">Renal Hypoplasia [code]</option>
-          <option value="gb">Renal plasia [code]</option>
-        </select>
-
-        <script type="text/javascript" src="/public/js/accessible-autocomplete.min.js">
-        </script>
-
-        <script>
-          accessibleAutocomplete.enhanceSelectElement({
-            defaultValue: '',
-            selectElement: document.querySelector('#hpo-picker')
-          }) 
-        </script>
+      <h1 class="nhsuk-heading-xl">HPO Terms</h1>
 
 
 
+      <div class="nhsuk-form-group">      
+      
+        <form action="presence-namelist-select" method="post" class="form">
+          <h1 class="nhsuk-label-wrapper">
+            <label class="nhsuk-label nhsuk-label--l" for="HPO-terms">
+              Add HPO Terms
+            </label>
+          </h1>
 
-      </form>
+          <div class="nhsuk-hint" id="nhs-number-hint">
+            Search for an HPO term by name or code.
+          </div>
+
+          <select id="hpo-picker">
+            <option value="hpo">Search HPO terms</option>
+            <option value="r-cy">Renal Cyst [code]</option>
+            <option value="r-hy">Renal Hypoplasia [code]</option>
+            <option value="r-pl">Renal plasia [code]</option>
+          </select>
+
+          <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
+          <script type="text/javascript" src="/js/accessible-autocomplete.min.js">
+          </script>
+
+          <script>
+            accessibleAutocomplete.enhanceSelectElement({
+              defaultValue: '',
+              selectElement: document.querySelector('#hpo-picker')
+            }) 
+          </script>
+
+          <button class="nhsuk-button nhsuk-u-margin-top-4" data-module="nhsuk-button" type="submit">
+            Add Selected HPO term
+          </button>
+
+        </form>
+      </div>
+
 
     </div>
   </div>
