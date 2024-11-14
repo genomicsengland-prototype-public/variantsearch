@@ -1,0 +1,26 @@
+{% extends 'layout.html' %} {% block pageTitle %} NHS.UK prototype kit {%
+endblock %} {% block outerContent %}
+<div class="nhsuk-back-link" style="margin-top: 2rem"></div>
+{% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h2 class="nhsuk-u-margin-bottom-4">Relevant clinical information</h2>
+        <div class="nhsuk-form-group">
+            {% from 'textarea/macro.njk' import textarea %} {{ textarea({ name:
+            "notes", id: "notes", label: { text: " Include any previous molecure
+            testing with dates and any other pertinent clinical information." }
+            }) }}
+        </div>
+
+        <a
+            class="nhsuk-button"
+            data-module="nhsuk-button"
+            href="/"
+            draggable="false"
+            role="button"
+        >
+            Continue
+        </a>
+    </div>
+</div>
+{% endblock %}
