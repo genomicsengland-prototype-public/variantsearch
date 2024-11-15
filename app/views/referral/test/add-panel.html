@@ -1,0 +1,41 @@
+{% from 'fieldset/macro.njk' import fieldset %} {% from 'input/macro.njk' import
+input %} {% from 'radios/macro.njk' import radios %} {% extends 'layout.html' %}
+{% block pageTitle %} NHS.UK prototype kit {% endblock %} {% block outerContent
+%}
+<div class="nhsuk-back-link" style="margin-top: 2rem">
+    <a class="nhsuk-back-link__link" href="/patient-search">
+        <svg
+            class="nhsuk-icon nhsuk-icon__chevron-left"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="24"
+            width="24"
+        >
+            <path
+                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+            ></path>
+        </svg>
+        Go back</a
+    >
+</div>
+{% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full nhsuk-u-margin-bottom-7">
+        <h2>Aditional panel</h2>
+        {{ input({ label: { html: "Use panels with panel type 'GMS rare disease virtual' listed on <a href=\"#\">pannelapp</a>" }, id: "add-panel", name: "add-panel", classes: "nhsuk-u-width-two-thirds" }) }}
+    </div>
+
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
+        <a
+            class="nhsuk-button"
+            data-module="nhsuk-button"
+            href="/referral/test/related-disease-summary"
+            draggable="false"
+            role="button"
+        >
+            Add panel
+        </a>
+    </div>
+</div>
+{% endblock %}
