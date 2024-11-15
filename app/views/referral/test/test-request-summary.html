@@ -84,12 +84,14 @@ based on the url, then this code bit is useful "{{req.query['test']}}" #}
             </div>
             {%- endfor %}
         </dl>
+        {% endif %} {% set currentPanel = 0 %} {% if req.query['panels'] and
+        req.query['panels'] > 0 %} {% set currentPanel = req.query['panels'] %}
         {% endif %}
         <div class="nhsuk-summary-list__row">
             <a
                 class="nhsuk-button nhsuk-button--secondary"
                 data-module="nhsuk-button"
-                href="/referral/test/disease-status"
+                href="/referral/test/add-panel?panels={{ currentPanel }}"
                 draggable="false"
                 role="button"
             >

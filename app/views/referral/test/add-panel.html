@@ -22,15 +22,43 @@ input %} {% from 'radios/macro.njk' import radios %} {% extends 'layout.html' %}
 {% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full nhsuk-u-margin-bottom-7">
-        <h2>Aditional panel</h2>
-        {{ input({ label: { html: "Use panels with panel type 'GMS rare disease virtual' listed on <a href=\"#\">pannelapp</a>" }, id: "add-panel", name: "add-panel", classes: "nhsuk-u-width-two-thirds" }) }}
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label nhsuk-label--l nhsuk-u-margin-top-6" for="input-with-hint-text">
+              Additional panel
+          </label>
+
+          <div class="nhsuk-hint" id="input-with-hint-text-hint">
+              Use panels with panel type ’GMS rare disease virtual’ listed on <a href="#">pannelapp</a>
+          </div>
+          <div class="nhsuk-u-width-two-thirds">
+          <select id="add-panel" class="nhsuk-u-width-two-thirds">
+            <option></option>
+            <option>Rare genetic inflammatory skin disorders</option>
+            <option>Other rare neuromuscular disorders</option>
+            <option>Rare multisystem ciliopathy Super panel</option>
+          </select>
+
+          <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
+          <script type="text/javascript" src="/js/accessible-autocomplete.min.js"></script>
+          </script>
+
+          <script>
+            accessibleAutocomplete.enhanceSelectElement({
+              defaultValue: '',
+              selectElement: document.querySelector('#add-panel'),
+            })
+          </script>
+        </div>
     </div>
 
+    {% set currentPanel = 0 %} {% if req.query['panels'] and
+    req.query['panels'] > 0 %} {% set currentPanel = req.query['panels'] | int %}
+    {% endif %}
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
         <a
             class="nhsuk-button"
             data-module="nhsuk-button"
-            href="/referral/test/related-disease-summary"
+            href="/referral/test/test-request-summary?panels={{ currentPanel+1 }}"
             draggable="false"
             role="button"
         >
