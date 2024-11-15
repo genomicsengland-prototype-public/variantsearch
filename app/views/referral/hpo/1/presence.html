@@ -3,145 +3,143 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-  Check your answers template - NHS.UK prototype kit
+Check your answers template - NHS.UK prototype kit
+{% endblock %}
+
+{% block outerContent %}
+<div class="nhsuk-back-link" style="margin-top: 2rem">
+  <a class="nhsuk-back-link__link" href="/patient-search">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      aria-hidden="true" height="24" width="24">
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+      </path>
+    </svg>
+    Go back</a>
+</div>
 {% endblock %}
 
 {% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-width-container-fluid">
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-width-container-fluid">
+    <span class="nhsuk-caption-m">HPO observations</span>
 
-      <span class="nhsuk-caption-m">HPO observations</span>
+    <h1 class="nhsuk-heading-xl">
+      Has parathormone-independent increased renal tubular calcium reabsorption been observed in participants?
+    </h1>
 
-      <h1 class="nhsuk-heading-xl">
-        Has parathormone-independent increased renal tubular calcium reabsorption been observed in participants?
-      </h1>
-      <!-- <div class="nhsuk-hint" id="example-hints-hint">
-        <p>Record if the HPO term been observed as present or absent in the propand and family members. If it has not been indicated mark as not recorded.</p>
-      </div> -->
+    <div class="nhsuk-form-group">
+      <form action="summary-by-term" method="post" class="form">
 
-      <div class="nhsuk-form-group">
-        <form action="summary-by-term" method="post" class="form">
-
-        <fieldset class="nhsuk-fieldset">
+        <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-6">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <span class="nhsuk-caption-m">Proband</span>
             <h2 class="nhsuk-fieldset__heading nhsuk-heading-m">
               Jay Smith
-            </h1>
+            </h2>
           </legend>
-            
-          <div class="nhsuk-radios nhsuk-radios--inline">
-      
+
+          <div class="nhsuk-hint" id="input-with-hint-text-hint">
+            Patient (proband)
+          </div>
+
+          <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="true">
               <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
                 Present
               </label>
             </div>
-      
+
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="false">
               <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
                 Absent
               </label>
             </div>
-      
+
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="null">
               <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
-                Not recorded
+                Unknown
               </label>
             </div>
-    
           </div>
         </fieldset>
-      
-      </div>
 
-
-      <div class="nhsuk-form-group">
-
-        <fieldset class="nhsuk-fieldset">
+        <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-6">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <span class="nhsuk-caption-m">Mother</span>
             <h2 class="nhsuk-fieldset__heading nhsuk-heading-m">
               Jane Smith
-            </h1>
+            </h2>
           </legend>
-            
-          <div class="nhsuk-radios nhsuk-radios--inline">
-      
+
+          <div class="nhsuk-hint" id="input-with-hint-text-hint">
+            Mother
+          </div>
+
+          <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="true">
               <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
                 Present
               </label>
             </div>
-      
+
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="false">
               <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
                 Absent
               </label>
             </div>
-      
+
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="null">
               <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
-                Not recorded
+                Unknown
               </label>
             </div>
-    
           </div>
         </fieldset>
-      
-      </div>
 
-      <div class="nhsuk-form-group">
-
-        <fieldset class="nhsuk-fieldset">
+        <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-6">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <span class="nhsuk-caption-m">Father</span>
             <h2 class="nhsuk-fieldset__heading nhsuk-heading-m">
               James Smith
-            </h1>
+            </h2>
           </legend>
-            
-          <div class="nhsuk-radios nhsuk-radios--inline">
-      
+
+          <div class="nhsuk-hint" id="input-with-hint-text-hint">
+            Father
+          </div>
+
+          <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="true">
               <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
                 Present
               </label>
             </div>
-      
+
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="false">
               <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
                 Absent
               </label>
             </div>
-      
+
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="null">
               <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
-                Not recorded
+                Unknown
               </label>
             </div>
-    
           </div>
         </fieldset>
-      
-      </div>
-
-
-
-      <button class="nhsuk-button  nhsuk-u-margin-top-4" data-module="nhsuk-button" type="submit">
-        Confirm and continue
-      </button>
-
-
     </div>
+
+    <button class="nhsuk-button  nhsuk-u-margin-top-4" data-module="nhsuk-button" type="submit">
+      Confirm
+    </button>
   </div>
+</div>
 {% endblock %}

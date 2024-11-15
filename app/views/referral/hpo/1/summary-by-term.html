@@ -6,18 +6,191 @@
   Check your answers template - NHS.UK prototype kit
 {% endblock %}
 
+{% block outerContent %}
+<div class="nhsuk-back-link" style="margin-top: 2rem">
+  <a class="nhsuk-back-link__link" href="/patient-search">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      aria-hidden="true" height="24" width="24">
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+      </path>
+    </svg>
+    Go back</a>
+</div>
+{% endblock %}
+
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-
-      <span class="nhsuk-caption-m">HPO Terms</span>
-
-      <h1 class="nhsuk-heading-xl">
-        HPO term presence
+      <h1>
+        HPO terms
       </h1>
 
-      <div class="nhsuk-form-group">      
+      <h3 class="nhsuk-heading-m  nhsuk-u-margin-bottom-2">
+        Parathormone-independent increased renal tubular calcium reabsorption
+      </h3>
+
+      <div class="nhsuk-hint" id="input-with-hint-text-hint">
+        HP:0003529
+      </div>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" style="width: 14rem">
+            Jay Smith - Patient
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Present
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden"> observation</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Jane Smith - Mother
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Absent
+          </dd>
       
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden"> observation</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            James Smith - Father
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Present
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden"> observation</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">
+        Renal agenesis
+      </h3>
+
+      <div class="nhsuk-hint" id="input-with-hint-text-hint">
+        HP:0000104
+      </div>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" style="width: 14rem">
+            Jay Smith - Proband
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Present
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden"> observation</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Jane Smith - Mother
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Absent
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden"> observation</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            James Smith - Father
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Absent
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden"> observation</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">
+        Renal tubular lysine transport defect
+      </h3>
+
+      <div class="nhsuk-hint" id="input-with-hint-text-hint">
+        HP:0008272
+      </div>
+
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" style="width: 14rem">
+            Jay Smith - Proband
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Present
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden"> observation</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Jane Smith - Mother
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Absent
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden"> observation</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            James Smith - Father
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Present
+          </dd>
+      
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden"> observation</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <div class="nhsuk-form-group">
         <form action="presence-namelist-select" method="post" class="form">
           <h2 class="nhsuk-label-wrapper">
             <label class="nhsuk-label nhsuk-label--l " for="HPO-terms">
@@ -26,7 +199,7 @@
           </h2>
 
           <select id="hpo-picker">
-            <option value="hpo">Search HPO terms</option>
+            <option></option>
             <option value="r-cy">Renal Cyst [code]</option>
             <option value="r-hy">Renal Hypoplasia [code]</option>
             <option value="r-pl">Renal plasia [code]</option>
@@ -44,242 +217,14 @@
           </script>
 
           <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-4" data-module="nhsuk-button" type="submit">
-            Add Selected HPO term
+            Add HPO term
           </button>
-
         </form>
       </div>
 
-      <h2 class="nhsuk-heading-l">
-        HPO summary
-      </h2>
-
-      <span class="nhsuk-caption-m">HP:0003529</span>
-      <h3 class="nhsuk-heading-m  nhsuk-u-margin-bottom-2">
-        Parathormone-independent increased renal tubular calcium reabsorption
-      </h3>
-
-      <dl class="nhsuk-summary-list">
-
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Jay Smith
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            Proband
-          </dd>
-          <dd class="nhsuk-summary-list__value">
-            Present
-          </dd>
-      
-          <dd class="nhsuk-summary-list__actions">
-      
-            <a href="#">
-              Change<span class="nhsuk-u-visually-hidden"> observation</span>
-            </a>
-      
-          </dd>
-      
-        </div>
-
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Jane Smith
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            Mother
-          </dd>
-          <dd class="nhsuk-summary-list__value">
-            Absent
-          </dd>
-      
-          <dd class="nhsuk-summary-list__actions">
-      
-            <a href="#">
-              Change<span class="nhsuk-u-visually-hidden"> observation</span>
-            </a>
-      
-          </dd>
-      
-        </div>
-
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            James Smith
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            Father
-          </dd>
-          <dd class="nhsuk-summary-list__value">
-            Present
-          </dd>
-      
-          <dd class="nhsuk-summary-list__actions">
-      
-            <a href="#">
-              Change<span class="nhsuk-u-visually-hidden"> observation</span>
-            </a>
-      
-          </dd>
-      
-        </div>
-
-
-      </dl>
-
-      <span class="nhsuk-caption-m">HP:0000104</span>
-      <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">
-        Renal agenesis
-      </h3>
-
-      <dl class="nhsuk-summary-list">
-
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Jay Smith
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            Proband
-          </dd>
-          <dd class="nhsuk-summary-list__value">
-            Present
-          </dd>
-      
-          <dd class="nhsuk-summary-list__actions">
-      
-            <a href="#">
-              Change<span class="nhsuk-u-visually-hidden"> observation</span>
-            </a>
-      
-          </dd>
-      
-        </div>
-
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Jane Smith
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            Mother
-          </dd>
-          <dd class="nhsuk-summary-list__value">
-            Absent
-          </dd>
-      
-          <dd class="nhsuk-summary-list__actions">
-      
-            <a href="#">
-              Change<span class="nhsuk-u-visually-hidden"> observation</span>
-            </a>
-      
-          </dd>
-      
-        </div>
-
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            James Smith
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            Father
-          </dd>
-          <dd class="nhsuk-summary-list__value">
-            Absent
-          </dd>
-      
-          <dd class="nhsuk-summary-list__actions">
-      
-            <a href="#">
-              Change<span class="nhsuk-u-visually-hidden"> observation</span>
-            </a>
-      
-          </dd>
-      
-        </div>
-
-
-      </dl>
-
-      <span class="nhsuk-caption-m">HP:0008272</span>
-      <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">
-        Renal tubular lysine transport defect
-      </h3>
-
-      <dl class="nhsuk-summary-list">
-
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Jay Smith
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            Proband
-          </dd>
-          <dd class="nhsuk-summary-list__value">
-            Present
-          </dd>
-      
-          <dd class="nhsuk-summary-list__actions">
-      
-            <a href="#">
-              Change<span class="nhsuk-u-visually-hidden"> observation</span>
-            </a>
-      
-          </dd>
-      
-        </div>
-
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Jane Smith
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            Mother
-          </dd>
-          <dd class="nhsuk-summary-list__value">
-            Not recorded
-          </dd>
-      
-          <dd class="nhsuk-summary-list__actions">
-      
-            <a href="#">
-              Change<span class="nhsuk-u-visually-hidden"> observation</span>
-            </a>
-      
-          </dd>
-      
-        </div>
-
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            James Smith
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            Father
-          </dd>
-          <dd class="nhsuk-summary-list__value">
-            Not recorded
-          </dd>
-      
-          <dd class="nhsuk-summary-list__actions">
-      
-            <a href="#">
-              Change<span class="nhsuk-u-visually-hidden"> observation</span>
-            </a>
-      
-          </dd>
-      
-        </div>
-
-
-      </dl>
-
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-        Confirm and continue
+        Continue
       </button>
-
-
-
-
     </div>
   </div>
 {% endblock %}
