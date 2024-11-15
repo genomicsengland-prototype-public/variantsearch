@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block outerContent %}
+<div class="nhsuk-back-link" style="margin-top: 2rem">
+  <a class="nhsuk-back-link__link" href="/patient-search">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      aria-hidden="true" height="24" width="24">
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+      </path>
+    </svg>
+    Go back</a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-form-group">
+      <form action="presence" method="post" class="form">
+        <h1 style="margin-bottom: 1rem">HPO Terms</h1>
+
+        <p>HPO terms are important for the analysis and interpretation of whole genome screening (WGS) data.</p>
+
+        <p>Enter HPO terms present in the patient (proband) or family members being tested.</p>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label nhsuk-label--l nhsuk-u-margin-top-6" for="input-with-hint-text">
+            Enter HPO term
+          </label>
+
+          <div class="nhsuk-hint" id="input-with-hint-text-hint">
+            Type to search HPO term
+          </div>
+
+          <select id="hpo-picker">
+            <option></option>
+            <option>Renal Cyst [code]</option>
+            <option>Renal Hypoplasia [code]</option>
+            <option>Renal plasia [code]</option>
+          </select>
+
+          <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
+          <script type="text/javascript" src="/js/accessible-autocomplete.min.js">
+          </script>
+
+          <script>
+            accessibleAutocomplete.enhanceSelectElement({
+              defaultValue: '',
+              selectElement: document.querySelector('#hpo-picker')
+            }) 
+          </script>
+
+          <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-4" data-module="nhsuk-button" type="submit">
+            Add HPO term
+          </button>
+        </div>
+
+        <div>
+          <button class="nhsuk-button nhsuk-u-margin-top-4" data-module="nhsuk-button" type="submit">
+            Continue
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
