@@ -14,8 +14,8 @@ href: "/referral",
 text: "Referral #123456789"
 }
 ],
-href: "/referral/care-team",
-text: "Care team"
+href: "/referral/family",
+text: "Family"
 }) }}
 {% endblock %}
 
@@ -35,62 +35,114 @@ text: "Care team"
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <h2>Care team</h2>
+    <h2 class="nhsuk-u-margin-bottom-4">Family testing</h2>
 
-    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-6">
+    <dl class="nhsuk-summary-list">
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Organisation
+          People being tested
         </dt>
         <dd class="nhsuk-summary-list__value">
-          Great Ormond Street Hospital
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="/referral/care-team">Change</a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Responsible clinician
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Dr Sue Donim
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="/referral/care-team/responsible-clinician">Change</a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Clinician contact
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          <p>0208 965 5244</p>
-          <p>sue.donim@nhs.net</p>
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="/referral/care-team/responsible-clinician">Change</a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Main contact email
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          admins_GOSH_genetics@nhs.net
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="/referral/care-team/responsible-clinician">Change</a>
+          1
         </dd>
       </div>
     </dl>
 
-    <div style="margin-top: 3rem">
-      <a class="nhsuk-button" data-module="nhsuk-button" href="/referral/glh"
+    <h4>Mother</h4>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Martha Carson
+        </dd>
+        <dd class="nhsuk-summary-list__actions"></dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          NHS number
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          944 930 3363
+        </dd>
+        <dd class="nhsuk-summary-list__actions"></dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Gender
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Female
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href=""></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Ethnicity
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          White Irish
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href=""></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Life status
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Deceased
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href=""></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Relationship
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Mother
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="">Change</a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Disease status
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Affected
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="">Change</a>
+        </dd>
+      </div>
+
+      
+    </dl>
+
+    <div>
+      <a class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" href="/patient-search"
         draggable="false" role="button">
+        Add family member
+      </a>
+    </div>
+
+    <div>
+      <a class="nhsuk-button" data-module="nhsuk-button" href="/referral/stage" draggable="false" role="button">
         Continue
       </a>
     </div>
