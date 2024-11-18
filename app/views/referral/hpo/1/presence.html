@@ -6,6 +6,21 @@
 Check your answers template - NHS.UK prototype kit
 {% endblock %}
 
+{% block beforeContent %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+
+{{ breadcrumb({
+items: [
+{
+href: "/referral",
+text: "Referral #123456789"
+}
+],
+href: "/referral/hpo/1",
+text: "HPO terms"
+}) }}
+{% endblock %}
+
 {% block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem">
   <a class="nhsuk-back-link__link" href="/patient-search">
@@ -21,10 +36,10 @@ Check your answers template - NHS.UK prototype kit
 
 {% block content %}
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-width-container-fluid">
+  <div class="nhsuk-grid-column-two-thirds">
     <span class="nhsuk-caption-m">HPO observations</span>
 
-    <h1 class="nhsuk-heading-xl">
+    <h1 class="nhsuk-heading-l">
       Has parathormone-independent increased renal tubular calcium reabsorption been observed in participants?
     </h1>
 
@@ -44,22 +59,25 @@ Check your answers template - NHS.UK prototype kit
 
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="true">
+              <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline-1" type="radio"
+                value="true">
               <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
                 Present
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="false">
+              <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline-1" type="radio"
+                value="false">
               <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
                 Absent
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="null">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+              <input class="nhsuk-radios__input" id="example-inline-3" name="example-inline-1" type="radio"
+                value="null">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-3">
                 Unknown
               </label>
             </div>
@@ -79,22 +97,25 @@ Check your answers template - NHS.UK prototype kit
 
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="true">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+              <input class="nhsuk-radios__input" id="example-inline-4" name="example-inline-2" type="radio"
+                value="true">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-4">
                 Present
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="false">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+              <input class="nhsuk-radios__input" id="example-inline-5" name="example-inline-2" type="radio"
+                value="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-5">
                 Absent
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="null">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+              <input class="nhsuk-radios__input" id="example-inline-6" name="example-inline-2" type="radio"
+                value="null">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-6">
                 Unknown
               </label>
             </div>
@@ -114,22 +135,25 @@ Check your answers template - NHS.UK prototype kit
 
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="true">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+              <input class="nhsuk-radios__input" id="example-inline-7" name="example-inline-3" type="radio"
+                value="true">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-7">
                 Present
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="false">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+              <input class="nhsuk-radios__input" id="example-inline-8" name="example-inline-3" type="radio"
+                value="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-8">
                 Absent
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="null">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+              <input class="nhsuk-radios__input" id="example-inline-9" name="example-inline-3" type="radio"
+                value="null">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-9">
                 Unknown
               </label>
             </div>

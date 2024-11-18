@@ -6,6 +6,21 @@
 Question page
 {% endblock %}
 
+{% block beforeContent %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+
+{{ breadcrumb({
+items: [
+{
+href: "/referral",
+text: "Referral #123456789"
+}
+],
+href: "/referral/hpo/1",
+text: "HPO terms"
+}) }}
+{% endblock %}
+
 {% block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem">
   <a class="nhsuk-back-link__link" href="/patient-search">
