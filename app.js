@@ -193,6 +193,19 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.post("/referral/test/answer", (req, res) => {
+  // Make a variable and give it the value from 'know-nhs-number'
+  const diseaseSuspected = req.session.data["disease"];
+  // Check whether the variable matches a condition
+  if (diseaseSuspected === "yes") {
+    // Send user to next page
+    res.redirect("/referral/test/disease-status");
+  } else {
+    // Send user to ineligible page
+    res.redirect("/referral/test/test-request-summary");
+  }
+});
+
 // Automatically route pages
 app.get(/^([^.]+)$/, (req, res, next) => {
   automaticRouting.matchRoutes(req, res, next);
