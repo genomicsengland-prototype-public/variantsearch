@@ -1,7 +1,29 @@
-{% extends 'layout.html' %} {% block pageTitle %} NHS.UK prototype kit {%
-endblock %} {% block outerContent %}
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+NHS.UK prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+
+{{ breadcrumb({
+items: [
+{
+href: "/referral",
+text: "Referral #123456789"
+}
+],
+href: "/referral/clinical-info",
+text: "Clinical info"
+}) }}
+{% endblock %}
+
+{% block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem"></div>
-{% endblock %} {% block content %}
+{% endblock %}
+
+{% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <h2 class="nhsuk-u-margin-bottom-4">Relevant clinical information</h2>
