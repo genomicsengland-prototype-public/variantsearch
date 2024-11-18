@@ -1,393 +1,376 @@
-{% extends 'layout.html' %}
-
-{% block pageTitle %}
-NHS.UK prototype kit
-{% endblock %}
-
-{% block beforeContent %}
-{% from 'breadcrumb/macro.njk' import breadcrumb %}
-
-{{ breadcrumb({
-  href: "/referral",
-  text: "Referral #123456789"
-}) }}
-{% endblock %}
-
-{% block outerContent %}
+{% extends 'layout.html' %} {% block pageTitle %} NHS.UK prototype kit {%
+endblock %} {% block beforeContent %} {% from 'breadcrumb/macro.njk' import
+breadcrumb %} {{ breadcrumb({ href: "/referral", text: "Referral #123456789" })
+}} {% endblock %} {% block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem">
-  <a class="nhsuk-back-link__link" href="/patient-search">
-    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-      aria-hidden="true" height="24" width="24">
-      <path
-        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
-      </path>
-    </svg>
-    Go back</a>
+    <a class="nhsuk-back-link__link" href="/patient-search">
+        <svg
+            class="nhsuk-icon nhsuk-icon__chevron-left"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            height="24"
+            width="24"
+        >
+            <path
+                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+            ></path>
+        </svg>
+        Go back</a
+    >
 </div>
-{% endblock %}
-
-{% block content %}
+{% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-two-thirds">
-    <h2>Referral #0000000000</h2>
+    <div class="nhsuk-grid-column-two-thirds">
+        <h2>Referral #R321 1234 321</h2>
 
-    <p class="nhsuk-u-margin-bottom-6">Data must be added to all mandatory fields before submission.</p>
+        <p class="nhsuk-u-margin-bottom-6">
+            Data must be added to all mandatory fields before submission.
+        </p>
 
-    <!-- PATIENT STAGE -->
-    <div class="nhsuk-u-margin-bottom-4" style="display: flex; align-items: center;">
-      <h4 class="nhsuk-u-margin-bottom-0"><a href="/referral/patient">Patient (proband)</a></h4>
+        <!-- PATIENT STAGE -->
+        <div
+            class="nhsuk-u-margin-bottom-4"
+            style="display: flex; align-items: center"
+        >
+            <h4 class="nhsuk-u-margin-bottom-0">
+                <a href="/patient-search">Patient (proband)</a>
+            </h4>
 
-      <h5 class="nhsuk-u-margin-bottom-0" style="margin-left: auto">Completed</h5>
+            <h5 class="nhsuk-u-margin-bottom-0" style="margin-left: auto">
+                Completed
+            </h5>
+        </div>
+
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Name</dt>
+                <dd class="nhsuk-summary-list__value">Ethan Carson</dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">NHS number</dt>
+                <dd class="nhsuk-summary-list__value">944 930 3266</dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Post code</dt>
+                <dd class="nhsuk-summary-list__value">LS1 4HY</dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Gender</dt>
+                <dd class="nhsuk-summary-list__value">Male</dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Ethnicity</dt>
+                <dd class="nhsuk-summary-list__value">
+                    Mixed White and Black Caribbean
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+            </div>
+        </dl>
+
+        <!-- CLINICAL INFO STAGE -->
+        <div
+            class="nhsuk-u-margin-bottom-4"
+            style="display: flex; align-items: center"
+        >
+            <h4 class="nhsuk-u-margin-bottom-0">
+                <a href="/referral/clinical-info">Clinical information</a>
+            </h4>
+
+            <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
+                In progress
+            </strong>
+        </div>
+
+        <!-- TEST STAGE -->
+        <div
+            class="nhsuk-u-margin-bottom-4"
+            style="display: flex; align-items: center"
+        >
+            <h4 class="nhsuk-u-margin-bottom-0">
+                <a href="/referral/test">Test request</a>
+            </h4>
+
+            <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
+                In progress
+            </strong>
+        </div>
+
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Test type</dt>
+                <dd class="nhsuk-summary-list__value">Rear disease</dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="/referral/test/disease-status">Change</a>
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Panels</dt>
+                <dd class="nhsuk-summary-list__value">
+                    <p>Panel name R000</p>
+                    <p>Panel name R000</p>
+                    <p>Panel name R000</p>
+                    <p>Panel longer long name disease R000</p>
+                </dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Mandatory field</dt>
+                <dd class="nhsuk-summary-list__value">[not provided?]</dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="/referral/test/add-panel?panels=0">Add</a>
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Optional field</dt>
+                <dd class="nhsuk-summary-list__value"></dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="/referral/test/add-panel?panels=0">Add</a>
+                </dd>
+            </div>
+        </dl>
+
+        <!-- FAMAILY STAGE -->
+        <div
+            class="nhsuk-u-margin-bottom-4"
+            style="display: flex; align-items: center"
+        >
+            <h4 class="nhsuk-u-margin-bottom-0">
+                <a href="/referral/family">Family</a>
+            </h4>
+
+            <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
+                Not started
+            </strong>
+        </div>
+
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">People being tested</dt>
+                <dd class="nhsuk-summary-list__value">1</dd>
+            </div>
+        </dl>
+
+        <h4>Mother</h4>
+
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Name</dt>
+                <dd class="nhsuk-summary-list__value">Firstname Lastname</dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">NHS number</dt>
+                <dd class="nhsuk-summary-list__value">5677773456</dd>
+                <dd class="nhsuk-summary-list__actions"></dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Gender</dt>
+                <dd class="nhsuk-summary-list__value">AdministrativeGender</dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="/referral/family">Change</a>
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Ethnicity</dt>
+                <dd class="nhsuk-summary-list__value">Ethnicity</dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="/referral/family">Change</a>
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Life status</dt>
+                <dd class="nhsuk-summary-list__value">Life status</dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="/referral/family">Change</a>
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Relationship</dt>
+                <dd class="nhsuk-summary-list__value">Relationship</dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="/referral/family/relationship">Change</a>
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Disease status</dt>
+                <dd class="nhsuk-summary-list__value">Disease status</dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="/referral/family/disease-status">Change</a>
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Related disorders</dt>
+                <dd class="nhsuk-summary-list__value">
+                    Related disorders<br />
+                    Related disorders
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="/referral/family">Change</a>
+                </dd>
+            </div>
+        </dl>
+
+        <!-- CARE TEAM STAGE -->
+        <div
+            class="nhsuk-u-margin-bottom-4"
+            style="display: flex; align-items: center"
+        >
+            <h4 class="nhsuk-u-margin-bottom-0">
+                <a href="/referral/care-team">Care team</a>
+            </h4>
+
+            <h5 class="nhsuk-u-margin-bottom-0" style="margin-left: auto">
+                Completed
+            </h5>
+        </div>
+
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Organisation</dt>
+                <dd class="nhsuk-summary-list__value">OrganisationName</dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="/referral/care-team">Change</a>
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Department</dt>
+                <dd class="nhsuk-summary-list__value">DepartmentName</dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="/referral/care-team">Change</a>
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Responsible clinician</dt>
+                <dd class="nhsuk-summary-list__value">Name here</dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="/referral/care-team">Change</a>
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Clinician contact</dt>
+                <dd class="nhsuk-summary-list__value">
+                    <p>030 0123 4567</p>
+                    <p>n.name-clinician@nhs.net</p>
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="/referral/care-team">Change</a>
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Main contact email</dt>
+                <dd class="nhsuk-summary-list__value">
+                    department-admin@nhs.net
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="/referral/care-team">Change</a>
+                </dd>
+            </div>
+        </dl>
+
+        <!-- GLH STAGE -->
+        <div
+            class="nhsuk-u-margin-bottom-4"
+            style="display: flex; align-items: center"
+        >
+            <h4 class="nhsuk-u-margin-bottom-0">
+                <a href="/referral/glh">GLH</a>
+            </h4>
+
+            <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
+                Not started
+            </strong>
+        </div>
+
+        <!-- HPO terms STAGE -->
+        <div
+            class="nhsuk-u-margin-bottom-4"
+            style="display: flex; align-items: center"
+        >
+            <h4 class="nhsuk-u-margin-bottom-0">
+                <a href="/referral/hpo/1">HPO terms</a>
+            </h4>
+
+            <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
+                Not started
+            </strong>
+        </div>
+
+        <!-- CONSENT RECORD STAGE -->
+        <div
+            class="nhsuk-u-margin-bottom-4"
+            style="display: flex; align-items: center"
+        >
+            <h4 class="nhsuk-u-margin-bottom-0">
+                <a href="#">Consent record</a>
+            </h4>
+
+            <strong class="nhsuk-tag nhsuk-tag--red" style="margin-left: auto">
+                There is a problem
+            </strong>
+        </div>
+
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Label</dt>
+                <dd class="nhsuk-summary-list__value">Date added</dd>
+                <dd class="nhsuk-summary-list__actions">
+                    <a href="#">Change</a>
+                </dd>
+            </div>
+        </dl>
+
+        <div>
+            <a
+                class="nhsuk-button"
+                data-module="nhsuk-button"
+                href="/referral/submit"
+                draggable="false"
+                role="button"
+            >
+                Submit referral
+            </a>
+
+            <a
+                class="nhsuk-button nhsuk-button--secondary"
+                style="margin-left: 1rem"
+                data-module="nhsuk-button"
+                href=""
+                draggable="false"
+                role="button"
+            >
+                Review by email
+            </a>
+        </div>
+
+        <p>
+            <a href="">Export data as CSV</a> |
+            <a href="">Download test order as PDF</a>
+        </p>
+
+        <p><a href="">Cancel referral</a></p>
     </div>
-
-    <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Firstname Lastname
-        </dd>
-        <dd class="nhsuk-summary-list__actions"></dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          NHS number
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          5677773456
-        </dd>
-        <dd class="nhsuk-summary-list__actions"></dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Gender
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          AdministrativeGender
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="">Change</a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Ethnicity
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Ethnicity
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="">Change</a>
-        </dd>
-      </div>
-    </dl>
-
-    <!-- TEST STAGE -->
-    <div class="nhsuk-u-margin-bottom-4" style="display: flex; align-items: center;">
-      <h4 class="nhsuk-u-margin-bottom-0"><a href="/referral/test">Test</a></h4>
-
-      <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto;">
-        In progress
-      </strong>
-    </div>
-
-    <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Test type
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Rear disease
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="">Change</a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Panels
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          <p>Panel name R000</p>
-          <p>Panel name R000</p>
-          <p>Panel name R000</p>
-          <p>Panel longer long name disease R000</p>
-        </dd>
-        <dd class="nhsuk-summary-list__actions"></dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Mandatory field
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          [not provided?]
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="">Add</a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Optional field
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="">Add</a>
-        </dd>
-      </div>
-    </dl>
-
-    <!-- CLINICAL INFO STAGE -->
-    <div class="nhsuk-u-margin-bottom-4" style="display: flex; align-items: center;">
-      <h4 class="nhsuk-u-margin-bottom-0"><a href="/referral/clinical-info">Clinical info</a></h4>
-
-      <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto;">
-        In progress
-      </strong>
-    </div>
-
-    <!-- FAMAILY STAGE -->
-    <div class="nhsuk-u-margin-bottom-4" style="display: flex; align-items: center;">
-      <h4 class="nhsuk-u-margin-bottom-0"><a href="/referral/family">Family</a></h4>
-
-      <strong class="nhsuk-tag" style="margin-left: auto;">
-        Not started
-      </strong>
-    </div>
-
-    <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          People being tested
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          1
-        </dd>
-      </div>
-    </dl>
-
-    <h4>Mother</h4>
-
-    <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Firstname Lastname
-        </dd>
-        <dd class="nhsuk-summary-list__actions"></dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          NHS number
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          5677773456
-        </dd>
-        <dd class="nhsuk-summary-list__actions"></dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Gender
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          AdministrativeGender
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="">Change</a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Ethnicity
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Ethnicity
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="">Change</a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Life status
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Life status
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="">Change</a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Relationship
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Relationship
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="">Change</a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Disease status
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Disease status
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="">Change</a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Related disorders
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Related disorders<br />
-          Related disorders
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="">Change</a>
-        </dd>
-      </div>
-    </dl>
-
-    <!-- SAMPLES STAGE -->
-    <div class="nhsuk-u-margin-bottom-4" style="display: flex; align-items: center;">
-      <h4 class="nhsuk-u-margin-bottom-0"><a href="/referral/samples">Samples</a></h4>
-
-      <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto;">
-        In progress
-      </strong>
-    </div>
-
-    <!-- CARE TEAM STAGE -->
-    <div class="nhsuk-u-margin-bottom-4" style="display: flex; align-items: center;">
-      <h4 class="nhsuk-u-margin-bottom-0"><a href="/referral/care-team">Care team</a></h4>
-
-      <h5 class="nhsuk-u-margin-bottom-0" style="margin-left: auto">Completed</h5>
-    </div>
-
-    <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Organisation
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          OrganisationName
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="">Change</a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Department
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          DepartmentName
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="">Change</a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Responsible clinician
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Name here
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="">Change</a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Clinician contact
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          <p>030 0123 4567</p>
-          <p>n.name-clinician@nhs.net</p>
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="">Change</a>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Main contact email
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          department-admin@nhs.net
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="">Change</a>
-        </dd>
-      </div>
-    </dl>
-
-    <!-- CONSENT RECORD STAGE -->
-    <div class="nhsuk-u-margin-bottom-4" style="display: flex; align-items: center;">
-      <h4 class="nhsuk-u-margin-bottom-0"><a href="/referral/consent">Consent record</a></h4>
-
-      <strong class="nhsuk-tag nhsuk-tag--red" style="margin-left: auto;">
-        There is a problem
-      </strong>
-    </div>
-
-    <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Label
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Date added
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="">Change</a>
-        </dd>
-      </div>
-    </dl>
-
-    <div>
-      <a class="nhsuk-button" data-module="nhsuk-button" href="/referral/submit" draggable="false" role="button">
-        Submit referral
-      </a>
-
-      <a class="nhsuk-button nhsuk-button--secondary" style="margin-left: 1rem" data-module="nhsuk-button" href=""
-        draggable="false" role="button">
-        Review by email
-      </a>
-    </div>
-
-    <p><a href="">Export data as CSV</a> | <a href="">Download test order as PDF</a></p>
-
-    <p><a href="">Cancel referral</a></p>
-  </div>
 </div>
 {% endblock %}
