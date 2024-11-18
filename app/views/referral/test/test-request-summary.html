@@ -1,25 +1,8 @@
-{% extends 'layout.html' %}
-
-{% block pageTitle %}
-NHS.UK prototype kit
-{% endblock %}
-
-{% block beforeContent %}
-{% from 'breadcrumb/macro.njk' import breadcrumb %}
-
-{{ breadcrumb({
-items: [
-{
-href: "/referral",
-text: "Referral #123456789"
-}
-],
-href: "/referral/test",
-text: "Test request"
-}) }}
-{% endblock %}
-
-{% block outerContent %}
+{% extends 'layout.html' %} {% block pageTitle %} NHS.UK prototype kit {%
+endblock %} {% block beforeContent %} {% from 'breadcrumb/macro.njk' import
+breadcrumb %} {{ breadcrumb({ items: [ { href: "/referral", text: "Referral
+#123456789" } ], href: "/referral/test", text: "Test request" }) }} {% endblock
+%} {% block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem">
     <a class="nhsuk-back-link__link" href="/patient-search">
         <svg
@@ -123,7 +106,7 @@ based on the url, then this code bit is useful "{{req.query['test']}}" #}
             <a
                 class="nhsuk-button"
                 data-module="nhsuk-button"
-                href="/referral"
+                href="/referral/family"
                 draggable="false"
                 role="button"
             >
