@@ -3082,9 +3082,7 @@ b {
     /* 3 */
     /* 4 */
 }
-.nhsuk-button[aria-disabled] {
-    background: #79b998;
-}
+
 @media (min-width: 40.0625em) {
     .nhsuk-button {
         font-size: 19px;
