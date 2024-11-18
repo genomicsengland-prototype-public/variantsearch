@@ -1,7 +1,7 @@
 {% extends 'layout.html' %} {% block pageTitle %} NHS.UK prototype kit {%
 endblock %} {% block beforeContent %} {% from 'breadcrumb/macro.njk' import
 breadcrumb %} {{ breadcrumb({ items: [ { href: "/referral", text: "Referral
-#123456789" } ], href: "/referral/glh", text: "Labatory" }) }} {% endblock %} {%
+#123456789" } ], href: "/referral/glh", text: "Laboratory" }) }} {% endblock %} {%
 block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem">
     <a class="nhsuk-back-link__link" href="/patient-search">
@@ -23,10 +23,10 @@ block outerContent %}
 {% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <h2 class="nhsuk-u-margin-bottom-4">Labatory</h2>
+        <h2 class="nhsuk-u-margin-bottom-4">Laboratory</h2>
 
         <label class="nhsuk-label" for="HPO-terms">
-            GLH labatory receiving sample
+            GLH laboratory receiving sample
         </label>
 
         <div class="nhsuk-hint" id="nhs-number-hint">
@@ -60,7 +60,7 @@ block outerContent %}
                     class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l"
                 >
                     <h4 class="nhsuk-u-margin-bottom-1">
-                        Will the same GLH labatory interpret returned results?
+                        Will the same GLH laboratory interpret returned results?
                     </h4>
                 </legend>
 
@@ -107,7 +107,7 @@ block outerContent %}
                     >
                         <div class="nhsuk-form-group">
                             <label class="nhsuk-label" for="email">
-                                Which GLH labatory will interpret?
+                                Which GLH laboratory will interpret?
                             </label>
                             <input
                                 class="nhsuk-input"
