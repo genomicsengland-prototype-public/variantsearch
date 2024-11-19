@@ -4,7 +4,7 @@ from 'breadcrumb/macro.njk' import breadcrumb %} {{ breadcrumb({ items: [ {
 href: "/referral", text: "Referral #123456789" } ], href: "/referral/hpo/1",
 text: "HPO terms" }) }} {% endblock %} {% block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem">
-    <a class="nhsuk-back-link__link" href="/patient-search">
+    <a class="nhsuk-back-link__link" href="javascript:history.back();">
         <svg
             class="nhsuk-icon nhsuk-icon__chevron-left"
             xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,12 @@ text: "HPO terms" }) }} {% endblock %} {% block outerContent %}
                     <select id="hpo-picker" name="hpo-picker">
                         <option></option>
                         <option>Intellectual disability – profound [HP:0002187]</option>
-                        <option>Generalised tonic-clonic seizures – [HP:0010818]</option>
+                        <option>Intellectual disability, mild [HP:0001256]</option>
+                        <option>Intestinal polyp [HP:0005266]</option>
+                        <option>Generalised tonic-clonic seizures [HP:0010818]</option>
+                        <option>Generalized hirsutism [HP:0002230]</option>
+                        <option>Generalized amyotrophy [HP:0003700]</option>
+                        <option>Generalized hypotonia due to defect at the neuromuscular junction [HP:0003397]</option>
                     </select>
 
                     <link
