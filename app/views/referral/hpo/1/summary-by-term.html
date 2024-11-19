@@ -19,194 +19,75 @@ endblock %} {% block outerContent %}
     >
 </div>
 {% endblock %} {% block content %}
+
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <h1>HPO terms</h1>
-
-        <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">
-            Parathormone-independent increased renal tubular calcium
-            reabsorption
-        </h3>
-
-        <div class="nhsuk-hint" id="input-with-hint-text-hint">HP:0003529</div>
-
         <dl class="nhsuk-summary-list">
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key" style="width: 14rem">
-                    Jay Smith - Patient
-                </dt>
-                <dd class="nhsuk-summary-list__value">Present</dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="#">
-                        Change<span class="nhsuk-u-visually-hidden">
-                            observation</span
-                        >
-                    </a>
-                </dd>
-            </div>
+            {% if data['hpoCollection'] %}
+                {% for entry in data['hpoCollection'] %}
+                    {% set hpoTermArray = entry[0].split ('[') %}
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key" style="width: 24rem;">
+                            <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">
+                                {{hpoTermArray[0]}}
+                            </h3>
 
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Jane Smith - Mother</dt>
-                <dd class="nhsuk-summary-list__value">Absent</dd>
+                        </dt>
+                        <dd class="nhsuk-summary-list__value"><div class="nhsuk-hint" id="input-with-hint-text-hint">{{ hpoTermArray[1] | replace("]","") }}</div></dd>
+                        <dd class="nhsuk-summary-list__actions"><a href="/referral/hpo/1/add-hpo">
+                                Remove<span class="nhsuk-u-visually-hidden">
+                                    observation</span
+                                >
+                            </a>
+                        </dd>
+                    </div>
 
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="#">
-                        Change<span class="nhsuk-u-visually-hidden">
-                            observation</span
-                        >
-                    </a>
-                </dd>
-            </div>
 
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">James Smith - Father</dt>
-                <dd class="nhsuk-summary-list__value">Present</dd>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key" style="width: 14rem">
+                            Ethan Carson - Patient
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">{{entry[1]}}</dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a href="#">
+                                Change<span class="nhsuk-u-visually-hidden">
+                                    observation</span
+                                >
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">Jane Smith - Mother</dt>
+                        <dd class="nhsuk-summary-list__value">{{entry[2]}}</dd>
 
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="#">
-                        Change<span class="nhsuk-u-visually-hidden">
-                            observation</span
-                        >
-                    </a>
-                </dd>
-            </div>
-        </dl>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a href="#">
+                                Change<span class="nhsuk-u-visually-hidden">
+                                    observation</span
+                                >
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row" style="height: 68px" >
+                        &nbsp;
+                    </div>
 
-        <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Renal agenesis</h3>
-
-        <div class="nhsuk-hint" id="input-with-hint-text-hint">HP:0000104</div>
-
-        <dl class="nhsuk-summary-list">
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key" style="width: 14rem">
-                    Jay Smith - Proband
-                </dt>
-                <dd class="nhsuk-summary-list__value">Present</dd>
-
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="#">
-                        Change<span class="nhsuk-u-visually-hidden">
-                            observation</span
-                        >
-                    </a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Jane Smith - Mother</dt>
-                <dd class="nhsuk-summary-list__value">Absent</dd>
-
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="#">
-                        Change<span class="nhsuk-u-visually-hidden">
-                            observation</span
-                        >
-                    </a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">James Smith - Father</dt>
-                <dd class="nhsuk-summary-list__value">Absent</dd>
-
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="#">
-                        Change<span class="nhsuk-u-visually-hidden">
-                            observation</span
-                        >
-                    </a>
-                </dd>
-            </div>
-        </dl>
-
-        <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">
-            Renal tubular lysine transport defect
-        </h3>
-
-        <div class="nhsuk-hint" id="input-with-hint-text-hint">HP:0008272</div>
-
-        <dl class="nhsuk-summary-list">
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key" style="width: 14rem">
-                    Jay Smith - Proband
-                </dt>
-                <dd class="nhsuk-summary-list__value">Present</dd>
-
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="#">
-                        Change<span class="nhsuk-u-visually-hidden">
-                            observation</span
-                        >
-                    </a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Jane Smith - Mother</dt>
-                <dd class="nhsuk-summary-list__value">Absent</dd>
-
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="#">
-                        Change<span class="nhsuk-u-visually-hidden">
-                            observation</span
-                        >
-                    </a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">James Smith - Father</dt>
-                <dd class="nhsuk-summary-list__value">Present</dd>
-
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="#">
-                        Change<span class="nhsuk-u-visually-hidden">
-                            observation</span
-                        >
-                    </a>
-                </dd>
-            </div>
-        </dl>
+                    {% endfor %}
+                {% endif %}
+            </dl>
 
         <div class="nhsuk-form-group">
-            <form action="presence-namelist-select" method="post" class="form">
-                <h2 class="nhsuk-label-wrapper">
-                    <label class="nhsuk-label nhsuk-label--l" for="HPO-terms">
-                        Add more HPO terms
-                    </label>
-                </h2>
 
-                <select id="hpo-picker">
-                    <option></option>
-                    <option value="r-cy">Renal Cyst [code]</option>
-                    <option value="r-hy">Renal Hypoplasia [code]</option>
-                    <option value="r-pl">Renal plasia [code]</option>
-                </select>
 
-                <link
-                    rel="stylesheet"
-                    href="/css/accessible-autocomplete.min.css"
-                />
-                <script
-                    type="text/javascript"
-                    src="/js/accessible-autocomplete.min.js"
-                ></script>
-
-                <script>
-                    accessibleAutocomplete.enhanceSelectElement({
-                        defaultValue: "",
-                        selectElement: document.querySelector("#hpo-picker"),
-                    });
-                </script>
-
-                <button
+                <a
                     class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-4"
                     data-module="nhsuk-button"
-                    type="submit"
+                    href="/referral/hpo/1/add-hpo"
                 >
                     Add HPO term
-                </button>
-            </form>
+                </a>
+
         </div>
 
         <a

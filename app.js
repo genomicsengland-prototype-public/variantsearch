@@ -193,6 +193,14 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.post("/referral/hpo/1/summary-by-term", (req, res, next) => {
+  if (!req.session.data.hpoCollection) {
+    req.session.data.hpoCollection = [];
+  }
+  req.session.data.hpoCollection.push([req.session.data['hpo-picker'], req.session.data['hpo-question-observed-proband'], req.session.data['hpo-question-observed-family1'],]);
+  next();
+});
+
 app.post("/referral/test/answer", (req, res) => {
   // Make a variable and give it the value from 'know-nhs-number'
   const diseaseSuspected = req.session.data["disease"];

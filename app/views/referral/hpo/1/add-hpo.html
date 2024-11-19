@@ -25,38 +25,47 @@ text: "HPO terms" }) }} {% endblock %} {% block outerContent %}
     <div class="nhsuk-grid-column-two-thirds">
         <div class="nhsuk-form-group">
             <form action="presence" method="post" class="form">
-                <h1 style="margin-bottom: 1rem">HPO Terms</h1>
-
-                <p>
-                    HPO terms are important for the analysis and interpretation
-                    of whole genome screening (WGS) data.
-                </p>
-
-                <p>
-                    Enter HPO terms present in the patient (proband) or family
-                    members being tested.
-                </p>
+                <h1 style="margin-bottom: 1rem">Add HPO term</h1>
 
                 <div class="nhsuk-form-group">
 
-                    <a
-                        class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-4"
-                        data-module="nhsuk-button"
-                        href="1/add-hpo"
-                    >
-                        Add HPO term
-                    </a>
-                </div>
 
-                <div>
-                    <a
+                    <div class="nhsuk-hint" id="input-with-hint-text-hint">
+                        Type to search HPO term
+                    </div>
+
+                    <select id="hpo-picker" name="hpo-picker">
+                        <option></option>
+                        <option>Intellectual disability – profound [HP:0002187]</option>
+                        <option>Generalised tonic-clonic seizures – [HP:0010818]</option>
+                    </select>
+
+                    <link
+                        rel="stylesheet"
+                        href="/css/accessible-autocomplete.min.css"
+                    />
+                    <script
+                        type="text/javascript"
+                        src="/js/accessible-autocomplete.min.js"
+                    ></script>
+
+                    <script>
+                        accessibleAutocomplete.enhanceSelectElement({
+                            defaultValue: "",
+                            selectElement:
+                                document.querySelector("#hpo-picker"),
+                        });
+                    </script>
+
+                    <button
                         class="nhsuk-button nhsuk-u-margin-top-4"
                         data-module="nhsuk-button"
-                        href="/referral/test"
+                        type="submit"
                     >
-                        Continue
-                    </a>
+                        Add to referral
+                    </button>
                 </div>
+
             </form>
         </div>
     </div>
