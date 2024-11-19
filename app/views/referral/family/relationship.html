@@ -39,12 +39,61 @@ text: "Family"
       <label class="nhsuk-label nhsuk-label--l" for="input-with-hint-text">
         Relationship to patient (proband)
       </label>
+
+      <select id="org-picker" value="">
+        <option>Mother</option>
+        <option>Father</option>
+        <option>Full Sibling</option>
+        <option>Daughter</option>
+        <option>Son</option>
+        <option>Twins Unknown</option>
+        <option>Twins Monozygous</option>
+        <option>Twins Dizygous</option>
+        <option>Maternal Half Sibling</option>
+        <option>Paternal Half Sibling</option>
+        <option>Maternal Grandparent</option>
+        <option>Paternal Grandparent</option>
+        <option>Maternal Grandfather's Parent</option>
+        <option>Maternal Grandmother's Parent</option>
+        <option>Paternal Grandfather's Parent</option>
+        <option>Paternal Grandmother's Parent</option>
+        <option>Maternal Aunt</option>
+        <option>Maternal Uncle</option>
+        <option>Paternal Aunt</option>
+        <option>Paternal Uncle</option>
+        <option>Maternal Cousin through Aunt</option>
+        <option>Maternal Cousin through Uncle</option>
+        <option>Paternal Cousin through Aunt</option>
+        <option>Paternal Cousin through Uncle</option>
+        <option>Maternal First Cousin once removed</option>
+        <option>Paternal First Cousin once removed</option>
+        <option>Maternal Second Cousin</option>
+        <option>Paternal Second Cousin</option>
+        <option>Maternal Second Cousin once removed</option>
+        <option>Paternal Second Cousin once removed</option>
+        <option>Maternal Third Cousin</option>
+        <option>Paternal Third Cousin</option>
+        <option>Double First Cousin</option>
+        <option>Other</option>
+      </select>
+
+      <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
+      <script type="text/javascript" src="/js/accessible-autocomplete.min.js"></script>
+
+      <script>
+        accessibleAutocomplete.enhanceSelectElement({
+          defaultValue: "",
+          selectElement: document.querySelector("#org-picker"),
+        });
+      </script>
+
       <input class="nhsuk-input nhsuk-input--width-20" id="input-with-hint-text" name="test-name-2" type="text"
         aria-describedby="input-with-hint-text-hint">
     </div>
 
     <div>
-      <a class="nhsuk-button" data-module="nhsuk-button" href="/referral/family/disease-status" draggable="false" role="button">
+      <a class="nhsuk-button" data-module="nhsuk-button" href="/referral/family/disease-status" draggable="false"
+        role="button">
         Continue
       </a>
     </div>
