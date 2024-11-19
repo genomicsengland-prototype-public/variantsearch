@@ -2,7 +2,10 @@
 {% from 'textarea/macro.njk' import textarea %}
 {{ textarea({
 name: "example", id: "example", label: { text: "Details of why this referral
-considered urgent." } }) }}
+considered urgent. "},
+hint: {
+    text: "There is currently no urgent WGS pathway. It may be possible to prioritise some cases."
+   } }) }}
 {% endset -%}
 
 {% extends 'layout.html' %}
@@ -40,31 +43,28 @@ text: "Test request"
 {% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
+        <h2 class: nhsuk-fieldset__legend--l>Test request</h2>
+
+        {% from 'input/macro.njk' import input %} {{ input({hint: { html:
+            hintHtmlCi }, label: { text: "Clinical Indication and code" }, id:
+            "cic", name: "cic" }) }}
+
         {% from 'radios/macro.njk' import radios %} {% from 'fieldset/macro.njk'
         import fieldset %} {% from 'hint/macro.njk' import hint %} {% set
         hintHtml -%}
-        <label for="test-req" class="nhsuk-u-margin-bottom-2"
-            ><strong>Is this test clinically urgent?</strong></label
-        >
-        <p>
-            There is currently no urgent WGS pathway, however it may be possible
-            to prioritise some cases.
-        </p>
+        <label for="test-req" class="nhsuk-u-margin-bottom-2">
+
         {%- endset %} {% set hintHtmlCi -%}
         <p for="test-req" class="nhsuk-u-margin-bottom-2">
             Search by clinical indication or code listed in the
             <a href="#">Test directory</a>
         </p>
         {%- endset %} {{ radios({ idPrefix: "test-req", name: "test-req",
-        fieldset: { legend: { text: "Test request", classes:
-        "nhsuk-fieldset__legend--l", isPageHeading: false } }, hint: { html:
+        fieldset: { legend: { text: "Is this test clinically urgent?", isPageHeading: false } }, hint: { html:
         hintHtml }, items: [ { value: "no", text: "No" }, { value: "yes", text:
         "Yes", conditional: { html: textHtml } } ] }) }}
-    </div>
-    <div class="nhsuk-grid-column-two-thirds">
-        {% from 'input/macro.njk' import input %} {{ input({hint: { html:
-        hintHtmlCi }, label: { text: "Clinical Indication and code" }, id:
-        "cic", name: "cic" }) }}
+
+
         <a
             class="nhsuk-button"
             data-module="nhsuk-button"
