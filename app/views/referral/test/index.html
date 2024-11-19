@@ -136,10 +136,17 @@ text: "Test request"
             Search by clinical indication or code listed in the
             <a href="#">Test directory</a>
         </p>
-        {%- endset %} {{ radios({ idPrefix: "test-req", name: "test-req",
-        fieldset: { legend: { text: "Is this test clinically urgent?", isPageHeading: false } }, hint: { html:
-        hintHtml }, items: [ { value: "no", text: "No" }, { value: "yes", text:
-        "Yes", conditional: { html: textHtml } } ] }) }}
+        {%- endset %}
+        
+        {{
+            radios({
+                idPrefix: "test-req",
+                name: "test-req",
+                fieldset: { legend: { text: "Is this test clinically urgent?", isPageHeading: false } },
+                hint: { html: hintHtml },
+                items: [ { value: "no", text: "No", checked: true }, { value: "yes", text: "Yes", conditional: { html: textHtml } } ]
+            })
+        }}
 
 
         <a

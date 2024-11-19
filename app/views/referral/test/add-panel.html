@@ -34,7 +34,9 @@ text: "Test request"
       </svg>
       Go back</a>
   </div>
-{% endblock %} {% block content %}
+{% endblock %}
+
+{% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full nhsuk-u-margin-bottom-7">
         <div class="nhsuk-form-group">
@@ -43,7 +45,7 @@ text: "Test request"
           </label>
 
           <div class="nhsuk-hint" id="input-with-hint-text-hint">
-              Use panels with panel type ’GMS rare disease virtual’ listed on <a href="#">pannelapp</a>
+              Use panels with panel type ’GMS rare disease virtual’ listed on <a href="https://panelapp.genomicsengland.co.uk">PanelApp</a>
           </div>
           <div class="nhsuk-u-width-two-thirds">
           <select id="add-panel" class="nhsuk-u-width-two-thirds">
