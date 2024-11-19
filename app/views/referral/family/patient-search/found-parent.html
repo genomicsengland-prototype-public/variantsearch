@@ -4,21 +4,6 @@
 NHS.UK prototype kit
 {% endblock %}
 
-{% block beforeContent %}
-{% from 'breadcrumb/macro.njk' import breadcrumb %}
-
-{{ breadcrumb({
-items: [
-{
-href: "/referral",
-text: "Referral #123456789"
-}
-],
-href: "/referral/family",
-text: "Family"
-}) }}
-{% endblock %}
-
 {% block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem">
   <a class="nhsuk-back-link__link" href="javascript:history.back();">
@@ -35,50 +20,69 @@ text: "Family"
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <h2 class="nhsuk-u-margin-bottom-4">Related disorders summary</h2>
+    <h2 class="nhsuk-heading-1">Record found</h2>
+
+    <!-- <p>Martha Carson has no referrals started. You can start a new referral now</p> -->
 
     <dl class="nhsuk-summary-list">
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Related rare disease
+          Name
         </dt>
         <dd class="nhsuk-summary-list__value">
-          Confirmed
-        </dd>
-        <dd class="nhsuk-summary-list__value">
-          <a href="/referral/family/disorders">Change</a>
-        </dd>
-        <dd class="nhsuk-summary-list__value">
-          <a href="#">Remove</a>
+          Martha Carson
         </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          [other disorder here]
+          NHS number
         </dt>
         <dd class="nhsuk-summary-list__value">
-          Suspected
-        </dd>
-        <dd class="nhsuk-summary-list__value">
-          <a href="/referral/family/disorders">Change</a>
-        </dd>
-        <dd class="nhsuk-summary-list__value">
-          <a href="#">Remove</a>
+          4857773456
         </dd>
       </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          03/10/1980
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Gender
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Female
+        </dd>
+
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Ethnicity
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          White Irish
+        </dd>
+
+      </div>
+
+      
     </dl>
 
-    <div>
-      <a class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" href="/referral/family/disorders"
-        draggable="false" role="button">
-        Add another relevant disorder
-      </a>
-    </div>
+    <div style="display: flex; gap: 1rem;">
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit"  href="../referral/family/relationship">
+        Add to referral
+      </button>
 
-    <div>
-      <a class="nhsuk-button" data-module="nhsuk-button" href="/referral/family" draggable="false" role="button">
-        Continue
+      <a class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" href="index.html"
+        draggable="false" role="button">
+        Cancel
       </a>
     </div>
   </div>
