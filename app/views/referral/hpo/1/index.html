@@ -8,7 +8,7 @@ text: "HPO terms" }) }} {% endblock %} {% block outerContent %}
       <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
         aria-hidden="true" height="24" width="24">
         <path
-          d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+          d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
         </path>
       </svg>
       Go back</a>
@@ -17,7 +17,7 @@ text: "HPO terms" }) }} {% endblock %} {% block outerContent %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <div class="nhsuk-form-group">
-            <form action="1/presence" method="post" class="form">
+            <form action="presence" method="post" class="form">
                 <h1 style="margin-bottom: 1rem">HPO Terms</h1>
 
                 <p>
@@ -31,58 +31,24 @@ text: "HPO terms" }) }} {% endblock %} {% block outerContent %}
                 </p>
 
                 <div class="nhsuk-form-group">
-                    <label
-                        class="nhsuk-label nhsuk-label--l nhsuk-u-margin-top-6"
-                        for="input-with-hint-text"
-                    >
-                        Enter HPO term
-                    </label>
 
-                    <div class="nhsuk-hint" id="input-with-hint-text-hint">
-                        Type to search HPO term
-                    </div>
-
-                    <select id="hpo-picker">
-                        <option></option>
-                        <option>Renal Cyst [code]</option>
-                        <option>Renal Hypoplasia [code]</option>
-                        <option>Renal plasia [code]</option>
-                    </select>
-
-                    <link
-                        rel="stylesheet"
-                        href="/css/accessible-autocomplete.min.css"
-                    />
-                    <script
-                        type="text/javascript"
-                        src="/js/accessible-autocomplete.min.js"
-                    ></script>
-
-                    <script>
-                        accessibleAutocomplete.enhanceSelectElement({
-                            defaultValue: "",
-                            selectElement:
-                                document.querySelector("#hpo-picker"),
-                        });
-                    </script>
-
-                    <button
+                    <a
                         class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-4"
                         data-module="nhsuk-button"
-                        type="submit"
+                        href="/referral/hpo/1/add-hpo"
                     >
                         Add HPO term
-                    </button>
+                    </a>
                 </div>
 
                 <div>
-                    <button
+                    <a
                         class="nhsuk-button nhsuk-u-margin-top-4"
                         data-module="nhsuk-button"
-                        type="submit"
+                        href="/referral/test"
                     >
                         Continue
-                    </button>
+                    </a>
                 </div>
             </form>
         </div>
