@@ -1,0 +1,137 @@
+{% set textHtml %}
+{% from 'textarea/macro.njk' import textarea %}
+{{ textarea({
+name: "example", id: "example", label: { text: "Details of why this referral
+considered urgent. "},
+hint: {
+    text: "There is currently no urgent WGS pathway. It may be possible to prioritise some cases."
+   } }) }}
+{% endset -%}
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+NHS.UK prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+
+{{ breadcrumb({
+items: [
+{
+href: "/cancer/referral",
+text: "Referral #123456789"
+}
+],
+href: "/cancer/referral/test",
+text: "Test request"
+}) }}
+{% endblock %}
+
+{% block outerContent %}
+<div class="nhsuk-back-link" style="margin-top: 2rem">
+    <a class="nhsuk-back-link__link" href="javascript:history.back();">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            aria-hidden="true" height="24" width="24">
+            <path
+                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+            </path>
+        </svg>
+        Go back</a>
+</div>
+{% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h2 class: nhsuk-fieldset__legend--l>Test request</h2>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="input-with-hint-text">
+                Clinical Indication and code
+            </label>
+
+            <div class="nhsuk-hint" id="input-with-hint-text-hint">
+                Search by clinical indication or code listed in the
+                <a href="#">Test directory</a>
+            </div>
+
+            <select id="org-picker" value="">
+                <option></option>
+                <option value="M226">Cancer of Unknown Primary - M226</option>
+                <option value="M131">Cystic Nephroma - Paediatric - M131</option>
+                <option value="M204">Undifferentiated tumour - M204</option>
+                <option value="M100">Primary Mediastinal B Cell Lymphoma - M100</option>
+                <option value="M110">Paediatric Type Follicular Lymphoma - M110</option>
+                <option value="M111">T Cell Non-Hodgkin Lymphoma - M111</option>
+                <option value="M116">Hepatosplenic T Cell Lymphoma - M116</option>
+                <option value="M126">CNS High-Grade Neuroepithelial Tumour with MN1 Alteration - Paediatric - M126</option>
+                <option value="M133">Desmoplastic Medulloblastoma - Paediatric - M133</option>
+                <option value="M137">Ganglioglioma - Paediatric - 137</option>
+                <option value="M147">Medulloblastoma Group 3/4 - Paediatric - 147</option>
+                <option value="M149">Melanotic Tumours - Paediatric - 149</option>
+                <option value="M151">Midline Carcinoma - Paediatric - 151</option>
+                <option value="M152">Neuroblastoma - Paediatric - M152</option>
+                <option value="M155">Oligoastrocytoma - Paediatric - M155</option>
+                <option value="M157">Thyroid Papillary Carcinoma - Paediatric - M157</option>
+                <option value="M159">Pituitary Blastoma - Paediatric - M159</option>
+                <option value="M178">Wilms Tumours - Paediatric - M178</option>
+                <option value="M179">WNT Medulloblastoma - Paediatric - M179</option>
+                <option value="M183">Diffuse Midline Glioma - Paediatric - M183</option>
+                <option value="M184">Glioma - Paediatric - M184</option>
+                <option value="M186">Low Grade Glioma - Paediatric - M186</option>
+                <option value="M190">Embryonal Tumour Differential - Adult and Paediatric - M190</option>
+                <option value="M191">Low Grade Intrinsic Brain Tumour Differential - Adult - M191</option>
+                <option value="M197">Round Cell Sarcoma of Soft Tissue Differential - M197</option>
+                <option value="M198">Vascular Soft Tissue Tumour Differential - M198</option>
+                <option value="M199">Spindle Cell Soft Tissue Tumour Differential - M199</option>
+                <option value="M201">Adipocytic Soft Tissue Tumour Differential - M201</option>
+                <option value="M205">Cartilage Forming Bone Tumour Differential - M205</option>
+                <option value="M21">Astrocytoma - Adult - M21</option>
+            </select>
+
+            <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
+            <script type="text/javascript" src="/js/accessible-autocomplete.min.js"></script>
+
+            <script>
+                accessibleAutocomplete.enhanceSelectElement({
+                    defaultValue: "",
+                    selectElement: document.querySelector("#org-picker"),
+                });
+            </script>
+        </div>
+
+        {% from 'radios/macro.njk' import radios %} {% from 'fieldset/macro.njk'
+        import fieldset %} {% from 'hint/macro.njk' import hint %} {% set
+        hintHtml -%}
+        <label for="test-req" class="nhsuk-u-margin-bottom-2">
+
+        {%- endset %} {% set hintHtmlCi -%}
+        <p for="test-req" class="nhsuk-u-margin-bottom-2">
+            Search by clinical indication or code listed in the
+            <a href="#">Test directory</a>
+        </p>
+        {%- endset %}
+
+        {{
+            radios({
+                idPrefix: "test-req",
+                name: "test-req",
+                fieldset: { legend: { text: "Presentation status", isPageHeading: false } },
+                hint: { html: hintHtml },
+                items: [ { value: "first", text: "First diagnosis", checked: true }, { value: "recurrence", text: "Recurrence / Relapse" }, { value: "unknown", text: "Unknown" } ]
+            })
+        }}
+
+
+        <a
+            class="nhsuk-button"
+            data-module="nhsuk-button"
+            href="/cancer/referral/test/details"
+            draggable="false"
+            role="button"
+        >
+            Save and continue
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+NHS.UK prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+
+{{ breadcrumb({
+items: [
+{
+href: "/rare-disease/referral",
+text: "Referral #123456789"
+}
+],
+href: "/rare-disease/referral/family",
+text: "Family"
+}) }}
+{% endblock %}
+
+{% block outerContent %}
+<div class="nhsuk-back-link" style="margin-top: 2rem">
+  <a class="nhsuk-back-link__link" href="javascript:history.back();">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+      aria-hidden="true" height="24" width="24">
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+      </path>
+    </svg>
+    Go back</a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-form-group">
+      <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+          Do you want to delete [name] from this referral?
+        </legend>
+
+        <div class="nhsuk-radios">
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="Yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+              Yes, delete this family member
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="No">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+              No, delete this family member
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div>
+      <a class="nhsuk-button" data-module="nhsuk-button" href="/rare-disease/referral/family" draggable="false" role="button">
+        Continue
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}
