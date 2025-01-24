@@ -8,23 +8,14 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-        <h1 class="nhsuk-label--l">Liquid tumour</h1>
+        <h1 class="nhsuk-label--l">Solid tumour</h1>
         <form action="/cancer/referral/tumour-samples/" method="post" class="form">
 
         {% from 'radios/macro.njk' import radios %}
         {% from 'input/macro.njk' import input %}
+        {% from 'textarea/macro.njk' import textarea %}
 
-        {% set emailHtml %}
 
-        {{ input({
-            id: "other",
-            name: "other",
-            classes: "nhsuk-u-width-two-thirds",
-            label: {
-              text: "Please specify"
-            }
-          }) }}
-        {% endset -%}
         
         {{
             radios({
@@ -36,22 +27,23 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
                 },
                 hint: { html: hintHtml },
                 items: [ 
-                    { value: "AML", text: "AML"}, 
-                    { value: "ALL", text: "ALL" },
-                    { value: "Other", text: "Other" }
+                    { value: "primary", text: "Primary"}, 
+                    { value: "metastatic", text: "Metastatic" },
+                    { value: "unknown", text: "Unknown" },
+                    { value: "lymphoma", text: "Lymphoma" }
                 ]
             })
         }}
 
+        {{ input({
+          label: {
+            text: "Histopathology Lab ID"
+          },
+          classes: "nhsuk-u-width-three-quarters",
+          id: "hist-id",
+          name: "hist-id"
+        }) }}
         
-        <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="SIHMDS-ID">
-                SIHMDS Lab ID
-            </label>
-            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="SIHMDS-ID" name="SIHMDS-ID"
-              type="text" >
-        </div>
-
         {% from 'date-input/macro.njk' import dateInput %}
 
         {{ dateInput({
@@ -81,6 +73,34 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
             }
           ]
         }) }}
+
+        {{ textarea({
+          name: "add-tumour-info",
+          id: "add-tumour-info",
+          label: {
+            text: "Additional tumour information if relevant (optional)"
+          }
+        }) }}
+
+        {{ input({
+          label: {
+            text: "Tumour topography"
+          },
+          classes: "nhsuk-u-width-full",
+          id: "topography",
+          name: "topography"
+        }) }}
+        
+        {{ input({
+          label: {
+            text: "Tumour morphology"
+          },
+          classes: "nhsuk-u-width-full",
+          id: "morphology",
+          name: "morphology"
+        }) }}
+        
+
 
         <button
             class="nhsuk-button"

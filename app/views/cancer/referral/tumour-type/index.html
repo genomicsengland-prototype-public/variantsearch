@@ -7,32 +7,66 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
 {% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
+        <form action="/tumour-type-answer" method="post" class="form">
 
-        {{
-            radios({
-                idPrefix: "tumour-type",
-                name: "tumour-type",
-                fieldset: { legend: { 
-                    text: "Tumour type",      
+            {{ radios({
+                idPrefix: "example-hints",
+                name: "example-hints",
+                fieldset: {
+                  legend: {
+                    text: "Tumour type",
                     classes: "nhsuk-fieldset__legend--l",
-                    isPageHeading: true } 
+                    isPageHeading: true
+                  }
                 },
-                hint: { html: hintHtml },
-                items: [ { value: "solid", text: "Solid tumour"}, { value: "liquid", text: "Haemato-oncology liquid tumour" } ]
-            })
-        }}
-        <label for="tumour-type" class="nhsuk-u-margin-bottom-2">
+                items: [
+                {
+                  value: "solid",
+                  text: "Solid tumour"
+                },
+                {
+                  value: "liquid",
+                  text: "Haemato-oncology liquid tumour"
+                }
+              ]
+              }) }}
+
+            {# {{
+                radios({
+                    idPrefix: "tumour-type",
+                    name: "tumour-type",
+                    fieldset: { legend: { 
+                        text: "Tumour type",      
+                        classes: "nhsuk-fieldset__legend--l",
+                        isPageHeading: true } 
+                    },
+                    hint: { html: hintHtml },
+                    items: [ { value: "solid", text: "Solid tumour"}, { value: "liquid", text: "Haemato-oncology liquid tumour" } ]
+                })
+            }}
+            <label for="tumour-type" class="nhsuk-u-margin-bottom-2">
 
 
-        <a
+            <a
+                class="nhsuk-button"
+                data-module="nhsuk-button"
+                href="/cancer/referral/tumour-type/liquid"
+                draggable="false"
+                role="button"
+            >
+                Save and continue
+            </a> #}
+
+            <button
             class="nhsuk-button"
             data-module="nhsuk-button"
-            href="/cancer/referral/tumour-type/liquid"
+            type="submit"
             draggable="false"
             role="button"
         >
             Save and continue
-        </a>
+        </button>
+        </form>        
 
     </div>
 </div>
