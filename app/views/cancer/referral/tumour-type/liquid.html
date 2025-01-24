@@ -9,6 +9,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
     <div class="nhsuk-grid-column-two-thirds">
 
         <h1 class="nhsuk-label--l">Liquid tumour</h1>
+        <form action="/cancer/referral/tumour-samples/" method="post" class="form">
 
         {% from 'radios/macro.njk' import radios %}
         {% from 'input/macro.njk' import input %}
@@ -72,15 +73,17 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
             }
           ]
         }) }}
-        <a
+
+        <button
             class="nhsuk-button"
             data-module="nhsuk-button"
-            href="/cancer/referral/tumour-type/liquid"
+            type="submit"
             draggable="false"
             role="button"
         >
             Save and continue
-        </a>
+        </button>
+        </form>        
 
     </div>
 </div>
