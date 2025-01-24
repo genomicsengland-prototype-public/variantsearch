@@ -1,0 +1,87 @@
+{% extends 'layout.html' %} {% block pageTitle %} NHS.UK prototype kit {%
+endblock %} {% block beforeContent %} {% from 'breadcrumb/macro.njk' import
+breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
+"Referral #123456789" } ], href: "/cancer/referral/tumour", text:
+"Tumour" }) }} {% endblock %} {% block outerContent %}
+<div class="nhsuk-back-link" style="margin-top: 2rem"></div>
+{% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-label--l">Liquid tumour</h1>
+
+        {% from 'radios/macro.njk' import radios %}
+        {% from 'input/macro.njk' import input %}
+
+        {% set emailHtml %}
+
+        {{ input({
+            id: "other",
+            name: "other",
+            classes: "nhsuk-u-width-two-thirds",
+            label: {
+              text: "Please specify"
+            }
+          }) }}
+        {% endset -%}
+        
+        {{
+            radios({
+                idPrefix: "tumour-type",
+                name: "tumour-type",
+                fieldset: { legend: { 
+                    text: "Liquid tumour type",      
+                    isPageHeading: false } 
+                },
+                hint: { html: hintHtml },
+                items: [ 
+                    { value: "AML", text: "AML"}, 
+                    { value: "ALL", text: "ALL" },
+                    { value: "Other", text: "Other" }
+                ]
+            })
+        }}
+      
+
+        {% from 'date-input/macro.njk' import dateInput %}
+
+        {{ dateInput({
+          id: "example",
+          namePrefix: "example",
+          fieldset: {
+            legend: {
+              text: "Date of this diagnosis",
+              isPageHeading: false
+            }
+          },
+          hint: {
+            text: "For example, 15 3 2024"
+          },
+          items: [
+            {
+              name: "day",
+              classes: "nhsuk-input--width-2"
+            },
+            {
+              name: "month",
+              classes: "nhsuk-input--width-2"
+            },
+            {
+              name: "year",
+              classes: "nhsuk-input--width-4"
+            }
+          ]
+        }) }}
+        <a
+            class="nhsuk-button"
+            data-module="nhsuk-button"
+            href="/cancer/referral/tumour-type/liquid"
+            draggable="false"
+            role="button"
+        >
+            Save and continue
+        </a>
+
+    </div>
+</div>
+{% endblock %}
