@@ -1,0 +1,155 @@
+{% extends 'layout.html' %} {% block pageTitle %} NHS.UK prototype kit {%
+endblock %} {% block beforeContent %} {% from 'breadcrumb/macro.njk' import
+breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
+"Referral #123456789" } ], href: "/cancer/referral/germline-samples", text:
+"Germline Samples" }) }} {% endblock %} {% block outerContent %}
+{% from 'input/macro.njk' import input %}
+{% from 'fieldset/macro.njk' import fieldset %}
+{% from 'radios/macro.njk' import radios %}
+<div class="nhsuk-back-link" style="margin-top: 2rem"></div>
+{% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h2 class="nhsuk-u-margin-bottom-4">Germline Samples</h2>
+        <form action="care-team" method="post" class="form">
+        {{ input({
+            label: {
+            text: "Sample ID"
+            },
+            id: "sampleId",
+            name: "sampleId",
+            classes: "nhsuk-input--width-20"
+            }) }}
+            <div class="nhsuk-form-group">
+                {% call fieldset({
+                    legend: {
+                      text: "Date of collection",
+                      isPageHeading: false
+                    }
+                  }) %}
+
+                  <div class="nhsuk-date-input" id="doc">
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="doc-day">
+                          Day
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="doc-day" name="doc[day]"
+                          type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="doc-month">
+                          Month
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="doc-month" name="doc[month]"
+                          type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="doc-year">
+                          Year
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="doc-year" name="doc[year]"
+                          type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+                  {% endcall %}
+            </div>
+            <div class="nhsuk-form-group">
+                  {% call fieldset({
+                    legend: {
+                      text: "Time of collection",
+                      isPageHeading: false
+                    }
+                  }) %}
+                  
+                    <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                        For example, 14:22
+                      </div>
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label" for="doc-hour">
+                          Hour
+                        </label>
+                        <input class="nhsuk-input nhsuk-input--width-2" id="doc-hour" name="doc[hour]"
+                          type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label" for="doc-minute">
+                          Minute
+                        </label>
+                        <input class="nhsuk-input nhsuk-input--width-2" id="doc-minute" name="doc[minute]"
+                          type="text" inputmode="numeric">
+                      </div>
+                  </div>
+                  {% endcall %}
+            </div>
+
+                {{ radios({
+                    "idPrefix": "sample-type",
+                    "name": "sample-type",
+                    "fieldset": {
+                      "legend": {
+                        "text": "Sample type",
+                        "isPageHeading": false
+                      }
+                    },
+                    "items": [
+                      {
+                        "value": "blood",
+                        "text": "Blood"
+                      },
+                      {
+                        "value": "saliva",
+                        "text": "Saliva"
+                      },
+                      {
+                        "value": "skin",
+                        "text": "Skin"
+                      },
+                      {
+                        "value": "bone-marrow",
+                        "text": "Bone marrow"
+                      }
+                    ]
+                  }) }}
+            
+
+                  <div class="nhsuk-form-group">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label" for="sample-volume">
+                        Sample volume
+                      </label>
+                      <input class="nhsuk-input nhsuk-input--width-5" id="sample-volume" name="sample-volume"
+                        type="text" inputmode="numeric">
+                    </div>
+                </div>
+
+                  
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label" for="comments">
+                        Comments (optional)
+                      </label>
+                      <input class="nhsuk-input nhsuk-u-width-full" id="comments" name="comments"
+                        type="text">
+                    </div>
+                  
+        <button
+            class="nhsuk-button"
+            data-module="nhsuk-button"
+            type="submit"
+            draggable="false"
+            role="button"
+        >
+            Continue
+        </button>
+        </form>
+    </div>
+</div>
+{% endblock %}
