@@ -193,7 +193,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.post("/referral/hpo/1/summary-by-term", (req, res, next) => {
+app.post("/rare-disease/referral/hpo/1/summary-by-term", (req, res, next) => {
   if (!req.session.data.hpoCollection) {
     req.session.data.hpoCollection = [];
   }
@@ -201,16 +201,16 @@ app.post("/referral/hpo/1/summary-by-term", (req, res, next) => {
   next();
 });
 
-app.post("/referral/test/answer", (req, res) => {
+app.post("/rare-disease/referral/test/answer", (req, res) => {
   // Make a variable and give it the value from 'know-nhs-number'
   const diseaseSuspected = req.session.data["disease"];
   // Check whether the variable matches a condition
   if (diseaseSuspected === "yes") {
     // Send user to next page
-    res.redirect("/referral/test/disease-status");
+    res.redirect("/rare-disease/referral/test/disease-status");
   } else {
     // Send user to ineligible page
-    res.redirect("/referral/test/test-request-summary");
+    res.redirect("/rare-disease/referral/test/test-request-summary");
   }
 });
 

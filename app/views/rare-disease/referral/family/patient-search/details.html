@@ -4,6 +4,21 @@
 NHS.UK prototype kit
 {% endblock %}
 
+{% block beforeContent %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+
+{{ breadcrumb({
+items: [
+{
+href: "/rare-disease/referral",
+text: "Referral #123456789"
+}
+],
+href: "/rare-disease/referral/family",
+text: "Family"
+}) }}
+{% endblock %}
+
 {% block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem">
   <a class="nhsuk-back-link__link" href="javascript:history.back();">
@@ -20,18 +35,22 @@ NHS.UK prototype kit
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <h2 class="nhsuk-u-margin-bottom-4">Look up NHS number</h2>
+    <h2 class="nhsuk-u-margin-bottom-4">Look up record with personal details</h2>
 
-    <p>Search for a patient using their NHS number and date of birth or <a href="/patient-search/details">search without
-        NHS number</a></p>
+    <p>If they do not know their NHS number, search using other personal details.</p>
 
     <div class="nhsuk-form-group">
       <label class="nhsuk-label" for="input-example">
-        Search by NHS number
+        First name
       </label>
-      <div class="nhsuk-hint" id="input-with-hint-text-hint">
-        For example, 4857773456
-      </div>
+      <input class="nhsuk-input nhsuk-input--width-10" id="input-with-hint-text" name="test-name-2" type="text"
+        aria-describedby="input-with-hint-text-hint">
+    </div>
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="input-example">
+        Last name
+      </label>
       <input class="nhsuk-input nhsuk-input--width-10" id="input-with-hint-text" name="test-name-2" type="text"
         aria-describedby="input-with-hint-text-hint">
     </div>
@@ -77,9 +96,24 @@ NHS.UK prototype kit
       </fieldset>
     </div>
 
-    <a class="nhsuk-button" data-module="nhsuk-button" href="/patient-search/found" draggable="false" role="button">
-      Look up record
-    </a>
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="input-example">
+        Postcode (optional)
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-10" id="input-with-hint-text" name="test-name-2" type="text"
+        aria-describedby="input-with-hint-text-hint">
+    </div>
+
+    <div style="display: flex; gap: 1rem;">
+      <a class="nhsuk-button" data-module="nhsuk-button" href="/patient-search/found" draggable="false" role="button">
+        Look up record
+      </a>
+
+      <a class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" href="/patient-search"
+        draggable="false" role="button">
+        Cancel
+      </a>
+    </div>
   </div>
 </div>
 {% endblock %}

@@ -4,6 +4,21 @@
 NHS.UK prototype kit
 {% endblock %}
 
+{% block beforeContent %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+
+{{ breadcrumb({
+items: [
+{
+href: "/rare-disease/referral",
+text: "Referral #123456789"
+}
+],
+href: "/rare-disease/referral/family",
+text: "Family"
+}) }}
+{% endblock %}
+
 {% block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem">
   <a class="nhsuk-back-link__link" href="javascript:history.back();">
@@ -77,7 +92,7 @@ NHS.UK prototype kit
       </fieldset>
     </div>
 
-    <a class="nhsuk-button" data-module="nhsuk-button" href="/patient-search/found" draggable="false" role="button">
+    <a class="nhsuk-button" data-module="nhsuk-button" href="/rare-disease/referral/family/patient-search/found" draggable="false" role="button">
       Look up record
     </a>
   </div>

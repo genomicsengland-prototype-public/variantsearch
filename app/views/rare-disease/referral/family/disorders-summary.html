@@ -4,6 +4,21 @@
 NHS.UK prototype kit
 {% endblock %}
 
+{% block beforeContent %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+
+{{ breadcrumb({
+items: [
+{
+href: "/rare-disease/referral",
+text: "Referral #123456789"
+}
+],
+href: "/rare-disease/referral/family",
+text: "Family"
+}) }}
+{% endblock %}
+
 {% block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem">
   <a class="nhsuk-back-link__link" href="javascript:history.back();">
@@ -20,69 +35,50 @@ NHS.UK prototype kit
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <h2 class="nhsuk-heading-1">Record found</h2>
-
-    <!-- <p>Martha Carson has no referrals started. You can start a new referral now</p> -->
+    <h2 class="nhsuk-u-margin-bottom-4">Related disorders summary</h2>
 
     <dl class="nhsuk-summary-list">
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Name
+          Related rare disease
         </dt>
         <dd class="nhsuk-summary-list__value">
-          Martha Carson
+          Confirmed
+        </dd>
+        <dd class="nhsuk-summary-list__value">
+          <a href="/rare-disease/referral/family/disorders">Change</a>
+        </dd>
+        <dd class="nhsuk-summary-list__value">
+          <a href="#">Remove</a>
         </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          NHS number
+          [other disorder here]
         </dt>
         <dd class="nhsuk-summary-list__value">
-          4857773456
+          Suspected
         </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Date of birth
-        </dt>
         <dd class="nhsuk-summary-list__value">
-          03/10/1980
+          <a href="/rare-disease/referral/family/disorders">Change</a>
         </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Gender
-        </dt>
         <dd class="nhsuk-summary-list__value">
-          Female
+          <a href="#">Remove</a>
         </dd>
-
       </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Ethnicity
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          White Irish
-        </dd>
-
-      </div>
-
-
     </dl>
 
-    <div style="display: flex; gap: 1rem;">
-      <a class="nhsuk-button" data-module="nhsuk-button" type="submit"  href="../referral/family/relationship">
-        Add to referral
-      </a>
-
-      <a class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" href="/patient-search"
+    <div>
+      <a class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" href="/rare-disease/referral/family/disorders"
         draggable="false" role="button">
-        Cancel
+        Add another relevant disorder
+      </a>
+    </div>
+
+    <div>
+      <a class="nhsuk-button" data-module="nhsuk-button" href="/rare-disease/referral/family" draggable="false" role="button">
+        Continue
       </a>
     </div>
   </div>

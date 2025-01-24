@@ -1,0 +1,59 @@
+{% from 'radios/macro.njk' import radios %} {% from 'date-input/macro.njk'
+import dateInput %} {% extends 'layout.html' %} {% block pageTitle %} NHS.UK
+prototype kit {% endblock %} {% block beforeContent %} {% from
+'breadcrumb/macro.njk' import breadcrumb %} {{ breadcrumb({ items: [ { href:
+"/rare-disease/referral", text: "Referral #123456789" } ], href: "/rare-disease/referral/test", text:
+"Test request" }) }} {% endblock %} {% block outerContent %}
+<div class="nhsuk-back-link" style="margin-top: 2rem">
+    <a class="nhsuk-back-link__link" href="javascript:history.back();">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+        aria-hidden="true" height="24" width="24">
+        <path
+          d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+        </path>
+      </svg>
+      Go back</a>
+  </div>
+{% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+        <h2>Test request</h2>
+    </div>
+    <form action="/rare-disease/referral/test/answer" method="post">
+        <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
+            {{ dateInput({ id: "example", namePrefix: "example", fieldset: {
+            legend: { text: "What was the patient’s (proband’s) age of onset?",
+            classes: "nhsuk-label--s", isPageHeading: false } }, hint: { text:
+            "For example, 1 year 6 months or 18 months" }, items: [ { label:
+            "Years", name: "year", classes: "nhsuk-input--width-4" }, { label:
+            "Months", name: "month", classes: "nhsuk-input--width-4" } ] }) }}
+        </div>
+        <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
+            {{ radios({ idPrefix: "disease", name: "disease", fieldset: {
+            legend: { text: "Disease penetrance", classes:
+            "nhsuk-fieldset__legend--s", isPageHeading: false } }, items: [ {
+            value: "complete", text: "Complete" }, { value: "incomplete", text:
+            "Incomplete" } ] }) }}
+        </div>
+        <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
+            {{ radios({ idPrefix: "disease", name: "disease_suspected", fieldset: {
+            legend: { text: "Are other specific rare of inherited diseases
+            suspected or confirmed?", classes: "nhsuk-fieldset__legend--s",
+            "idPrefix": "diseaseSuspected",
+            "name": "diseaseSuspected",
+            isPageHeading: false } }, items: [ { value: "yes", text: "Yes" }, {
+            value: "no", text: "No" } ] }) }}
+        </div>
+        <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
+            <button
+                class="nhsuk-button"
+                data-module="nhsuk-button"
+                type="submit"
+                draggable="false"
+            >
+                Continue
+            </>
+        </div>
+    </form>
+</div>
+{% endblock %}

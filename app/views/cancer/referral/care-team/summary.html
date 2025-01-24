@@ -4,6 +4,21 @@
 NHS.UK prototype kit
 {% endblock %}
 
+{% block beforeContent %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+
+{{ breadcrumb({
+items: [
+{
+href: "/cancer/referral",
+text: "Referral #123456789"
+}
+],
+href: "/cancer/referral/care-team",
+text: "Care team"
+}) }}
+{% endblock %}
+
 {% block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem">
   <a class="nhsuk-back-link__link" href="javascript:history.back();">
@@ -20,69 +35,63 @@ NHS.UK prototype kit
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <h2 class="nhsuk-heading-1">Record found</h2>
+    <h2>Care team</h2>
 
-    <!-- <p>Martha Carson has no referrals started. You can start a new referral now</p> -->
-
-    <dl class="nhsuk-summary-list">
+    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-6">
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Name
+          Organisation
         </dt>
         <dd class="nhsuk-summary-list__value">
-          Martha Carson
+          Great Ormond Street Hospital
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="/cancer/referral/care-team">Change</a>
         </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          NHS number
+          Responsible clinician
         </dt>
         <dd class="nhsuk-summary-list__value">
-          4857773456
+          Dr Sue Donim
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="/cancer/referral/care-team/responsible-clinician">Change</a>
         </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Date of birth
+          Clinician contact
         </dt>
         <dd class="nhsuk-summary-list__value">
-          03/10/1980
+          <p>0208 965 5244</p>
+          <p>sue.donim@nhs.net</p>
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="/cancer/referral/care-team/responsible-clinician">Change</a>
         </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Gender
+          Main contact email
         </dt>
         <dd class="nhsuk-summary-list__value">
-          Female
+          admins_GOSH_genetics@nhs.net
         </dd>
-
-      </div>
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Ethnicity
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          White Irish
+        <dd class="nhsuk-summary-list__actions">
+          <a href="/cancer/referral/care-team/responsible-clinician">Change</a>
         </dd>
-
       </div>
-
-
     </dl>
 
-    <div style="display: flex; gap: 1rem;">
-      <a class="nhsuk-button" data-module="nhsuk-button" type="submit"  href="../referral/family/relationship">
-        Add to referral
-      </a>
-
-      <a class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" href="/patient-search"
+    <div style="margin-top: 3rem">
+      <a class="nhsuk-button" data-module="nhsuk-button" href="/cancer/referral/glh"
         draggable="false" role="button">
-        Cancel
+        Continue
       </a>
     </div>
   </div>
