@@ -8,7 +8,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-        <h1 class="nhsuk-label--l">Solid tumour</h1>
+        <h1 class="nhsuk-label--l nhsuk-u-margin-bottom-6">Solid tumour</h1>
         <form action="/cancer/referral/tumour-samples/" method="post" class="form">
 
         {% from 'radios/macro.njk' import radios %}
@@ -19,10 +19,11 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
         
         {{
             radios({
+                classes: "nhsuk-u-margin-bottom-4",
                 idPrefix: "tumour-type",
                 name: "tumour-type",
                 fieldset: { legend: { 
-                    text: "Liquid tumour type",      
+                    text: "Solid tumour type",      
                     isPageHeading: false } 
                 },
                 hint: { html: hintHtml },
@@ -39,7 +40,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
           label: {
             text: "Histopathology Lab ID"
           },
-          classes: "nhsuk-u-width-three-quarters",
+          classes: "nhsuk-u-width-three-quarters nhsuk-u-margin-bottom-4",
           id: "hist-id",
           name: "hist-id"
         }) }}
@@ -47,8 +48,9 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
         {% from 'date-input/macro.njk' import dateInput %}
 
         {{ dateInput({
-          id: "example",
-          namePrefix: "example",
+          classes: "nhsuk-u-margin-bottom-6",
+          id: "diagnosis-date",
+          namePrefix: "diagnosis-date",
           fieldset: {
             legend: {
               text: "Date of this diagnosis",
@@ -74,28 +76,23 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
           ]
         }) }}
 
-        {{ textarea({
-          name: "add-tumour-info",
-          id: "add-tumour-info",
-          label: {
-            text: "Additional tumour information if relevant (optional)"
-          }
-        }) }}
+
+        <h2 class="nhsuk-label--m nhsuk-u-margin-bottom-4">Additional tumour information if relevant</h2>
 
         {{ input({
           label: {
-            text: "Tumour topography"
+            text: "Tumour topography  (optional)"
           },
-          classes: "nhsuk-u-width-full",
+          classes: "nhsuk-u-width-full nhsuk-u-margin-bottom-2",
           id: "topography",
           name: "topography"
         }) }}
         
         {{ input({
           label: {
-            text: "Tumour morphology"
+            text: "Tumour morphology (optional)"
           },
-          classes: "nhsuk-u-width-full",
+          classes: "nhsuk-u-width-full nhsuk-u-margin-bottom-6",
           id: "morphology",
           name: "morphology"
         }) }}

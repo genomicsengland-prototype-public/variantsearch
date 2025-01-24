@@ -8,7 +8,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-        <h1 class="nhsuk-label--l">Liquid tumour</h1>
+        <h1 class="nhsuk-label--l nhsuk-u-margin-bottom-6">Liquid tumour</h1>
         <form action="/cancer/referral/tumour-samples/" method="post" class="form">
 
         {% from 'radios/macro.njk' import radios %}
@@ -19,7 +19,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
         {{ input({
             id: "other",
             name: "other",
-            classes: "nhsuk-u-width-two-thirds",
+            classes: "nhsuk-u-width-two-thirds ",
             label: {
               text: "Please specify"
             }
@@ -28,6 +28,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
         
         {{
             radios({
+                classes: "nhsuk-u-margin-bottom-4",
                 idPrefix: "tumour-type",
                 name: "tumour-type",
                 fieldset: { legend: { 
@@ -43,18 +44,19 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
             })
         }}
 
-        
-        <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="SIHMDS-ID">
-                SIHMDS Lab ID
-            </label>
-            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="SIHMDS-ID" name="SIHMDS-ID"
-              type="text" >
-        </div>
+        {{ input({
+          label: {
+            text: "SIHMDS Lab ID"
+          },
+          classes: "nhsuk-u-width-three-quarters nhsuk-u-margin-bottom-4",
+          id: "sihmd-id",
+          name: "sihmd-id"
+        }) }}
 
         {% from 'date-input/macro.njk' import dateInput %}
 
         {{ dateInput({
+          classes: "nhsuk-u-margin-bottom-6",
           id: "example",
           namePrefix: "example",
           fieldset: {
