@@ -1,7 +1,7 @@
 {% extends 'layout.html' %} {% block pageTitle %} NHS.UK prototype kit {%
 endblock %} {% block beforeContent %} {% from 'breadcrumb/macro.njk' import
 breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
-"Referral #123456789" } ], href: "/cancer/referral/tumour", text:
+"Referral #123456789" } ], href: "/cancer/referral/tumour-type", text:
 "Tumour" }) }} {% endblock %} {% block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem"></div>
 {% endblock %} {% block content %}
@@ -31,31 +31,6 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
               ]
               }) }}
 
-            {# {{
-                radios({
-                    idPrefix: "tumour-type",
-                    name: "tumour-type",
-                    fieldset: { legend: { 
-                        text: "Tumour type",      
-                        classes: "nhsuk-fieldset__legend--l",
-                        isPageHeading: true } 
-                    },
-                    hint: { html: hintHtml },
-                    items: [ { value: "solid", text: "Solid tumour"}, { value: "liquid", text: "Haemato-oncology liquid tumour" } ]
-                })
-            }}
-            <label for="tumour-type" class="nhsuk-u-margin-bottom-2">
-
-
-            <a
-                class="nhsuk-button"
-                data-module="nhsuk-button"
-                href="/cancer/referral/tumour-type/liquid"
-                draggable="false"
-                role="button"
-            >
-                Save and continue
-            </a> #}
 
             <button
             class="nhsuk-button"
