@@ -11,13 +11,13 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <h2 class="nhsuk-u-margin-bottom-4">Germline Samples</h2>
-        <form action="care-team" method="post" class="form">
+        <form action="/cancer/referral/care-team" method="post" class="form">
         {{ input({
             label: {
             text: "Sample ID"
             },
-            id: "sampleId",
-            name: "sampleId",
+            id: "germline-sampleId",
+            name: "germline-sampleId",
             classes: "nhsuk-input--width-20"
             }) }}
             <div class="nhsuk-form-group">
@@ -92,8 +92,8 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
             </div>
 
                 {{ radios({
-                    "idPrefix": "sample-type",
-                    "name": "sample-type",
+                    "idPrefix": "germline-sample-type",
+                    "name": "germline-sample-type",
                     "fieldset": {
                       "legend": {
                         "text": "Sample type",
@@ -102,19 +102,19 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
                     },
                     "items": [
                       {
-                        "value": "blood",
+                        "value": "Blood",
                         "text": "Blood"
                       },
                       {
-                        "value": "saliva",
+                        "value": "Saliva",
                         "text": "Saliva"
                       },
                       {
-                        "value": "skin",
+                        "value": "Skin",
                         "text": "Skin"
                       },
                       {
-                        "value": "bone-marrow",
+                        "value": "Bone marrow",
                         "text": "Bone marrow"
                       }
                     ]
@@ -133,10 +133,10 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
 
                   
                     <div class="nhsuk-form-group">
-                      <label class="nhsuk-label" for="comments">
+                      <label class="nhsuk-label" for="germline-sample-comments">
                         Comments (optional)
                       </label>
-                      <input class="nhsuk-input nhsuk-u-width-full" id="comments" name="comments"
+                      <input class="nhsuk-input nhsuk-u-width-full" id="germline-sample-comments" name="germline-sample-comments"
                         type="text">
                     </div>
                   
