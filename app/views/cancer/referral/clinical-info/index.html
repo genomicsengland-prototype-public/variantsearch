@@ -8,6 +8,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <h2 class="nhsuk-u-margin-bottom-4">Relevant clinical information</h2>
+        <form action="tumour-type" method="post">
         <div class="nhsuk-form-group">
             {% from 'textarea/macro.njk' import textarea %} {{ textarea({ name:
             "notes", id: "notes", label: { text: "Include previous tumours,
@@ -15,15 +16,16 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
             }}
         </div>
 
-        <a
+        <button
             class="nhsuk-button"
             data-module="nhsuk-button"
-            href="/cancer/referral/test"
             draggable="false"
             role="button"
+            type="submit"
         >
             Continue
-        </a>
+        </button>
+    </form>
     </div>
 </div>
 {% endblock %}

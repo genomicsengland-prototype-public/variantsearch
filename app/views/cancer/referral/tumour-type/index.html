@@ -10,8 +10,8 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
         <form action="/tumour-type-answer" method="post" class="form">
 
             {{ radios({
-                idPrefix: "example-hints",
-                name: "example-hints",
+                idPrefix: "tumour-type",
+                name: "tumour-type",
                 fieldset: {
                   legend: {
                     text: "Tumour type",
@@ -21,11 +21,11 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
                 },
                 items: [
                 {
-                  value: "solid",
+                  value: "Solid tumour",
                   text: "Solid tumour"
                 },
                 {
-                  value: "liquid",
+                  value: "Haemato-oncology liquid tumour",
                   text: "Haemato-oncology liquid tumour"
                 }
               ]

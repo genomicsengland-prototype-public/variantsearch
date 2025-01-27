@@ -14,7 +14,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
         {% from 'radios/macro.njk' import radios %}
         {% from 'input/macro.njk' import input %}
 
-        {% set emailHtml %}
+        {% set otherHtml %}
 
         {{ input({
             id: "other",
@@ -29,8 +29,8 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
         {{
             radios({
                 classes: "nhsuk-u-margin-bottom-4",
-                idPrefix: "tumour-type",
-                name: "tumour-type",
+                idPrefix: "liquid-tumour-type",
+                name: "liquid-tumour-type",
                 fieldset: { legend: { 
                     text: "Liquid tumour type",      
                     isPageHeading: false } 
@@ -39,7 +39,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
                 items: [ 
                     { value: "AML", text: "AML"}, 
                     { value: "ALL", text: "ALL" },
-                    { value: "Other", text: "Other" }
+                    { value: "Other", text: "Other", conditional: { html: otherHtml } }
                 ]
             })
         }}
@@ -57,8 +57,8 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
 
         {{ dateInput({
           classes: "nhsuk-u-margin-bottom-6",
-          id: "example",
-          namePrefix: "example",
+          id: "liquid-date-of-diagnosis",
+          namePrefix: "liquid-date-of-diagnosis",
           fieldset: {
             legend: {
               text: "Date of this diagnosis",
