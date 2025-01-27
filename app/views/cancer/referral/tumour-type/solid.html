@@ -1,0 +1,115 @@
+{% extends 'layout.html' %} {% block pageTitle %} NHS.UK prototype kit {%
+endblock %} {% block beforeContent %} {% from 'breadcrumb/macro.njk' import
+breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
+"Referral #123456789" } ], href: "/cancer/referral/tumour-type", text:
+"Tumour" }) }} {% endblock %} {% block outerContent %}
+<div class="nhsuk-back-link" style="margin-top: 2rem"></div>
+{% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-label--l nhsuk-u-margin-bottom-6">Solid tumour</h1>
+        <form action="/cancer/referral/tumour-samples/" method="post" class="form">
+
+        {% from 'radios/macro.njk' import radios %}
+        {% from 'input/macro.njk' import input %}
+        {% from 'textarea/macro.njk' import textarea %}
+
+
+        
+        {{
+            radios({
+                classes: "nhsuk-u-margin-bottom-4",
+                idPrefix: "tumour-type",
+                name: "tumour-type",
+                fieldset: { legend: { 
+                    text: "Solid tumour type",      
+                    isPageHeading: false } 
+                },
+                hint: { html: hintHtml },
+                items: [ 
+                    { value: "primary", text: "Primary"}, 
+                    { value: "metastatic", text: "Metastatic" },
+                    { value: "unknown", text: "Unknown" },
+                    { value: "lymphoma", text: "Lymphoma" }
+                ]
+            })
+        }}
+
+        {{ input({
+          label: {
+            text: "Histopathology Lab ID"
+          },
+          classes: "nhsuk-u-width-three-quarters nhsuk-u-margin-bottom-4",
+          id: "hist-id",
+          name: "hist-id"
+        }) }}
+        
+        {% from 'date-input/macro.njk' import dateInput %}
+
+        {{ dateInput({
+          classes: "nhsuk-u-margin-bottom-6",
+          id: "diagnosis-date",
+          namePrefix: "diagnosis-date",
+          fieldset: {
+            legend: {
+              text: "Date of this diagnosis",
+              isPageHeading: false
+            }
+          },
+          hint: {
+            text: "For example, 15 3 2024"
+          },
+          items: [
+            {
+              name: "day",
+              classes: "nhsuk-input--width-2"
+            },
+            {
+              name: "month",
+              classes: "nhsuk-input--width-2"
+            },
+            {
+              name: "year",
+              classes: "nhsuk-input--width-4"
+            }
+          ]
+        }) }}
+
+
+        <h2 class="nhsuk-label--m nhsuk-u-margin-bottom-4">Additional tumour information if relevant</h2>
+
+        {{ input({
+          label: {
+            text: "Tumour topography  (optional)"
+          },
+          classes: "nhsuk-u-width-full nhsuk-u-margin-bottom-2",
+          id: "topography",
+          name: "topography"
+        }) }}
+        
+        {{ input({
+          label: {
+            text: "Tumour morphology (optional)"
+          },
+          classes: "nhsuk-u-width-full nhsuk-u-margin-bottom-6",
+          id: "morphology",
+          name: "morphology"
+        }) }}
+        
+
+
+        <button
+            class="nhsuk-button"
+            data-module="nhsuk-button"
+            type="submit"
+            draggable="false"
+            role="button"
+        >
+            Save and continue
+        </button>
+        </form>        
+
+    </div>
+</div>
+{% endblock %}
