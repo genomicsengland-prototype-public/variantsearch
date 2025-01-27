@@ -11,14 +11,14 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <h2 class="nhsuk-u-margin-bottom-4">Germline Samples</h2>
-        <form action="care-team" method="post" class="form">
+        <form action="/cancer/referral/care-team" method="post" class="form">
         {{ input({
             label: {
             text: "Sample ID"
             },
             id: "sampleId",
             name: "sampleId",
-            classes: "nhsuk-input--width-20"
+            classes: "nhsuk-input--width-20 nhsuk-u-margin-bottom-4"
             }) }}
             <div class="nhsuk-form-group">
                 {% call fieldset({
@@ -28,7 +28,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
                     }
                   }) %}
 
-                  <div class="nhsuk-date-input" id="doc">
+                  <div class="nhsuk-date-input nhsuk-u-margin-bottom-4" id="doc">
                     <div class="nhsuk-date-input__item">
                       <div class="nhsuk-form-group">
                         <label class="nhsuk-label nhsuk-date-input__label" for="doc-day">
@@ -61,6 +61,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
             </div>
             <div class="nhsuk-form-group">
                   {% call fieldset({
+                    classes: "nhsuk-u-margin-bottom-4",
                     legend: {
                       text: "Time of collection",
                       isPageHeading: false
@@ -79,7 +80,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
                           type="text" inputmode="numeric">
                       </div>
                     </div>
-                    <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-date-input__item  nhsuk-u-margin-bottom-4">
                       <div class="nhsuk-form-group">
                         <label class="nhsuk-label" for="doc-minute">
                           Minute
@@ -92,6 +93,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
             </div>
 
                 {{ radios({
+                    classes: "nhsuk-u-margin-bottom-4",
                     "idPrefix": "sample-type",
                     "name": "sample-type",
                     "fieldset": {
@@ -122,13 +124,11 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
             
 
                   <div class="nhsuk-form-group">
-                    <div class="nhsuk-form-group">
                       <label class="nhsuk-label" for="sample-volume">
                         Sample volume
                       </label>
-                      <input class="nhsuk-input nhsuk-input--width-5" id="sample-volume" name="sample-volume"
+                      <input class="nhsuk-input nhsuk-input--width-5  nhsuk-u-margin-bottom-4" id="sample-volume" name="sample-volume"
                         type="text" inputmode="numeric">
-                    </div>
                 </div>
 
                   
@@ -136,7 +136,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
                       <label class="nhsuk-label" for="comments">
                         Comments (optional)
                       </label>
-                      <input class="nhsuk-input nhsuk-u-width-full" id="comments" name="comments"
+                      <input class="nhsuk-input nhsuk-u-width-full  nhsuk-u-margin-bottom-6" id="comments" name="comments"
                         type="text">
                     </div>
                   

@@ -10,7 +10,7 @@ router.post('/tumour-type-answer', function (req, res) {
     var tumourType = req.session.data['tumour-type']
     
     // Check whether the variable matches a condition
-    if (tumourType == "solid"){
+    if (tumourType == "Solid tumour"){
     // Send user to next page
     res.redirect('/cancer/referral/tumour-type/solid')
     } else {
