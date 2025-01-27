@@ -76,11 +76,41 @@ endblock %} {% block outerContent %}
                 <h4 class="nhsuk-u-margin-bottom-0">
                     <a href="/cancer/referral/test">Test request</a>
                 </h4>
-
+                {% if req.session.data['clinical-indication-code'] %}
+                <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">
+                    Completed
+                </p>
+                {% else %}
                 <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
                     Not started
                 </strong>
+                {% endif %}
             </div>
+            <dl class="nhsuk-summary-list">
+                {% if req.session.data['clinical-indication-code'] %}
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Clinical indication</dt>
+                    <dd class="nhsuk-summary-list__value">
+                    {{ req.session.data['clinical-indication-code'] }}
+                    </dd>
+                    <dd class="nhsuk-summary-list__actions">
+                        <a href="/cancer/referral/test">Change</a>
+                    </dd>
+                </div>
+                {% endif %}
+
+                {% if req.session.data['test-req'] %}
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Presentation status</dt>
+                    <dd class="nhsuk-summary-list__value">{{ req.session.data['test-req'] }}</dd>
+                    <dd class="nhsuk-summary-list__actions">
+                        <a href="/cancer/referral/test">Change</a>
+                    </dd>
+                </div>
+                {% endif %}
+    
+            </dl>
+    
 
         <!-- CLINICAL INFO STAGE -->
         <div
@@ -138,6 +168,7 @@ endblock %} {% block outerContent %}
                 Not started
             </strong>
         </div>
+        {{req.session.data | dump}}
 
         <!-- CARE TEAM STAGE -->
         <div

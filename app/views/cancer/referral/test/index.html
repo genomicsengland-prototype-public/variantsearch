@@ -49,44 +49,44 @@ text: "Test request"
             <label class="nhsuk-label" for="input-with-hint-text">
                 Clinical Indication and code
             </label>
-
+            <form id="clinical-indication-code-form" action="/cancer/referral/clinical-info" method="post">
             <div class="nhsuk-hint" id="input-with-hint-text-hint">
                 Search by clinical indication or code listed in the
                 <a href="#">Test directory</a>
             </div>
 
-            <select id="org-picker" value="">
+            <select title="Clinical Indication code" name="clinical-indication-code" id="clinical-indication-code">
                 <option></option>
-                <option value="M226">Cancer of Unknown Primary - M226</option>
-                <option value="M131">Cystic Nephroma - Paediatric - M131</option>
-                <option value="M204">Undifferentiated tumour - M204</option>
-                <option value="M100">Primary Mediastinal B Cell Lymphoma - M100</option>
-                <option value="M110">Paediatric Type Follicular Lymphoma - M110</option>
-                <option value="M111">T Cell Non-Hodgkin Lymphoma - M111</option>
-                <option value="M116">Hepatosplenic T Cell Lymphoma - M116</option>
-                <option value="M126">CNS High-Grade Neuroepithelial Tumour with MN1 Alteration - Paediatric - M126</option>
-                <option value="M133">Desmoplastic Medulloblastoma - Paediatric - M133</option>
-                <option value="M137">Ganglioglioma - Paediatric - 137</option>
-                <option value="M147">Medulloblastoma Group 3/4 - Paediatric - 147</option>
-                <option value="M149">Melanotic Tumours - Paediatric - 149</option>
-                <option value="M151">Midline Carcinoma - Paediatric - 151</option>
-                <option value="M152">Neuroblastoma - Paediatric - M152</option>
-                <option value="M155">Oligoastrocytoma - Paediatric - M155</option>
-                <option value="M157">Thyroid Papillary Carcinoma - Paediatric - M157</option>
-                <option value="M159">Pituitary Blastoma - Paediatric - M159</option>
-                <option value="M178">Wilms Tumours - Paediatric - M178</option>
-                <option value="M179">WNT Medulloblastoma - Paediatric - M179</option>
-                <option value="M183">Diffuse Midline Glioma - Paediatric - M183</option>
-                <option value="M184">Glioma - Paediatric - M184</option>
-                <option value="M186">Low Grade Glioma - Paediatric - M186</option>
-                <option value="M190">Embryonal Tumour Differential - Adult and Paediatric - M190</option>
-                <option value="M191">Low Grade Intrinsic Brain Tumour Differential - Adult - M191</option>
-                <option value="M197">Round Cell Sarcoma of Soft Tissue Differential - M197</option>
-                <option value="M198">Vascular Soft Tissue Tumour Differential - M198</option>
-                <option value="M199">Spindle Cell Soft Tissue Tumour Differential - M199</option>
-                <option value="M201">Adipocytic Soft Tissue Tumour Differential - M201</option>
-                <option value="M205">Cartilage Forming Bone Tumour Differential - M205</option>
-                <option value="M21">Astrocytoma - Adult - M21</option>
+                <option>Cancer of Unknown Primary - M226</option>
+                <option>Cystic Nephroma - Paediatric - M131</option>
+                <option>Undifferentiated tumour - M204</option>
+                <option>Primary Mediastinal B Cell Lymphoma - M100</option>
+                <option>Paediatric Type Follicular Lymphoma - M110</option>
+                <option>T Cell Non-Hodgkin Lymphoma - M111</option>
+                <option>Hepatosplenic T Cell Lymphoma - M116</option>
+                <option>CNS High-Grade Neuroepithelial Tumour with MN1 Alteration - Paediatric - M126</option>
+                <option>Desmoplastic Medulloblastoma - Paediatric - M133</option>
+                <option>Ganglioglioma - Paediatric - 137</option>
+                <option>Medulloblastoma Group 3/4 - Paediatric - 147</option>
+                <option>Melanotic Tumours - Paediatric - 149</option>
+                <option>Midline Carcinoma - Paediatric - 151</option>
+                <option>Neuroblastoma - Paediatric - M152</option>
+                <option>Oligoastrocytoma - Paediatric - M155</option>
+                <option>Thyroid Papillary Carcinoma - Paediatric - M157</option>
+                <option>Pituitary Blastoma - Paediatric - M159</option>
+                <option>Wilms Tumours - Paediatric - M178</option>
+                <option>WNT Medulloblastoma - Paediatric - M179</option>
+                <option>Diffuse Midline Glioma - Paediatric - M183</option>
+                <option>Glioma - Paediatric - M184</option>
+                <option>Low Grade Glioma - Paediatric - M186</option>
+                <option>Embryonal Tumour Differential - Adult and Paediatric - M190</option>
+                <option>Low Grade Intrinsic Brain Tumour Differential - Adult - M191</option>
+                <option>Round Cell Sarcoma of Soft Tissue Differential - M197</option>
+                <option>Vascular Soft Tissue Tumour Differential - M198</option>
+                <option>Spindle Cell Soft Tissue Tumour Differential - M199</option>
+                <option>Adipocytic Soft Tissue Tumour Differential - M201</option>
+                <option>Cartilage Forming Bone Tumour Differential - M205</option>
+                <option>Astrocytoma - Adult - M21</option>
             </select>
 
             <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
@@ -95,7 +95,7 @@ text: "Test request"
             <script>
                 accessibleAutocomplete.enhanceSelectElement({
                     defaultValue: "",
-                    selectElement: document.querySelector("#org-picker"),
+                    selectElement: document.querySelector("#clinical-indication-code"),
                 });
             </script>
         </div>
@@ -118,20 +118,20 @@ text: "Test request"
                 name: "test-req",
                 fieldset: { legend: { text: "Presentation status", isPageHeading: false } },
                 hint: { html: hintHtml },
-                items: [ { value: "first", text: "First diagnosis", checked: true }, { value: "recurrence", text: "Recurrence / Relapse" }, { value: "unknown", text: "Unknown" } ]
+                items: [ { value: "First diagnosis", text: "First diagnosis", checked: true }, { value: "Recurrence / Relapse", text: "Recurrence / Relapse" }, { value: "Unknown", text: "Unknown" } ]
             })
         }}
 
 
-        <a
+        <button
             class="nhsuk-button"
             data-module="nhsuk-button"
-            href="/cancer/referral/test/details"
             draggable="false"
             role="button"
+            type="submit"
         >
             Save and continue
-        </a>
+        </button>
     </div>
 </div>
 {% endblock %}
