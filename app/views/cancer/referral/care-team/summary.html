@@ -43,7 +43,7 @@ text: "Care team"
           Organisation
         </dt>
         <dd class="nhsuk-summary-list__value">
-          Great Ormond Street Hospital
+          {{ req.session.data['care-team'] }}
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a href="/cancer/referral/care-team">Change</a>
@@ -55,7 +55,7 @@ text: "Care team"
           Responsible clinician
         </dt>
         <dd class="nhsuk-summary-list__value">
-          Dr Sue Donim
+          {{ req.session.data['fname'] }} {{ req.session.data['lname'] }}
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a href="/cancer/referral/care-team/responsible-clinician">Change</a>
@@ -67,25 +67,29 @@ text: "Care team"
           Clinician contact
         </dt>
         <dd class="nhsuk-summary-list__value">
-          <p>0208 965 5244</p>
-          <p>sue.donim@nhs.net</p>
+          {% if req.session.data['phone'] %}
+              <p>{{ req.session.data['phone'] }}</p>
+          {% endif %}
+          <p>{{ req.session.data['email'] }}</p>
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a href="/cancer/referral/care-team/responsible-clinician">Change</a>
         </dd>
       </div>
 
+      {% if req.session.data['conditional_email'] %}
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
           Main contact email
         </dt>
         <dd class="nhsuk-summary-list__value">
-          admins_GOSH_genetics@nhs.net
+          {{ req.session.data['conditional_email'] }}
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a href="/cancer/referral/care-team/responsible-clinician">Change</a>
         </dd>
       </div>
+      {% endif %}
     </dl>
 
     <div style="margin-top: 3rem">

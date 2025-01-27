@@ -268,6 +268,11 @@ app.post("/examples/passing-data/clear-data", (req, res) => {
   res.render("examples/passing-data/clear-data-success");
 });
 
+app.get("/clear-data", (req, res) => {
+  req.session.data = {};
+  res.render("examples/passing-data/clear-data-success");
+});
+
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
 app.post(/^\/([^.]+)$/, (req, res) => {
   res.redirect(`/${req.params[0]}`);

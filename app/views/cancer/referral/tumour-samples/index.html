@@ -15,8 +15,8 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
 
             {{ radios({
                 classes: "nhsuk-u-margin-bottom-4",
-                "idPrefix": "sample-type",
-                "name": "sample-type",
+                "idPrefix": "tumour-sample-type",
+                "name": "tumour-sample-type",
                 "fieldset": {
                   "legend": {
                     "text": "Sample type",
@@ -25,19 +25,19 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
                 },
                 "items": [
                   {
-                    "value": "fresh-frozen-tumour",
+                    "value": "Fresh frozen tumour",
                     "text": "Fresh frozen tumour"
                   },
                   {
-                    "value": "bone-marrow",
+                    "value": "Bone marrow",
                     "text": "Bone marrow"
                   },
                   {
-                    "value": "blood",
+                    "value": "Blood (EDTA)",
                     "text": "Blood (EDTA)"
                   },
                   {
-                    "value": "other",
+                    "value": "Other",
                     "text": "Other"
                   }
                 ]
@@ -47,8 +47,8 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
             label: {
             text: "Sample ID"
             },
-            id: "sampleId",
-            name: "sampleId",
+            id: "tumour-sampleId",
+            name: "tumour-sampleId",
             classes: "nhsuk-input--width-20, nhsuk-u-margin-bottom-4"
             }) }}
             <div class="nhsuk-form-group">
@@ -130,8 +130,8 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
                         text: "ercentage malignant nuclei/blasts or equivalent in this sample must be provided. Refer to sample handling guidance."
                       },
                       classes: "nhsuk-input--width-5 nhsuk-u-margin-bottom-4",
-                      id: "name",
-                      name: "name"
+                      id: "malignant-nuclei-blasts",
+                      name: "malignant-nuclei-blasts"
                     }) }}
 
                     {{ input({

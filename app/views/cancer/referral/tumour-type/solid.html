@@ -20,8 +20,8 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
         {{
             radios({
                 classes: "nhsuk-u-margin-bottom-4",
-                idPrefix: "tumour-type",
-                name: "tumour-type",
+                idPrefix: "solid-tumour-type",
+                name: "solid-tumour-type",
                 fieldset: { legend: { 
                     text: "Solid tumour type",      
                     isPageHeading: false } 
@@ -29,9 +29,9 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
                 hint: { html: hintHtml },
                 items: [ 
                     { value: "primary", text: "Primary"}, 
-                    { value: "metastatic", text: "Metastatic" },
-                    { value: "unknown", text: "Unknown" },
-                    { value: "lymphoma", text: "Lymphoma" }
+                    { value: "Metastatic", text: "Metastatic" },
+                    { value: "Unknown", text: "Unknown" },
+                    { value: "Lymphoma", text: "Lymphoma" }
                 ]
             })
         }}
@@ -49,8 +49,8 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
 
         {{ dateInput({
           classes: "nhsuk-u-margin-bottom-6",
-          id: "diagnosis-date",
-          namePrefix: "diagnosis-date",
+          id: "solid-diagnosis-date",
+          namePrefix: "solid-diagnosis-date",
           fieldset: {
             legend: {
               text: "Date of this diagnosis",
