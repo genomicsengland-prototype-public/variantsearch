@@ -14,7 +14,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
         {% from 'radios/macro.njk' import radios %}
         {% from 'input/macro.njk' import input %}
 
-        {% set emailHtml %}
+        {% set otherHtml %}
 
         {{ input({
             id: "other",
@@ -39,7 +39,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
                 items: [ 
                     { value: "AML", text: "AML"}, 
                     { value: "ALL", text: "ALL" },
-                    { value: "Other", text: "Other" }
+                    { value: "Other", text: "Other", conditional: { html: otherHtml } }
                 ]
             })
         }}
