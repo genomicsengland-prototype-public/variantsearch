@@ -10,7 +10,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
 {% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <h2 class="nhsuk-u-margin-bottom-4">Germline Samples</h2>
+        <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-4">Germline Samples</h1>
         <form action="/cancer/referral/care-team" method="post" class="form">
         {{ input({
             label: {
@@ -93,14 +93,9 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
             </div>
 
                 {{ radios({
-<<<<<<< HEAD
                     classes: "nhsuk-u-margin-bottom-4",
-                    "idPrefix": "sample-type",
-                    "name": "sample-type",
-=======
                     "idPrefix": "germline-sample-type",
                     "name": "germline-sample-type",
->>>>>>> main
                     "fieldset": {
                       "legend": {
                         "text": "Sample type",
@@ -141,11 +136,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
                       <label class="nhsuk-label" for="germline-sample-comments">
                         Comments (optional)
                       </label>
-<<<<<<< HEAD
-                      <input class="nhsuk-input nhsuk-u-width-full  nhsuk-u-margin-bottom-6" id="comments" name="comments"
-=======
-                      <input class="nhsuk-input nhsuk-u-width-full" id="germline-sample-comments" name="germline-sample-comments"
->>>>>>> main
+                      <input class="nhsuk-input nhsuk-u-width-full nhsuk-u-margin-bottom-6" id="germline-sample-comments" name="germline-sample-comments"
                         type="text">
                     </div>
                   
@@ -156,7 +147,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
             draggable="false"
             role="button"
         >
-            Continue
+            Save and continue
         </button>
         </form>
     </div>
