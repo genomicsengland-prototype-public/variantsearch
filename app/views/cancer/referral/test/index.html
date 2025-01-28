@@ -43,9 +43,9 @@ text: "Test request"
 {% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <h2 class: nhsuk-fieldset__legend--l>Test request</h2>
+        <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-4">Test request</h1>
 
-        <div class="nhsuk-form-group">
+        <div class="nhsuk-form-group  nhsuk-u-margin-bottom-6">
             <label class="nhsuk-label" for="input-with-hint-text">
                 Clinical Indication and code
             </label>
@@ -114,11 +114,12 @@ text: "Test request"
 
         {{
             radios({
+                classes: "nhsuk-u-margin-bottom-4",
                 idPrefix: "test-req",
                 name: "test-req",
                 fieldset: { legend: { text: "Presentation status", isPageHeading: false } },
                 hint: { html: hintHtml },
-                items: [ { value: "First diagnosis", text: "First diagnosis", checked: true }, { value: "Recurrence / Relapse", text: "Recurrence / Relapse" }, { value: "Unknown", text: "Unknown" } ]
+                items: [ { value: "First diagnosis", text: "First diagnosis" }, { value: "Recurrence / Relapse", text: "Recurrence / Relapse" }, { value: "Unknown", text: "Unknown" } ]
             })
         }}
 

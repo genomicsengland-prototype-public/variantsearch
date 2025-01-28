@@ -10,12 +10,13 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
         <form action="/tumour-type-answer" method="post" class="form">
 
             {{ radios({
+                classes: "nhsuk-u-margin-bottom-4",
                 idPrefix: "tumour-type",
                 name: "tumour-type",
                 fieldset: {
                   legend: {
                     text: "Tumour type",
-                    classes: "nhsuk-fieldset__legend--l",
+                    classes: "nhsuk-fieldset__legend--l nhsuk-u-margin-bottom-4",
                     isPageHeading: true
                   }
                 },
