@@ -10,11 +10,11 @@ NHS.UK prototype kit
 {{ breadcrumb({
 items: [
 {
-href: "/rare-disease/referral",
+href: "/v1/referral",
 text: "Referral #123456789"
 }
 ],
-href: "/rare-disease/referral/family",
+href: "/v1/referral/family",
 text: "Family"
 }) }}
 {% endblock %}
@@ -36,12 +36,11 @@ text: "Family"
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
     <div class="nhsuk-form-group">
-      <form action="summary" method="post">
       <label class="nhsuk-label nhsuk-label--l" for="input-with-hint-text">
         Relationship to patient (proband)
       </label>
 
-      <select id="rare-relationship-picker" title="Select Relationship" name="rare-relationship-picker">
+      <select id="org-picker" value="">
         <option></option>
         <option>Mother</option>
         <option>Father</option>
@@ -85,22 +84,17 @@ text: "Family"
       <script>
         accessibleAutocomplete.enhanceSelectElement({
           defaultValue: "",
-          selectElement: document.querySelector("#rare-relationship-picker"),
+          selectElement: document.querySelector("#org-picker"),
         });
       </script>
     </div>
 
     <div>
-      <button
-      class="nhsuk-button"
-      data-module="nhsuk-button" 
-      draggable="false"
-      type="submit"
+      <a class="nhsuk-button" data-module="nhsuk-button" href="summary" draggable="false"
         role="button">
         Continue
-      </button>
+      </a>
     </div>
-    </form>
   </div>
 </div>
 {% endblock %}

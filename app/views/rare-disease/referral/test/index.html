@@ -1,12 +1,4 @@
-{% set textHtml %}
 {% from 'textarea/macro.njk' import textarea %}
-{{ textarea({
-name: "example", id: "example", label: { text: "Details of why this referral
-considered urgent. "},
-hint: {
-    text: "There is currently no urgent WGS pathway. It may be possible to prioritise some cases."
-   } }) }}
-{% endset -%}
 
 {% extends 'layout.html' %}
 
@@ -45,74 +37,79 @@ text: "Test request"
     <div class="nhsuk-grid-column-two-thirds">
         <h2 class: nhsuk-fieldset__legend--l>Test request</h2>
 
+        <form id="rare-clinical-indication-form" action="/rare-disease/referral/test/details" method="post">
         <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="input-with-hint-text">
                 Clinical Indication and code
             </label>
+            <p for="test-req" class="nhsuk-hint nhsuk-u-margin-bottom-2">
+            Search by clinical indication or code listed in the
+            <a href="#">Test directory</a>
+            </p>
 <!--
             <div class="nhsuk-hint" id="input-with-hint-text-hint">
                 Search by clinical indication or code listed in the
                 <a href="#">Test directory</a>
             </div> -->
 
-            <select id="org-picker" value="">
+            <select id="rare-clinical-indication" name="rare-clinical-indication" title="Choose a Clinical Indication and code">
                 <option></option>
-                <option value="R14.1">Acutely unwell children with a likely monogenic disorder - R14.1</option>
-                <option value="R56.3">Adult onset dystonia, chorea or related movement disorder - R56.3</option>
-                <option value="R60.3">Adult onset hereditary spastic paraplegia - R60.3</option>
-                <option value="R62.2">Adult onset leukodystrophy - R62.2</option>
-                <option value="R58.4">Adult onset neurodegenerative disorder - R58.4</option>
-                <option value="R83.3">Arthrogryposis - R83.3</option>
-                <option value="R107.1">Bardet Biedl syndrome - R107.1</option>
-                <option value="R31.3">Bilateral congenital or childhood onset cataracts - R31.3</option>
-                <option value="R84.4">Cerebellar anomalies - R84.4</option>
-                <option value="R87.3">Cerebral malformation - R87.3</option>
-                <option value="R57.5">Childhood onset dystonia, chorea or related movement disorder - R57.5</option>
-                <option value="R61.4">Childhood onset hereditary spastic paraplegia - R61.4</option>
-                <option value="R109.3">Childhood onset leukodystrophy - R109.3</option>
-                <option value="R193.4">Cystic renal disease - R193.4</option>
-                <option value="R59.3">Early onset or syndromic epilepsy - R59.3</option>
-                <option value="R21.2">Fetal anomalies with a likely genetic cause - R21.2</option>
-                <option value="R412.1">Fetal anomalies with a likely genetic cause - non urgent - R412.1</option>
-                <option value="R54.3">Hereditary ataxia with onset in adulthood - R54.3</option>
-                <option value="R55.4">Hereditary ataxia with onset in childhood - R55.4</option>
-                <option value="R78.4">Hereditary neuropathy or pain disorder - R78.4</option>
-                <option value="R85.2">Holoprosencephaly - NOT chromosomal - R85.2</option>
-                <option value="R86.3">Hydrocephalus - R86.3</option>
-                <option value="R69.5">Hypotonic infant - R69.5</option>
-                <option value="R29.4">Intellectual disability - R29.4</option>
-                <option value="R98.2">Likely inborn error of metabolism - R98.2</option>
-                <option value="R67.1">Monogenic hearing loss - R67.1</option>
-                <option value="R143.4">Neonatal diabetes - R143.4</option>
-                <option value="R381.2">Other rare neuromuscular disorders - R381.2</option>
-                <option value="R27.3">Paediatric disorders - R27.3</option>
-                <option value="R135.2">Paediatric or syndromic cardiomyopathy - R135.2</option>
-                <option value="R312.1">Parental sequencing for lethal autosomal recessive disorders - R312.1</option>
-                <option value="R236.1">Pigmentary skin disorders - R236.1</option>
-                <option value="R63.1">Possible mitochondrial disorder - nuclear genes - R63.1</option>
-                <option value="R15.4">Primary immunodeficiency or monogenic inflammatory bowel disease - R15.4</option>
-                <option value="R100.3">Rare syndromic craniosynostosis or isolated multisuture synostosis - R100.3
+                <option>Acutely unwell children with a likely monogenic disorder - R14.1</option>
+                <option>Adult onset dystonia, chorea or related movement disorder - R56.3</option>
+                <option>Adult onset hereditary spastic paraplegia - R60.3</option>
+                <option>Adult onset leukodystrophy - R62.2</option>
+                <option>Adult onset neurodegenerative disorder - R58.4</option>
+                <option>Arthrogryposis - R83.3</option>
+                <option>Bardet Biedl syndrome - R107.1</option>
+                <option>Bilateral congenital or childhood onset cataracts - R31.3</option1>
+                <option>Cerebellar anomalies - R84.4</option>
+                <option>Cerebral malformation - R87.3</option>
+                <option>Childhood onset dystonia, chorea or related movement disorder - R57.5</option>
+                <option>Childhood onset hereditary spastic paraplegia - R61.4</option>
+                <option>Childhood onset leukodystrophy - R109.3</option>
+                <option>Cystic renal disease - R193.4</option>
+                <option>Early onset or syndromic epilepsy - R59.3</option4>
+                <option>Fetal anomalies with a likely genetic cause - R21.2</option>
+                <option>Fetal anomalies with a likely genetic cause - non urgent - R412.1</option>
+                <option>Hereditary ataxia with onset in adulthood - R54.3</option1>
+                <option>Hereditary ataxia with onset in childhood - R55.4</option>
+                <option>Hereditary neuropathy or pain disorder - R78.4</option>
+                <option>Holoprosencephaly - NOT chromosomal - R85.2</option>
+                <option>Hydrocephalus - R86.3</option>
+                <option>Hypotonic infant - R69.5</option>
+                <option>Intellectual disability - R29.4</option>
+                <option>Likely inborn error of metabolism - R98.2</option>
+                <option>Monogenic hearing loss - R67.1</option>
+                <option>Neonatal diabetes - R143.4</option>
+                <option>Other rare neuromuscular disorders - R381.2</option>
+                <option>Paediatric disorders - R27.3</option2>
+                <option>Paediatric or syndromic cardiomyopathy - R135.2</option>
+                <option>Parental sequencing for lethal autosomal recessive disorders - R312.1</option>
+                <option>Pigmentary skin disorders - R236.1</option>
+                <option>Possible mitochondrial disorder - nuclear genes - R63.1</option1>
+                <option>Primary immunodeficiency or monogenic inflammatory bowel disease - R15.4</option>
+                <option>Rare syndromic craniosynostosis or isolated multisuture synostosis - R100.3
                 </option>
-                <option value="R32.2">Retinal disorders - R32.2</option>
-                <option value="R88.3">Severe microcephaly - R88.3</option>
-                <option value="R104.3">Skeletal dysplasia - R104.3</option>
-                <option value="R104.4">Skeletal dysplasia - R104.4</option>
-                <option value="R36.2">Structural eye disease - R36.2</option>
-                <option value="R89.3">Ultra-rare and atypical monogenic disorders - R89.3</option>
-                <option value="R441.1">Unexplained death in infancy and sudden unexplained death in childhood - R441.1
+                <option>Retinal disorders - R32.2</option>
+                <option>Severe microcephaly - R88.3</option>
+                <option>Skeletal dysplasia - R104.3</option>
+                <option>Skeletal dysplasia - R104.4</option>
+                <option>Structural eye disease - R36.2</option>
+                <option>Ultra-rare and atypical monogenic disorders - R89.3</option>
+                <option>Unexplained death in infancy and sudden unexplained death in childhood - R441.1
                 </option>
-                <option value="R257.2">Unexplained young onset end-stage renal disease - R257.2</option>
-                <option value="R169.1">Acute intermittent porphyria - R169.1</option>
-                <option value="R375.1">Family follow-up testing to aid variant interpretation - R375.1</option>
-                <option value="R431.1">Genome-wide DNA Methylation Profiling to Aid Variant Interpretation - R431.1
+                <option>Unexplained young onset end-stage renal disease - R257.2</option>
+                <option>Acute intermittent porphyria - R169.1</option>
+                <option>Family follow-up testing to aid variant interpretation - R375.1</option>
+                <option>Genome-wide DNA Methylation Profiling to Aid Variant Interpretation - R431.1
                 </option>
-                <option value="R377.1">Intellectual disability – microarray only - R377.1</option>
-                <option value="R331.1">Intestinal failure or congenital diarrhoea - R331.1</option>
-                <option value="R352.1">Mitochondrial DNA maintenance disorder - R352.1</option>
-                <option value="R394.1">Mitochondrial neurogastrointestinal encephalopathy - R394.1</option>
-                <option value="R417.2">Multi Locus Imprinting Disorder (MLID) - R417.2</option>
-                <option value="R202.1">Tubulointerstitial kidney disease - R202.1</option>
-                <option value="R442.1">Variant re-interpretation - R442.1</option>
+                <option>Intellectual disability – microarray only - R377.1</option>
+                <option>Intestinal failure or congenital diarrhoea - R331.1</option>
+                <option>Mitochondrial DNA maintenance disorder - R352.1</option>
+                <option>Mitochondrial neurogastrointestinal encephalopathy - R394.1</option>
+                <option>Multi Locus Imprinting Disorder (MLID) - R417.2</option>
+                <option>Tubulointerstitial kidney disease - R202.1</option>
+                <option>Variant re-interpretation - R442.1</option>
             </select>
 
             <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
@@ -121,43 +118,44 @@ text: "Test request"
             <script>
                 accessibleAutocomplete.enhanceSelectElement({
                     defaultValue: "",
-                    selectElement: document.querySelector("#org-picker"),
+                    selectElement: document.querySelector("#rare-clinical-indication"),
                 });
             </script>
         </div>
 
         {% from 'radios/macro.njk' import radios %} {% from 'fieldset/macro.njk'
-        import fieldset %} {% from 'hint/macro.njk' import hint %} {% set
-        hintHtml -%}
-        <label for="test-req" class="nhsuk-u-margin-bottom-2">
+        import fieldset %} {% from 'hint/macro.njk' import hint %}
 
-        {%- endset %} {% set hintHtmlCi -%}
-        <p for="test-req" class="nhsuk-u-margin-bottom-2">
-            Search by clinical indication or code listed in the
-            <a href="#">Test directory</a>
-        </p>
-        {%- endset %}
+        {% set textHtml %}
+        {{ textarea({
+        name: "rare-considered-urgent", id: "rare-considered-urgent", label: { text: "Details of why this referral
+        considered urgent. "},
+        hint: {
+            text: "There is currently no urgent WGS pathway. It may be possible to prioritise some cases."
+        } }) }}
+        {% endset -%}
 
         {{
             radios({
                 idPrefix: "test-req",
                 name: "test-req",
                 fieldset: { legend: { text: "Is this test clinically urgent?", isPageHeading: false } },
-                hint: { html: hintHtml },
+                
                 items: [ { value: "no", text: "No", checked: true }, { value: "yes", text: "Yes", conditional: { html: textHtml } } ]
             })
         }}
 
 
-        <a
+        <button
             class="nhsuk-button"
             data-module="nhsuk-button"
-            href="/rare-disease/referral/test/details"
             draggable="false"
             role="button"
+            type="submit"
         >
             Continue
-        </a>
+        </button>
     </div>
+</form>
 </div>
 {% endblock %}

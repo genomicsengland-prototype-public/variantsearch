@@ -10,11 +10,11 @@ NHS.UK prototype kit
 {{ breadcrumb({
 items: [
 {
-href: "/rare-disease/referral",
+href: "/v1/referral",
 text: "Referral #123456789"
 }
 ],
-href: "/rare-disease/referral/care-team",
+href: "/v1/referral/care-team",
 text: "Care team"
 }) }}
 {% endblock %}
@@ -37,7 +37,6 @@ text: "Care team"
   <div class="nhsuk-grid-column-two-thirds">
     <h2 class="nhsuk-u-margin-bottom-4">Requesting organisation</h2>
 
-    <form action="/rare-disease/referral/care-team/responsible-clinician" id="form-rare-care-team" method="post">
     <label class="nhsuk-label" for="HPO-terms">
       Organisation name
     </label>
@@ -46,7 +45,7 @@ text: "Care team"
       Type to search by organisation name or ID
     </div>
 
-    <select id="rare-care-team" action="/rare-disease/referral/care-team/responsible-clinician" name="rare-care-team" title="Select a Requesting organisation">
+    <select id="org-picker">
       <option></option>
       <option>South Tyneside NHS Foundation Trust</option>
       <option>Southern Health NHS Foundation Trust</option>
@@ -86,17 +85,16 @@ text: "Care team"
     <script>
       accessibleAutocomplete.enhanceSelectElement({
         defaultValue: '',
-        selectElement: document.querySelector('#rare-care-team')
+        selectElement: document.querySelector('#org-picker')
       })
     </script>
 
     <div style="margin-top: 3rem">
-      <button class="nhsuk-button" data-module="nhsuk-button" type="submit"
+      <a class="nhsuk-button" data-module="nhsuk-button" href="/v1/referral/care-team/responsible-clinician"
         draggable="false" role="button">
         Continue
-      </button>
+      </a>
     </div>
-  </form>
   </div>
 </div>
 {% endblock %}

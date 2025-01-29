@@ -14,11 +14,11 @@ NHS.UK prototype kit
 {{ breadcrumb({
 items: [
 {
-href: "/rare-disease/referral",
+href: "/v1/referral",
 text: "Referral #123456789"
 }
 ],
-href: "/rare-disease/referral/test",
+href: "/v1/referral/test",
 text: "Test request"
 }) }}
 {% endblock %}
@@ -38,7 +38,6 @@ text: "Test request"
 
 {% block content %}
 <div class="nhsuk-grid-row">
-  <form action="/rare-disease/referral/test/test-request-summary" method="post">
     <div class="nhsuk-grid-column-full nhsuk-u-margin-bottom-7">
         <div class="nhsuk-form-group">
           <label class="nhsuk-label nhsuk-label--l nhsuk-u-margin-top-6" for="input-with-hint-text">
@@ -49,7 +48,7 @@ text: "Test request"
               Use panels with panel type ’GMS rare disease virtual’ listed on <a href="https://panelapp.genomicsengland.co.uk">PanelApp</a>
           </div>
           <div class="nhsuk-u-width-two-thirds">
-          <select id="rare-add-panel" name="rare-add-panel" title="Add Panel" class="nhsuk-u-width-two-thirds">
+          <select id="add-panel" class="nhsuk-u-width-two-thirds">
             <option></option>
             <option>Acute intermittent porphyria (R169)</option>
             <option>Bleeding and platelet disorders (R90)</option>
@@ -71,23 +70,25 @@ text: "Test request"
           <script>
             accessibleAutocomplete.enhanceSelectElement({
               defaultValue: '',
-              selectElement: document.querySelector('#rare-add-panel'),
+              selectElement: document.querySelector('#add-panel'),
             })
           </script>
         </div>
     </div>
 
+    {% set currentPanel = 0 %} {% if req.query['panels'] and
+    req.query['panels'] > 0 %} {% set currentPanel = req.query['panels'] | int %}
+    {% endif %}
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
-        <button
+        <a
             class="nhsuk-button"
             data-module="nhsuk-button"
+            href="/v1/referral/test/test-request-summary?panels={{ currentPanel+1 }}"
             draggable="false"
             role="button"
-            type="submit"
         >
             Add panel
-        </button>
+        </a>
     </div>
-    </form>
 </div>
 {% endblock %}

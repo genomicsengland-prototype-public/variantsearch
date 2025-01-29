@@ -2,7 +2,7 @@
 import dateInput %} {% extends 'layout.html' %} {% block pageTitle %} NHS.UK
 prototype kit {% endblock %} {% block beforeContent %} {% from
 'breadcrumb/macro.njk' import breadcrumb %} {{ breadcrumb({ items: [ { href:
-"/rare-disease/referral", text: "Referral #123456789" } ], href: "/rare-disease/referral/test", text:
+"/v1/referral", text: "Referral #123456789" } ], href: "/v1/referral/test", text:
 "Test request" }) }} {% endblock %} {% block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem">
     <a class="nhsuk-back-link__link" href="javascript:history.back();">
@@ -19,9 +19,9 @@ prototype kit {% endblock %} {% block beforeContent %} {% from
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
         <h2>Test request</h2>
     </div>
-    <form action="/rare-disease/referral/test/answer" method="post">
+    <form action="/v1/referral/test/answer" method="post">
         <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
-            {{ dateInput({ id: "rare-date-onset", namePrefix: "rare-date-onset", fieldset: {
+            {{ dateInput({ id: "example", namePrefix: "example", fieldset: {
             legend: { text: "What was the patient’s (proband’s) age of onset?",
             classes: "nhsuk-label--s", isPageHeading: false } }, hint: { text:
             "For example, 1 year 6 months or 18 months" }, items: [ { label:
@@ -29,20 +29,20 @@ prototype kit {% endblock %} {% block beforeContent %} {% from
             "Months", name: "month", classes: "nhsuk-input--width-4" } ] }) }}
         </div>
         <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
-            {{ radios({ idPrefix: "rare-disease-penetrance", name: "rare-disease-penetrance", fieldset: {
+            {{ radios({ idPrefix: "disease", name: "disease", fieldset: {
             legend: { text: "Disease penetrance", classes:
             "nhsuk-fieldset__legend--s", isPageHeading: false } }, items: [ {
-            value: "Complete", text: "Complete" }, { value: "Incomplete", text:
+            value: "complete", text: "Complete" }, { value: "incomplete", text:
             "Incomplete" } ] }) }}
         </div>
         <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
-            {{ radios({ idPrefix: "rare-disease-suspected", name: "rare-disease-suspected", fieldset: {
+            {{ radios({ idPrefix: "disease", name: "disease_suspected", fieldset: {
             legend: { text: "Are other specific rare of inherited diseases
             suspected or confirmed?", classes: "nhsuk-fieldset__legend--s",
             "idPrefix": "diseaseSuspected",
             "name": "diseaseSuspected",
-            isPageHeading: false } }, items: [ { value: "Yes", text: "Yes" }, {
-            value: "No", text: "No" } ] }) }}
+            isPageHeading: false } }, items: [ { value: "yes", text: "Yes" }, {
+            value: "no", text: "No" } ] }) }}
         </div>
         <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
             <button
@@ -52,7 +52,7 @@ prototype kit {% endblock %} {% block beforeContent %} {% from
                 draggable="false"
             >
                 Continue
-            </button>
+            </>
         </div>
     </form>
 </div>

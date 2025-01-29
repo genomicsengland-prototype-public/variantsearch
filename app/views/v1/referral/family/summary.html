@@ -1,7 +1,7 @@
 {% extends 'layout.html' %} {% block pageTitle %} NHS.UK prototype kit {%
 endblock %} {% block beforeContent %} {% from 'breadcrumb/macro.njk' import
-breadcrumb %} {{ breadcrumb({ items: [ { href: "/rare-disease/referral", text: "Referral
-#123456789" } ], href: "/rare-disease/referral/family", text: "Family" }) }} {% endblock %}
+breadcrumb %} {{ breadcrumb({ items: [ { href: "/v1/referral", text: "Referral
+#123456789" } ], href: "/v1/referral/family", text: "Family" }) }} {% endblock %}
 {% block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem">
     <a class="nhsuk-back-link__link" href="javascript:history.back();">
@@ -25,7 +25,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/rare-disease/referral", text: "
             </div>
         </dl>
 
-        <h4>{{ req.session.data['rare-relationship-picker'] }}</h4>
+        <h4>Mother</h4>
 
         <dl class="nhsuk-summary-list">
             <div class="nhsuk-summary-list__row">
@@ -66,17 +66,17 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/rare-disease/referral", text: "
 
             <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">Relationship</dt>
-                <dd class="nhsuk-summary-list__value">{{ req.session.data['rare-relationship-picker'] }}</dd>
+                <dd class="nhsuk-summary-list__value">Mother</dd>
                 <dd class="nhsuk-summary-list__actions">
-                    <a href="relationship">Change</a>
+                    <a href="">Change</a>
                 </dd>
             </div>
 
             <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">Disease status</dt>
-                <dd class="nhsuk-summary-list__value">{{ req.session.data['rare-family-member-disease-status'] }}</dd>
+                <dd class="nhsuk-summary-list__value">Affected</dd>
                 <dd class="nhsuk-summary-list__actions">
-                    <a href="disease-status">Change</a>
+                    <a href="">Change</a>
                 </dd>
             </div>
         </dl>
@@ -85,7 +85,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/rare-disease/referral", text: "
             <a
                 class="nhsuk-button nhsuk-button--secondary"
                 data-module="nhsuk-button"
-                href="/rare-disease/referral/family/patient-search"
+                href="/v1/referral/family/patient-search"
                 draggable="false"
                 role="button"
             >
@@ -97,7 +97,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/rare-disease/referral", text: "
             <a
                 class="nhsuk-button"
                 data-module="nhsuk-button"
-                href="/rare-disease/referral/care-team"
+                href="/v1/referral/care-team"
                 draggable="false"
                 role="button"
             >
