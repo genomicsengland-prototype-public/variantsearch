@@ -10,11 +10,11 @@ NHS.UK prototype kit
 {{ breadcrumb({
 items: [
 {
-href: "/rare-disease/referral",
+href: "/v1/referral",
 text: "Referral #123456789"
 }
 ],
-href: "/rare-disease/referral/family",
+href: "/v1/referral/family",
 text: "Family"
 }) }}
 {% endblock %}
@@ -37,11 +37,10 @@ text: "Family"
   <div class="nhsuk-grid-column-two-thirds">
     <h2 class="nhsuk-u-margin-bottom-4">Disease status</h2>
 
-    <form action="/rare-disease/referral/family/relationship" method="post">
     <div class="nhsuk-form-group">
       <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-          Is 	Martha Carson affected by {{ req.session.data['rare-clinical-indication'] }}?
+          Is 	Martha Carson affected by intellectual disability?
         </legend>
 
         <!-- <div class="nhsuk-hint" id="example-hint">
@@ -50,29 +49,29 @@ text: "Family"
 
         <div class="nhsuk-radios">
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="rare-family-member-disease-status-q-1" name="rare-family-member-disease-status" type="radio" value="Affected">
-            <label class="nhsuk-label nhsuk-radios__label" for="rare-family-member-disease-status-q-1">
+            <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="Affected" >
+            <label class="nhsuk-label nhsuk-radios__label" for="example-1">
               Affected
             </label>
           </div>
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="rare-family-member-disease-status-q-2" name="rare-family-member-disease-status" type="radio" value="Unaffected">
-            <label class="nhsuk-label nhsuk-radios__label" for="rare-family-member-disease-status-q-2">
+            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="Unaffected">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
               Unaffected
             </label>
           </div>
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="rare-family-member-disease-status-q-3" name="rare-family-member-disease-status" type="radio" value="Uncertain">
-            <label class="nhsuk-label nhsuk-radios__label" for="rare-family-member-disease-status-q-3">
+            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="Uncertain">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
               Uncertain
             </label>
           </div>
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="rare-family-member-disease-status-q-4" name="rare-family-member-disease-status" type="radio" value="Unknown">
-            <label class="nhsuk-label nhsuk-radios__label" for="rare-family-member-disease-status-q-4">
+            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="Unknown">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
               Unknown
             </label>
           </div>
@@ -88,11 +87,10 @@ text: "Family"
     </div> -->
 
     <div>
-      <button class="nhsuk-button" data-module="nhsuk-button" draggable="false" role="button" type="submit">
+      <a class="nhsuk-button" data-module="nhsuk-button" href="relationship" draggable="false" role="button">
         Continue
-      </button>
+      </a>
     </div>
   </div>
-  </form>
 </div>
 {% endblock %}

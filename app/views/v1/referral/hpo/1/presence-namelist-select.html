@@ -1,0 +1,344 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Check your answers template - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container-fluid">
+
+      <h1 class="nhsuk-heading-xl">
+        HPO Terms
+      </h1>
+
+      <h2 class="nhsuk-heading-l">
+        Term presence
+      </h2>
+
+      <span class="nhsuk-caption-m">Proband</span>
+      <h3 class="nhsuk-heading-m  nhsuk-u-margin-bottom-2">
+        Jay Smith
+      </h3>
+
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            HPO ONE <span class="nhsuk-u-visually-hidden"> presence for NameSmith</span>
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <div class="nhsuk-radios nhsuk-radios--inline">
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="true">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                  Present
+                </label>
+              </div>
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                  Absent
+                </label>
+              </div>
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="null">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                  Not recorded
+                </label>
+              </div>
+        
+            </div>
+          </dd>
+      
+          <!-- <dd class="nhsuk-summary-list__actions">
+      
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden"> name</span>
+            </a>
+      
+          </dd> -->
+      
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            HPO TWO <span class="nhsuk-u-visually-hidden"> presence for NameSmith</span>
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <div class="nhsuk-radios nhsuk-radios--inline">
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="true">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                  Present
+                </label>
+              </div>
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                  Absent
+                </label>
+              </div>
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="null">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                  Not recorded
+                </label>
+              </div>
+        
+            </div>
+          </dd>
+      
+          <!-- <dd class="nhsuk-summary-list__actions">
+      
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden"> name</span>
+            </a>
+      
+          </dd> -->
+      
+        </div>
+
+      </dl>
+
+      <span class="nhsuk-caption-m">Mother</span>
+
+      <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">
+        Jane Smith
+      </h3>
+
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            HPO ONE <span class="nhsuk-u-visually-hidden"> presence for NameSmith</span>
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <div class="nhsuk-radios nhsuk-radios--inline">
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="true">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                  Present
+                </label>
+              </div>
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                  Absent
+                </label>
+              </div>
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="null">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                  Not recorded
+                </label>
+              </div>
+        
+            </div>
+          </dd>
+      
+          <!-- <dd class="nhsuk-summary-list__actions">
+      
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden"> name</span>
+            </a>
+      
+          </dd> -->
+      
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            HPO TWO <span class="nhsuk-u-visually-hidden"> presence for NameSmith</span>
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <div class="nhsuk-radios nhsuk-radios--inline">
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="true">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                  Present
+                </label>
+              </div>
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                  Absent
+                </label>
+              </div>
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="null">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                  Not recorded
+                </label>
+              </div>
+        
+            </div>
+          </dd>
+      
+          <!-- <dd class="nhsuk-summary-list__actions">
+      
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden"> name</span>
+            </a>
+      
+          </dd> -->
+      
+        </div>
+
+      </dl>
+
+      <span class="nhsuk-caption-m">Father</span>
+      <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">
+        James Smith
+      </h3>
+
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            HPO ONE <span class="nhsuk-u-visually-hidden"> presence for NameSmith</span>
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <div class="nhsuk-radios nhsuk-radios--inline">
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="true">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                  Present
+                </label>
+              </div>
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                  Absent
+                </label>
+              </div>
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="null">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                  Not recorded
+                </label>
+              </div>
+        
+            </div>
+          </dd>
+      
+          <!-- <dd class="nhsuk-summary-list__actions">
+      
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden"> name</span>
+            </a>
+      
+          </dd> -->
+      
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            HPO TWO <span class="nhsuk-u-visually-hidden"> presence for NameSmith</span>
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <div class="nhsuk-radios nhsuk-radios--inline">
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="true">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                  Present
+                </label>
+              </div>
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                  Absent
+                </label>
+              </div>
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="null">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                  Not recorded
+                </label>
+              </div>
+        
+            </div>
+          </dd>
+      
+          <!-- <dd class="nhsuk-summary-list__actions">
+      
+            <a href="#">
+              Change<span class="nhsuk-u-visually-hidden"> name</span>
+            </a>
+      
+          </dd> -->
+      
+        </div>
+
+      </dl>
+
+
+
+      <div class="nhsuk-form-group">      
+      
+        <form action="presence-namelist-select" method="post" class="form">
+          <h2 class="nhsuk-label-wrapper">
+            <label class="nhsuk-label nhsuk-label--l" for="HPO-terms">
+              Add more HPO terms
+            </label>
+          </h2>
+
+          <div class="nhsuk-hint" id="nhs-number-hint">
+            Search for an HPO term by name or code.
+          </div>
+
+          <select id="hpo-picker">
+            <option value="hpo">Search HPO terms</option>
+            <option value="r-cy">Renal Cyst [code]</option>
+            <option value="r-hy">Renal Hypoplasia [code]</option>
+            <option value="r-pl">Renal plasia [code]</option>
+          </select>
+
+          <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
+          <script type="text/javascript" src="/js/accessible-autocomplete.min.js">
+          </script>
+
+          <script>
+            accessibleAutocomplete.enhanceSelectElement({
+              defaultValue: '',
+              selectElement: document.querySelector('#hpo-picker')
+            }) 
+          </script>
+
+          <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-4" data-module="nhsuk-button" type="submit">
+            Add Selected HPO term
+          </button>
+
+        </form>
+      </div>
+
+      <p>Continue to the next section when all terms have been added and presence is noted for each family member.</p>
+
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Confirm and continue
+      </button>
+
+
+    </div>
+  </div>
+{% endblock %}

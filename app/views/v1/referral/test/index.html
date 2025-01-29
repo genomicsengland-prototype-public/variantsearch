@@ -1,0 +1,163 @@
+{% set textHtml %}
+{% from 'textarea/macro.njk' import textarea %}
+{{ textarea({
+name: "example", id: "example", label: { text: "Details of why this referral
+considered urgent. "},
+hint: {
+    text: "There is currently no urgent WGS pathway. It may be possible to prioritise some cases."
+   } }) }}
+{% endset -%}
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+NHS.UK prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+
+{{ breadcrumb({
+items: [
+{
+href: "/v1/referral",
+text: "Referral #123456789"
+}
+],
+href: "/v1/referral/test",
+text: "Test request"
+}) }}
+{% endblock %}
+
+{% block outerContent %}
+<div class="nhsuk-back-link" style="margin-top: 2rem">
+    <a class="nhsuk-back-link__link" href="javascript:history.back();">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            aria-hidden="true" height="24" width="24">
+            <path
+                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+            </path>
+        </svg>
+        Go back</a>
+</div>
+{% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h2 class: nhsuk-fieldset__legend--l>Test request</h2>
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="input-with-hint-text">
+                Clinical Indication and code
+            </label>
+<!--
+            <div class="nhsuk-hint" id="input-with-hint-text-hint">
+                Search by clinical indication or code listed in the
+                <a href="#">Test directory</a>
+            </div> -->
+
+            <select id="org-picker" value="">
+                <option></option>
+                <option value="R14.1">Acutely unwell children with a likely monogenic disorder - R14.1</option>
+                <option value="R56.3">Adult onset dystonia, chorea or related movement disorder - R56.3</option>
+                <option value="R60.3">Adult onset hereditary spastic paraplegia - R60.3</option>
+                <option value="R62.2">Adult onset leukodystrophy - R62.2</option>
+                <option value="R58.4">Adult onset neurodegenerative disorder - R58.4</option>
+                <option value="R83.3">Arthrogryposis - R83.3</option>
+                <option value="R107.1">Bardet Biedl syndrome - R107.1</option>
+                <option value="R31.3">Bilateral congenital or childhood onset cataracts - R31.3</option>
+                <option value="R84.4">Cerebellar anomalies - R84.4</option>
+                <option value="R87.3">Cerebral malformation - R87.3</option>
+                <option value="R57.5">Childhood onset dystonia, chorea or related movement disorder - R57.5</option>
+                <option value="R61.4">Childhood onset hereditary spastic paraplegia - R61.4</option>
+                <option value="R109.3">Childhood onset leukodystrophy - R109.3</option>
+                <option value="R193.4">Cystic renal disease - R193.4</option>
+                <option value="R59.3">Early onset or syndromic epilepsy - R59.3</option>
+                <option value="R21.2">Fetal anomalies with a likely genetic cause - R21.2</option>
+                <option value="R412.1">Fetal anomalies with a likely genetic cause - non urgent - R412.1</option>
+                <option value="R54.3">Hereditary ataxia with onset in adulthood - R54.3</option>
+                <option value="R55.4">Hereditary ataxia with onset in childhood - R55.4</option>
+                <option value="R78.4">Hereditary neuropathy or pain disorder - R78.4</option>
+                <option value="R85.2">Holoprosencephaly - NOT chromosomal - R85.2</option>
+                <option value="R86.3">Hydrocephalus - R86.3</option>
+                <option value="R69.5">Hypotonic infant - R69.5</option>
+                <option value="R29.4">Intellectual disability - R29.4</option>
+                <option value="R98.2">Likely inborn error of metabolism - R98.2</option>
+                <option value="R67.1">Monogenic hearing loss - R67.1</option>
+                <option value="R143.4">Neonatal diabetes - R143.4</option>
+                <option value="R381.2">Other rare neuromuscular disorders - R381.2</option>
+                <option value="R27.3">Paediatric disorders - R27.3</option>
+                <option value="R135.2">Paediatric or syndromic cardiomyopathy - R135.2</option>
+                <option value="R312.1">Parental sequencing for lethal autosomal recessive disorders - R312.1</option>
+                <option value="R236.1">Pigmentary skin disorders - R236.1</option>
+                <option value="R63.1">Possible mitochondrial disorder - nuclear genes - R63.1</option>
+                <option value="R15.4">Primary immunodeficiency or monogenic inflammatory bowel disease - R15.4</option>
+                <option value="R100.3">Rare syndromic craniosynostosis or isolated multisuture synostosis - R100.3
+                </option>
+                <option value="R32.2">Retinal disorders - R32.2</option>
+                <option value="R88.3">Severe microcephaly - R88.3</option>
+                <option value="R104.3">Skeletal dysplasia - R104.3</option>
+                <option value="R104.4">Skeletal dysplasia - R104.4</option>
+                <option value="R36.2">Structural eye disease - R36.2</option>
+                <option value="R89.3">Ultra-rare and atypical monogenic disorders - R89.3</option>
+                <option value="R441.1">Unexplained death in infancy and sudden unexplained death in childhood - R441.1
+                </option>
+                <option value="R257.2">Unexplained young onset end-stage renal disease - R257.2</option>
+                <option value="R169.1">Acute intermittent porphyria - R169.1</option>
+                <option value="R375.1">Family follow-up testing to aid variant interpretation - R375.1</option>
+                <option value="R431.1">Genome-wide DNA Methylation Profiling to Aid Variant Interpretation - R431.1
+                </option>
+                <option value="R377.1">Intellectual disability – microarray only - R377.1</option>
+                <option value="R331.1">Intestinal failure or congenital diarrhoea - R331.1</option>
+                <option value="R352.1">Mitochondrial DNA maintenance disorder - R352.1</option>
+                <option value="R394.1">Mitochondrial neurogastrointestinal encephalopathy - R394.1</option>
+                <option value="R417.2">Multi Locus Imprinting Disorder (MLID) - R417.2</option>
+                <option value="R202.1">Tubulointerstitial kidney disease - R202.1</option>
+                <option value="R442.1">Variant re-interpretation - R442.1</option>
+            </select>
+
+            <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
+            <script type="text/javascript" src="/js/accessible-autocomplete.min.js"></script>
+
+            <script>
+                accessibleAutocomplete.enhanceSelectElement({
+                    defaultValue: "",
+                    selectElement: document.querySelector("#org-picker"),
+                });
+            </script>
+        </div>
+
+        {% from 'radios/macro.njk' import radios %} {% from 'fieldset/macro.njk'
+        import fieldset %} {% from 'hint/macro.njk' import hint %} {% set
+        hintHtml -%}
+        <label for="test-req" class="nhsuk-u-margin-bottom-2">
+
+        {%- endset %} {% set hintHtmlCi -%}
+        <p for="test-req" class="nhsuk-u-margin-bottom-2">
+            Search by clinical indication or code listed in the
+            <a href="#">Test directory</a>
+        </p>
+        {%- endset %}
+
+        {{
+            radios({
+                idPrefix: "test-req",
+                name: "test-req",
+                fieldset: { legend: { text: "Is this test clinically urgent?", isPageHeading: false } },
+                hint: { html: hintHtml },
+                items: [ { value: "no", text: "No", checked: true }, { value: "yes", text: "Yes", conditional: { html: textHtml } } ]
+            })
+        }}
+
+
+        <a
+            class="nhsuk-button"
+            data-module="nhsuk-button"
+            href="/v1/referral/test/details"
+            draggable="false"
+            role="button"
+        >
+            Continue
+        </a>
+    </div>
+</div>
+{% endblock %}

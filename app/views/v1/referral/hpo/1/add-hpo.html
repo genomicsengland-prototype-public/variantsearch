@@ -1,7 +1,7 @@
 {% extends 'layout.html' %} {% set mainClasses = "nhsuk-main-wrapper--s" %} {%
 block pageTitle %} Question page {% endblock %} {% block beforeContent %} {%
 from 'breadcrumb/macro.njk' import breadcrumb %} {{ breadcrumb({ items: [ {
-href: "/rare-disease/referral", text: "Referral #123456789" } ], href: "/rare-disease/referral/hpo/1",
+href: "/v1/referral", text: "Referral #123456789" } ], href: "/v1/referral/hpo/1",
 text: "HPO terms" }) }} {% endblock %} {% block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem">
     <a class="nhsuk-back-link__link" href="javascript:history.back();">
@@ -34,7 +34,7 @@ text: "HPO terms" }) }} {% endblock %} {% block outerContent %}
                         Type to search HPO term
                     </div>
 
-                    <select id="rare-hpo-picker" title="Select a HPO term" name="rare-hpo-picker">
+                    <select id="hpo-picker" name="hpo-picker">
                         <option></option>
                         <option>Intellectual disability – profound [HP:0002187]</option>
                         <option>Intellectual disability, mild [HP:0001256]</option>
@@ -58,7 +58,7 @@ text: "HPO terms" }) }} {% endblock %} {% block outerContent %}
                         accessibleAutocomplete.enhanceSelectElement({
                             defaultValue: "",
                             selectElement:
-                                document.querySelector("#rare-hpo-picker"),
+                                document.querySelector("#hpo-picker"),
                         });
                     </script>
 

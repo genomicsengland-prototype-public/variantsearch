@@ -12,11 +12,11 @@ Check your answers template - NHS.UK prototype kit
 {{ breadcrumb({
 items: [
 {
-href: "/rare-disease/referral",
+href: "/v1/referral",
 text: "Referral #123456789"
 }
 ],
-href: "/rare-disease/referral/hpo/1",
+href: "/v1/referral/hpo/1",
 text: "HPO terms"
 }) }}
 {% endblock %}
@@ -37,16 +37,13 @@ text: "HPO terms"
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    {% if data['rare-hpo-picker'] %}
-      {% set hpoTermArray = data['rare-hpo-picker'].split ('[') %}
+{% set hpoTermArray = data['hpo-picker'].split ('[') %}
     <h1 class="nhsuk-heading-l">
         Has {{ hpoTermArray[0]|trim }}, been observed in test participants?
     </h1>
-    {% else %}
-    <h1 class="nhsuk-heading-l">Has HPO term, been observed in test participants?</h1>
-    {% endif %}
-    <form action="/rare-disease/referral/hpo/1" method="post" class="form">
+
     <div class="nhsuk-form-group">
+      <form action="summary-by-term" method="post" class="form">
 
         <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-6">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
@@ -61,32 +58,31 @@ text: "HPO terms"
 
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="rare-hpo-question-observed-1" name="rare-hpo-question-observed-proband" type="radio"
+              <input class="nhsuk-radios__input" id="hpo-question-observed-1" name="hpo-question-observed-proband" type="radio"
                 value="Present">
-              <label class="nhsuk-label nhsuk-radios__label" for="rare-hpo-question-observed-1">
+              <label class="nhsuk-label nhsuk-radios__label" for="hpo-question-observed-1">
                 Present
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="rare-hpo-question-observed-2" name="rare-hpo-question-observed-proband" type="radio"
+              <input class="nhsuk-radios__input" id="example-inline-2" name="hpo-question-observed-proband" type="radio"
                 value="Absent">
-              <label class="nhsuk-label nhsuk-radios__label" for="rare-hpo-question-observed-2">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
                 Absent
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="rare-hpo-question-observed-3" name="hpo-question-observed-proband" type="radio"
+              <input class="nhsuk-radios__input" id="example-inline-3" name="hpo-question-observed-proband" type="radio"
                 value="Unknown">
-              <label class="nhsuk-label nhsuk-radios__label" for="rare-hpo-question-observed-3">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-3">
                 Unknown
               </label>
             </div>
           </div>
         </fieldset>
 
-        {% if req.session.data['rare-relationship-picker'] %}
         <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-6">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h2 class="nhsuk-fieldset__heading nhsuk-heading-m">
@@ -95,42 +91,40 @@ text: "HPO terms"
           </legend>
 
           <div class="nhsuk-hint" id="input-with-hint-text-hint">
-            {{ req.session.data['rare-relationship-picker'] }}
+            Mother
           </div>
 
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="rare-hpo-question-observed-4" name="rare-hpo-question-observed-family1" type="radio"
+              <input class="nhsuk-radios__input" id="example-inline-4" name="hpo-question-observed-family1" type="radio"
                 value="Present">
-              <label class="nhsuk-label nhsuk-radios__label" for="rare-hpo-question-observed-4">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-4">
                 Present
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="rare-hpo-question-observed-5" name="hpo-question-observed-family1" type="radio"
+              <input class="nhsuk-radios__input" id="example-inline-5" name="hpo-question-observed-family1" type="radio"
                 value="Absent">
-              <label class="nhsuk-label nhsuk-radios__label" for="rare-hpo-question-observed-5">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-5">
                 Absent
               </label>
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="rare-hpo-question-observed-6" name="hpo-question-observed-family1" type="radio"
+              <input class="nhsuk-radios__input" id="example-inline-6" name="hpo-question-observed-family1" type="radio"
                 value="Unknown">
-              <label class="nhsuk-label nhsuk-radios__label" for="rare-hpo-question-observed-6">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-6">
                 Unknown
               </label>
             </div>
           </div>
         </fieldset>
-        {% endif %}
     </div>
 
     <button class="nhsuk-button  nhsuk-u-margin-top-4" data-module="nhsuk-button" type="submit">
       Confirm
     </button>
-    </form>
   </div>
 </div>
 {% endblock %}
