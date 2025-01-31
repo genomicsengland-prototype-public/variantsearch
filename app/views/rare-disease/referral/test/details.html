@@ -25,15 +25,15 @@ prototype kit {% endblock %} {% block beforeContent %} {% from
             legend: { text: "What was the patient’s (proband’s) age of onset?",
             classes: "nhsuk-label--s", isPageHeading: false } }, hint: { text:
             "For example, 1 year 6 months or 18 months" }, items: [ { label:
-            "Years", name: "year", classes: "nhsuk-input--width-4" }, { label:
-            "Months", name: "month", classes: "nhsuk-input--width-4" } ] }) }}
+            "Years", name: "year", classes: "nhsuk-input--width-4", value: req.session.data['rare-date-onset-year'] },
+            { label: "Months", name: "month", classes: "nhsuk-input--width-4", value: req.session.data['rare-date-onset-month'] } ] }) }}
         </div>
         <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
             {{ radios({ idPrefix: "rare-disease-penetrance", name: "rare-disease-penetrance", fieldset: {
             legend: { text: "Disease penetrance", classes:
             "nhsuk-fieldset__legend--s", isPageHeading: false } }, items: [ {
-            value: "Complete", text: "Complete" }, { value: "Incomplete", text:
-            "Incomplete" } ] }) }}
+            value: "Complete", text: "Complete", checked: req.session.data['rare-disease-penetrance'] === 'Complete' }, { value: "Incomplete", text:
+            "Incomplete", checked: req.session.data['rare-disease-penetrance'] === 'Incomplete' } ] }) }}
         </div>
         <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
             {{ radios({ idPrefix: "rare-disease-suspected", name: "rare-disease-suspected", fieldset: {
@@ -41,8 +41,8 @@ prototype kit {% endblock %} {% block beforeContent %} {% from
             suspected or confirmed?", classes: "nhsuk-fieldset__legend--s",
             "idPrefix": "diseaseSuspected",
             "name": "diseaseSuspected",
-            isPageHeading: false } }, items: [ { value: "Yes", text: "Yes" }, {
-            value: "No", text: "No" } ] }) }}
+            isPageHeading: false } }, items: [ { value: "Yes", text: "Yes", checked: req.session.data['rare-disease-suspected'] === 'Yes'}, {
+            value: "No", text: "No", checked: req.session.data['rare-disease-suspected'] === 'No' } ] }) }}
         </div>
         <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
             <button

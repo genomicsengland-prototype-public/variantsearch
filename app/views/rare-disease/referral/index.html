@@ -398,16 +398,18 @@ endblock %} {% block outerContent %}
         </div>
 
         {% if req.session.data['hpoCollection'] and req.session.data['hpoCollection'].length > 0 %}
-        <dl class="nhsuk-summary-list">
-            {% for entry in data['hpoCollection'] -%}
-                {% set hpoTermArray = entry['hpo-term'].split ('[') %}
-                <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">HPO terms</dt>
-                    <dd class="nhsuk-summary-list__value">{{ hpoTermArray[0] }}</dd>
-                    <dd class="nhsuk-summary-list__actions">
-                        <a href="/rare-disease/referral/glh">Change</a>
-                    </dd>
-                </div>
+       <dl class="nhsuk-summary-list">
+            {% for entry in req.session.data['hpoCollection'] -%}
+                {% if entry['hpo-term'] !== undefined %}
+                    {% set hpoTermArray = entry['hpo-term'].split ('[') %}
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">HPO terms</dt>
+                        <dd class="nhsuk-summary-list__value">{{ hpoTermArray[0] }}</dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            <a href="/rare-disease/referral/hpo/1/add-hpo/{{loop0}}">Change</a>
+                        </dd>
+                    </div>
+                {% endif %}
             {%- endfor %}
         </dl>
         {% endif %}

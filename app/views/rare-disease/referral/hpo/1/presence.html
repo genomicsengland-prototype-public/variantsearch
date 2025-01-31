@@ -46,6 +46,7 @@ text: "HPO terms"
     <h1 class="nhsuk-heading-l">Has HPO term, been observed in test participants?</h1>
     {% endif %}
     <form action="/rare-disease/referral/hpo/1" method="post" class="form">
+      <input type="hidden" name="posting-hpo" value="true" />
     <div class="nhsuk-form-group">
 
         <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-6">
@@ -108,7 +109,7 @@ text: "HPO terms"
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="rare-hpo-question-observed-5" name="hpo-question-observed-family1" type="radio"
+              <input class="nhsuk-radios__input" id="rare-hpo-question-observed-5" name="rare-hpo-question-observed-family1" type="radio"
                 value="Absent">
               <label class="nhsuk-label nhsuk-radios__label" for="rare-hpo-question-observed-5">
                 Absent
@@ -116,7 +117,7 @@ text: "HPO terms"
             </div>
 
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="rare-hpo-question-observed-6" name="hpo-question-observed-family1" type="radio"
+              <input class="nhsuk-radios__input" id="rare-hpo-question-observed-6" name="rare-hpo-question-observed-family1" type="radio"
                 value="Unknown">
               <label class="nhsuk-label nhsuk-radios__label" for="rare-hpo-question-observed-6">
                 Unknown

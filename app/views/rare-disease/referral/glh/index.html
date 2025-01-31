@@ -27,19 +27,26 @@ block outerContent %}
             Your GLH has been auto-selected. Delete and update if this is not
             correct.
         </div>
-
+        {%- 
+            set glhList = [
+            'North East and Yorkshire Genomic Laboratory Hub (GLH)',
+            'South East Genomic Laboratory Hub (GLH)',
+            'Central and South Genomic Laboratory Hub (GLH)',
+            'East Genomic Laboratory Hub (GLH)',
+            'North West Genomic Laboratory Hub (GLH)',
+            'North Thames Genomic Laboratory Hub (GLH)',
+            'South East Genomic Laboratory Hub (GLH)',
+            'South West Genomic Laboratory Hub (GLH)'
+            ]
+            %}
         <select
         id="rare-glh-picker"
         name="rare-glh-picker"
         title="Pick a Genomic Laboratory Hub (GLH)">
-            <option>North East and Yorkshire Genomic Laboratory Hub (GLH)</option>
-            <option>South East Genomic Laboratory Hub (GLH)</option>
-            <option>Central and South Genomic Laboratory Hub (GLH)</option>
-            <option>East Genomic Laboratory Hub (GLH)</option>
-            <option>North West Genomic Laboratory Hub (GLH)</option>
-            <option>North Thames Genomic Laboratory Hub (GLH)</option>
-            <option>South East Genomic Laboratory Hub (GLH)</option>
-            <option>South West Genomic Laboratory Hub (GLH)</option>
+        {%- for glh in glhList %}
+        {%- set selected = ' selected' if req.session.data['rare-glh-picker'] === glh else '' %}
+        <option value="{{ glh }}"{{ selected }}>{{ glh }}</option>
+        {%- endfor %}
         </select>
 
         <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />

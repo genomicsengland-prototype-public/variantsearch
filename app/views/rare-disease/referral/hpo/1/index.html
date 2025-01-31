@@ -30,10 +30,12 @@ text: "HPO terms" }) }} {% endblock %} {% block outerContent %}
                     members being tested.
                 </p>
 
-                {% if data['hpoCollection'] %}
+                {{ data['hpoCollection'] | dump }}
+                {% if data['hpoCollection'] and data['hpoCollection'].length > 0 %}
                 <dl class="nhsuk-summary-list">
 
                         {% for entry in data['hpoCollection'] %}
+                            {% if entry['hpo-term'] !== undefined %}
                             {% set hpoTermArray = entry['hpo-term'].split ('[') %}
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key" style="width: 24rem;">
@@ -50,7 +52,7 @@ text: "HPO terms" }) }} {% endblock %} {% block outerContent %}
                                     </a>
                                 </dd>
                             </div>
-        
+                            {% endif %}
         
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key" style="width: 14rem">
@@ -102,7 +104,7 @@ text: "HPO terms" }) }} {% endblock %} {% block outerContent %}
                     <a
                         class="nhsuk-button nhsuk-u-margin-top-4"
                         data-module="nhsuk-button"
-                        href="/rare-disease/referral/test"
+                        href="/rare-disease/referral"
                     >
                         Continue
                     </a>
