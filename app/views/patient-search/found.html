@@ -1,6 +1,11 @@
 {% extends 'layout.html' %} {% block pageTitle %} NHS.UK prototype kit {%
 endblock %}
 
+{% set ignorePatientData = true %}
+{% block header %}
+{{ super() }}
+{% endblock %}
+
 {% block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem">
   <a class="nhsuk-back-link__link" href="javascript:history.back();">
