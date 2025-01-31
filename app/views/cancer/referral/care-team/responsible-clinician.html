@@ -29,7 +29,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
     <form
       name="responsible-clinician-form"
       id="responsible-clinician-form"
-      action="summary"
+      action="/cancer/referral/glh"
       method="post"
     >
       {{ input({ label: { text: "First name" }, id: "fname", name: "fname",
@@ -101,7 +101,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
           draggable="false"
           role="button"
         >
-          Continue
+          Save and continue
         </button>
       </div>
     </form>
