@@ -41,6 +41,44 @@ router.get("/rare-disease/referral/hpo/1/remove/:id", (req, res) => {
     }
     res.redirect("/rare-disease/referral/hpo/1")
   })
+
+router.get('/rare-disease/referral/edit', (req, res) => {
+    // req.session.data['hpoCollection'] = []
+
+    patientData = {
+        'rare-clinical-indication': 'Intellectual disability - R29.4',
+        'test-req': 'no',
+        'rare-date-onset-year': 4,
+        'rare-date-onset-month': 1,
+        'rare-disease-penetrance': 'Incomplete',
+        'rare-family-member-disease-status': 'Affected',
+        'rare-relationship-picker': 'Mother',
+        'rare-care-team': 'Great Ormond Street Hospital for Children NHS Foundation Trust',
+        'rare-fname': 'Dr Sue',
+        'rare-lname': 'Donim',
+        'rare-email': 'Sue.donim@nhs.net',
+        'rare-phone': '02089655244',
+        'rare-org-contact': 'no',
+        'rare-conditional_email': 'admin_GOSH_genetics@nhs.net',
+        'rare-glh-picker': 'South East Genomic Laboratory Hub (GLH)',
+        'hpoCollection': [
+            {
+            'hpo-term': 'Profound global developmental delay [HP:0012736]',
+            'observed-proband': 'Present', 
+            'observed-family-member': 'Absent'
+        },
+        {
+            'hpo-term': 'Intellectual disability – profound [HP:0002187]',
+            'observed-proband': 'Absent', 
+            'observed-family-member': 'Present',
+        }
+        ],
+    }
+
+    req.session.data = patientData;
+
+    res.redirect('/rare-disease/referral')
+})
   
     
 // Add your routes here - above the module.exports line
