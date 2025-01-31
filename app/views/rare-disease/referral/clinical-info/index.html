@@ -12,7 +12,7 @@ endblock %} {% block outerContent %}
         <div class="nhsuk-form-group">
             {% from 'textarea/macro.njk' import textarea %} {{ textarea({ name:
             "rare-notes", id: "rare-notes", label: { text: " Include any previous molecure
-            testing with dates and any other pertinent clinical information." }
+            testing with dates and any other pertinent clinical information." }, value: req.session.data['rare-notes']
             }) }}
         </div>
 
