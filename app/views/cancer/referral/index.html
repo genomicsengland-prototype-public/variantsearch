@@ -33,7 +33,6 @@ endblock %} {% block outerContent %}
     >
       <h4 class="nhsuk-u-margin-bottom-0">Patient (proband)</h4>
 
-      <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">Completed</p>
     </div>
 
     <dl class="nhsuk-summary-list">
@@ -78,9 +77,7 @@ endblock %} {% block outerContent %}
       <h4 class="nhsuk-u-margin-bottom-0">
         <a href="/cancer/referral/test">Test request</a>
       </h4>
-      {% if req.session.data['clinical-indication-code'] %}
-      <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">Completed</p>
-      {% else %}
+      {% if not req.session.data['clinical-indication-code'] %}
       <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
         Not started
       </strong>
@@ -119,10 +116,8 @@ endblock %} {% block outerContent %}
         <a href="/cancer/referral/clinical-info">Clinical information</a>
       </h4>
 
-      {% if req.session.data['notes'] %}
-      <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">Completed</p>
-      {% else %}
-      <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
+      {% if not req.session.data['notes'] %}
+        <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
         Not started
       </strong>
       {% endif %}
@@ -150,9 +145,7 @@ endblock %} {% block outerContent %}
       <h4 class="nhsuk-u-margin-bottom-0">
         <a href="/cancer/referral/tumour-type">Tumour type</a>
       </h4>
-      {% if req.session.data['tumour-type'] %}
-      <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">Completed</p>
-      {% else %}
+      {% if not req.session.data['tumour-type'] %}
       <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
         Not started
       </strong>
@@ -283,9 +276,7 @@ endblock %} {% block outerContent %}
         <a href="/cancer/referral/tumour-samples">Tumour sample</a>
       </h4>
 
-      {% if req.session.data['tumour-sample-type'] %}
-      <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">Completed</p>
-      {% else %}
+      {% if not req.session.data['tumour-sample-type'] %}
       <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
         Not started
       </strong>
@@ -375,9 +366,7 @@ endblock %} {% block outerContent %}
         <a href="/cancer/referral/germline-samples">Germline sample</a>
       </h4>
 
-      {% if req.session.data['germline-sampleId'] %}
-        <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">Completed</p>
-      {% else %}
+      {% if not req.session.data['germline-sampleId'] %}
         <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
             Not started
         </strong>
@@ -473,9 +462,7 @@ endblock %} {% block outerContent %}
         <a href="/cancer/referral/care-team">Care team</a>
       </h4>
 
-      {% if req.session.data['care-team'] %}
-        <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">Completed</p>
-      {% else %}
+      {% if not req.session.data['care-team'] %}
         <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
             Not started
         </strong>
@@ -547,9 +534,7 @@ endblock %} {% block outerContent %}
         <a href="/cancer/referral/glh">GLH</a>
       </h4>
 
-      {% if req.session.data['glh-picker'] %}
-        <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">Completed</p>
-      {% else %}
+      {% if not req.session.data['glh-picker'] %}
         <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
             Not started
         </strong>
