@@ -451,7 +451,6 @@ caption {
   margin: 0 16px; /* [1] */
   max-width: 960px; /* [2] */
   /* [4] */
-  /* padding-top: 80px */
 }
 @media (min-width: 48.0625em) {
   .nhsuk-width-container {
@@ -4435,35 +4434,6 @@ b {
   background-color: #005eb8;
 }
 
-.gel-header {
-  align-content: center;
-}
-
-.gel-logout-btn {
-  color: #FFFFFF;
-  background: #005EB8;
-  border-radius: 4px;
-  border: 1px solid #FFF;
-  padding: 16px;
-}
-
-.nhsuk-second-header__patient-data {
-  background: #D8DDE0;
-  padding: 12px 0;
-
-}
-
-.nhsuk-second-header__patient-data__container {
-  display: flex;
-  justify-content: left;
-  margin: auto;
-  max-width: 960px;
-}
-
-.nhsuk-second-header__patient-data__container > p {
-  margin: 0 24px 0 0;
-}
-
 .nhsuk-header__container {
   margin: 0 16px; /* [1] */
   max-width: 960px; /* [2] */
@@ -7495,4 +7465,39 @@ b {
     font-size: 14pt;
     line-height: 1.2;
   }
+}
+
+.gel-header {
+  align-content: center;
+}
+
+.gel-logout-btn {
+  color: #FFFFFF;
+  background: #005EB8;
+  border-radius: 4px;
+  border: 1px solid #FFF;
+  padding: 16px;
+}
+
+.nhsuk-second-header__patient-data {
+  background: #D8DDE0;
+  padding: 12px 0;
+}
+
+.nhsuk-second-header__patient-data__container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-width: 960px;
+  padding-left: 100px;
+}
+
+.nhsuk-second-header__patient-data__container > p {
+  margin: 0 24px 0 0;
+}
+
+.nhsuk-header__logo--only .nhsuk-header__service-name {
+  padding: 6px 0 6px 16px;
+  margin-left: 16px;
+  border-left: solid 1px #fff;
 }
