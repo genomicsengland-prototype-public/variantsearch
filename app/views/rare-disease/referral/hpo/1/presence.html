@@ -47,8 +47,15 @@ text: "HPO terms"
     {% endif %}
     <form action="/rare-disease/referral/hpo/1" method="post" class="form">
       <input type="hidden" name="posting-hpo" value="true" />
+      {%-
+        set currentHpo = undefined
+        %}
     <div class="nhsuk-form-group">
-
+      {%- if data['hpoCollection'] !== undefined and data['hpoCollection'][req.query.hpoId] !== undefined %}
+      {%-
+        set currentHpo = data['hpoCollection'][req.query.hpoId]
+        %}
+      {%- endif %}
         <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-6">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h2 class="nhsuk-fieldset__heading nhsuk-heading-m">
@@ -63,6 +70,7 @@ text: "HPO terms"
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="rare-hpo-question-observed-1" name="rare-hpo-question-observed-proband" type="radio"
+                {{ " checked" if currentHpo and currentHpo['observed-proband'] and currentHpo['observed-proband'] == 'Present' }}
                 value="Present">
               <label class="nhsuk-label nhsuk-radios__label" for="rare-hpo-question-observed-1">
                 Present
@@ -71,6 +79,7 @@ text: "HPO terms"
 
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="rare-hpo-question-observed-2" name="rare-hpo-question-observed-proband" type="radio"
+              {{ " checked" if currentHpo and currentHpo['observed-proband'] and currentHpo['observed-proband'] == 'Absent' }}
                 value="Absent">
               <label class="nhsuk-label nhsuk-radios__label" for="rare-hpo-question-observed-2">
                 Absent
@@ -79,6 +88,7 @@ text: "HPO terms"
 
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="rare-hpo-question-observed-3" name="hpo-question-observed-proband" type="radio"
+              {{ " checked" if currentHpo and currentHpo['observed-proband'] and currentHpo['observed-proband'] == 'Unknown' }}
                 value="Unknown">
               <label class="nhsuk-label nhsuk-radios__label" for="rare-hpo-question-observed-3">
                 Unknown
@@ -90,7 +100,7 @@ text: "HPO terms"
         {% if req.session.data['rare-relationship-picker'] %}
         <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-6">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h2 class="nhsuk-fieldset__heading nhsuk-heading-m">
+            <h2 class="nhsuk-fieldset__heading nhsuk-heading-m" id="fam">
                 Martha Carson
             </h2>
           </legend>
@@ -102,6 +112,7 @@ text: "HPO terms"
           <div class="nhsuk-radios">
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="rare-hpo-question-observed-4" name="rare-hpo-question-observed-family1" type="radio"
+              {{ " checked" if currentHpo and currentHpo['observed-family-member'] and currentHpo['observed-family-member'] == 'Present' }}
                 value="Present">
               <label class="nhsuk-label nhsuk-radios__label" for="rare-hpo-question-observed-4">
                 Present
@@ -110,6 +121,7 @@ text: "HPO terms"
 
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="rare-hpo-question-observed-5" name="rare-hpo-question-observed-family1" type="radio"
+              {{ " checked" if currentHpo and currentHpo['observed-family-member'] and currentHpo['observed-family-member'] == 'Absent' }}
                 value="Absent">
               <label class="nhsuk-label nhsuk-radios__label" for="rare-hpo-question-observed-5">
                 Absent
@@ -118,6 +130,7 @@ text: "HPO terms"
 
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="rare-hpo-question-observed-6" name="rare-hpo-question-observed-family1" type="radio"
+              {{ " checked" if currentHpo and currentHpo['observed-family-member'] and currentHpo['observed-family-member'] == 'Unknown' }}
                 value="Unknown">
               <label class="nhsuk-label nhsuk-radios__label" for="rare-hpo-question-observed-6">
                 Unknown

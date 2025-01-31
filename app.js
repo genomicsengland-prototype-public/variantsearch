@@ -234,9 +234,9 @@ app.post("/v1/referral/test/answer", (req, res) => {
 
 app.post("/rare-disease/referral/test/answer", (req, res) => {
   // Make a variable and give it the value from 'know-nhs-number'
-  const diseaseSuspected = req.session.data["disease"];
+  const diseaseSuspected = req.session.data["rare-disease-suspected"];
   // Check whether the variable matches a condition
-  if (diseaseSuspected === "yes") {
+  if (diseaseSuspected === "Yes") {
     // Send user to next page
     res.redirect("/rare-disease/referral/test/disease-status");
   } else {

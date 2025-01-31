@@ -33,6 +33,15 @@ router.get('/rare-disease/referral/test/test-request-summary/:id', function (req
     req.session.data['rare-add-panel-list'].splice(id, 1)
     res.redirect('/rare-disease/referral/test/test-request-summary')
 })
+
+router.get("/rare-disease/referral/hpo/1/remove/:id", (req, res) => {
+    const { id } = req.params
+    if (req.session.data['hpoCollection'] !== undefined && req.session.data['hpoCollection'][id] !== undefined) {
+        req.session.data['hpoCollection'].splice(id, 1)
+    }
+    res.redirect("/rare-disease/referral/hpo/1")
+  })
+  
     
 // Add your routes here - above the module.exports line
 

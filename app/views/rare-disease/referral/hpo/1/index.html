@@ -45,7 +45,7 @@ text: "HPO terms" }) }} {% endblock %} {% block outerContent %}
         
                                 </dt>
                                 <dd class="nhsuk-summary-list__value"><div class="nhsuk-hint" id="input-with-hint-text-hint">{{ hpoTermArray[1] | replace("]","") }}</div></dd>
-                                <dd class="nhsuk-summary-list__actions"><a href="/rare-disease/referral/hpo/1/add-hpo">
+                                <dd class="nhsuk-summary-list__actions"><a href="/rare-disease/referral/hpo/1/remove/{{ loop.index0 }}">
                                         Remove<span class="nhsuk-u-visually-hidden">
                                             observation</span
                                         >
@@ -60,7 +60,7 @@ text: "HPO terms" }) }} {% endblock %} {% block outerContent %}
                                 </dt>
                                 <dd class="nhsuk-summary-list__value">{{entry['observed-proband']}}</dd>
                                 <dd class="nhsuk-summary-list__actions">
-                                    <a href="#">
+                                    <a href="/rare-disease/referral/hpo/1/presence?hpoId={{loop.index0}}">
                                         Change<span class="nhsuk-u-visually-hidden">
                                             observation</span
                                         >
@@ -73,7 +73,7 @@ text: "HPO terms" }) }} {% endblock %} {% block outerContent %}
                                 <dd class="nhsuk-summary-list__value">{{entry['observed-family-member']}}</dd>
         
                                 <dd class="nhsuk-summary-list__actions">
-                                    <a href="/rare-disease/referral/hpo/1/presence">
+                                    <a href="/rare-disease/referral/hpo/1/presence?hpoId={{loop.index0}}#fam">
                                         Change<span class="nhsuk-u-visually-hidden">
                                             observation</span
                                         >
