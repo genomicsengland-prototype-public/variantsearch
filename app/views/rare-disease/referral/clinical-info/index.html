@@ -11,7 +11,7 @@ endblock %} {% block outerContent %}
         <form action="/rare-disease/referral/test" method="post">
         <div class="nhsuk-form-group">
             {% from 'textarea/macro.njk' import textarea %} {{ textarea({ name:
-            "rare-notes", id: "rare-notes", label: { text: " Include any previous molecure
+            "rare-notes", id: "rare-notes", label: { text: " Include any previous molecular
             testing with dates and any other pertinent clinical information." }, value: req.session.data['rare-notes']
             }) }}
         </div>
