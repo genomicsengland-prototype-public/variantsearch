@@ -13,6 +13,7 @@ hint: {
 {% block pageTitle %}
 NHS.UK prototype kit
 {% endblock %}
+{% set cancerPatientData = true %}
 
 {% block beforeContent %}
 {% from 'breadcrumb/macro.njk' import breadcrumb %}
@@ -87,6 +88,7 @@ text: "Test request"
                 <option>Adipocytic Soft Tissue Tumour Differential - M201</option>
                 <option>Cartilage Forming Bone Tumour Differential - M205</option>
                 <option>Astrocytoma - Adult - M21</option>
+                <option>Acute Lympoblastic Leukaemia - M91.1</option>
             </select>
 
             <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />

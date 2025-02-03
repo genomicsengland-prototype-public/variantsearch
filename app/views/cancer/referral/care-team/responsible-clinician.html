@@ -1,5 +1,6 @@
 {% extends 'layout.html' %} {% block pageTitle %} NHS.UK prototype kit {%
-endblock %} {% block beforeContent %} {% from 'breadcrumb/macro.njk' import
+endblock %} {% set cancerPatientData = true %}
+{% block beforeContent %} {% from 'breadcrumb/macro.njk' import
 breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
 "Referral #123456789" } ], href: "/cancer/referral/care-team", text: "Care team"
 }) }} {% endblock %} {% block outerContent %}
@@ -29,7 +30,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
     <form
       name="responsible-clinician-form"
       id="responsible-clinician-form"
-      action="summary"
+      action="/cancer/referral/glh"
       method="post"
     >
       {{ input({ label: { text: "First name" }, id: "fname", name: "fname",
@@ -101,7 +102,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
           draggable="false"
           role="button"
         >
-          Continue
+          Save and continue
         </button>
       </div>
     </form>

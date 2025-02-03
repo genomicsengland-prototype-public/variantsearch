@@ -1,5 +1,7 @@
 {% extends 'layout.html' %} {% block pageTitle %} NHS.UK prototype kit {%
-endblock %} {% block outerContent %}
+endblock %} 
+{% set cancerPatientData = true %}
+{% block outerContent %}
 <div class="nhsuk-back-link" style="margin-top: 2rem">
   <a class="nhsuk-back-link__link" href="javascript:history.back();">
     <svg
