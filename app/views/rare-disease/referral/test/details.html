@@ -37,8 +37,8 @@ prototype kit {% endblock %} {% block beforeContent %} {% from
         </div>
         <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
             {{ radios({ idPrefix: "rare-disease-suspected", name: "rare-disease-suspected", fieldset: {
-            legend: { text: "Are other specific rare of inherited diseases
-            suspected or confirmed?", classes: "nhsuk-fieldset__legend--s",
+            legend: { text: "Specific rare or inherited diseases that are 
+            suspected or have been confirmed", classes: "nhsuk-fieldset__legend--s",
             "idPrefix": "diseaseSuspected",
             "name": "diseaseSuspected",
             isPageHeading: false } }, items: [ { value: "Yes", text: "Yes", checked: req.session.data['rare-disease-suspected'] === 'Yes'}, {
