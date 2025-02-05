@@ -50,28 +50,28 @@ text: "Family"
 
         <div class="nhsuk-radios">
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="rare-family-member-disease-status-q-1" name="rare-family-member-disease-status" type="radio" value="Affected">
+            <input class="nhsuk-radios__input" id="rare-family-member-disease-status-q-1" name="rare-family-member-disease-status" type="radio" value="Affected"{{ " checked" if req.session.data['rare-family-member-disease-status'] === 'Affected'}}>
             <label class="nhsuk-label nhsuk-radios__label" for="rare-family-member-disease-status-q-1">
               Affected
             </label>
           </div>
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="rare-family-member-disease-status-q-2" name="rare-family-member-disease-status" type="radio" value="Unaffected">
+            <input class="nhsuk-radios__input" id="rare-family-member-disease-status-q-2" name="rare-family-member-disease-status" type="radio" value="Unaffected"{{ " checked" if req.session.data['rare-family-member-disease-status'] === 'Unaffected'}}>
             <label class="nhsuk-label nhsuk-radios__label" for="rare-family-member-disease-status-q-2">
               Unaffected
             </label>
           </div>
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="rare-family-member-disease-status-q-3" name="rare-family-member-disease-status" type="radio" value="Uncertain">
+            <input class="nhsuk-radios__input" id="rare-family-member-disease-status-q-3" name="rare-family-member-disease-status" type="radio" value="Uncertain"{{ " checked" if req.session.data['rare-family-member-disease-status'] === 'Uncertain'}}>
             <label class="nhsuk-label nhsuk-radios__label" for="rare-family-member-disease-status-q-3">
               Uncertain
             </label>
           </div>
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="rare-family-member-disease-status-q-4" name="rare-family-member-disease-status" type="radio" value="Unknown">
+            <input class="nhsuk-radios__input" id="rare-family-member-disease-status-q-4" name="rare-family-member-disease-status" type="radio" value="Unknown"{{ " checked" if req.session.data['rare-family-member-disease-status'] === 'Unknown'}}>
             <label class="nhsuk-label nhsuk-radios__label" for="rare-family-member-disease-status-q-4">
               Unknown
             </label>
@@ -89,7 +89,7 @@ text: "Family"
 
     <div>
       <button class="nhsuk-button" data-module="nhsuk-button" draggable="false" role="button" type="submit">
-        Continue
+        Save and continue
       </button>
     </div>
   </div>

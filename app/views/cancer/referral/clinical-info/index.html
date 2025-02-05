@@ -1,5 +1,6 @@
 {% extends 'layout.html' %} {% block pageTitle %} NHS.UK prototype kit {%
-endblock %} {% block beforeContent %} {% from 'breadcrumb/macro.njk' import
+endblock %} {% set cancerPatientData = true %}
+{% block beforeContent %} {% from 'breadcrumb/macro.njk' import
 breadcrumb %} {{ breadcrumb({ items: [ { href: "/cancer/referral", text:
 "Referral #123456789" } ], href: "/cancer/referral/clinical-info", text:
 "Clinical info" }) }} {% endblock %} {% block outerContent %}

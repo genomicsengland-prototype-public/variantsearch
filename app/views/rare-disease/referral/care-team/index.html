@@ -46,37 +46,45 @@ text: "Care team"
       Type to search by organisation name or ID
     </div>
 
+    {%- set organisationList = [
+      'South Tyneside NHS Foundation Trust',
+      'Southern Health NHS Foundation Trust',
+      'South Warwickshire NHS Foundation Trust',
+      'Southport and Ormskirk Hospital NHS Trust',
+      'Southend University Hospital NHS Foundation Trust',
+      'University Hospital Southampton NHS Foundation Trust',
+      'South Tees Hospitals NHS Foundation Trust',
+      'Torbay and South Devon NHS Foundation Trust',
+      'South London and Maudsley NHS Foundation Trust',
+      'Norfolk and Norwich University Hospitals NHS Foundation Trust',
+      'East and North Hertfordshire NHS Trust',
+      'North Cumbria University Hospitals NHS Trust',
+      'Northumbria Healthcare NHS Foundation Trust',
+      'North Bristol NHS Trust',
+      'North East London NHS Foundation Trust',
+      'Northampton General Hospital NHS Trust',
+      'North West Boroughs Healthcare NHS Foundation Trust',
+      'University Hospitals of North Midlands NHS Trust',
+      'West Suffolk NHS Foundation Trust',
+      'Weston Area Health NHS Trust',
+      'Western Sussex Hospitals NHS Foundation Trust',
+      'Chelsea and Westminster Hospital NHS Foundation Trust',
+      'West Hertfordshire Hospitals NHS Trust',
+      'Great Western Hospitals NHS Foundation Trust',
+      'West London Mental Health NHS Trust',
+      'London North West Healthcare NHS Trust',
+      'Greater Manchester Mental Health NHS Foundation Trust',
+      'Great Western Hospitals NHS Foundation Trust',
+      'Great Ormond Street Hospital for Children NHS Foundation Trust'
+      ]
+      %}
     <select id="rare-care-team" action="/rare-disease/referral/care-team/responsible-clinician" name="rare-care-team" title="Select a Requesting organisation">
       <option></option>
-      <option>South Tyneside NHS Foundation Trust</option>
-      <option>Southern Health NHS Foundation Trust</option>
-      <option>South Warwickshire NHS Foundation Trust</option>
-      <option>Southport and Ormskirk Hospital NHS Trust</option>
-      <option>Southend University Hospital NHS Foundation Trust</option>
-      <option>University Hospital Southampton NHS Foundation Trust</option>
-      <option>South Tees Hospitals NHS Foundation Trust</option>
-      <option>Torbay and South Devon NHS Foundation Trust</option>
-      <option>South London and Maudsley NHS Foundation Trust</option>
-      <option>Norfolk and Norwich University Hospitals NHS Foundation Trust</option>
-      <option>East and North Hertfordshire NHS Trust</option>
-      <option>North Cumbria University Hospitals NHS Trust</option>
-      <option>Northumbria Healthcare NHS Foundation Trust</option>
-      <option>North Bristol NHS Trust</option>
-      <option>North East London NHS Foundation Trust</option>
-      <option>Northampton General Hospital NHS Trust</option>
-      <option>North West Boroughs Healthcare NHS Foundation Trust</option>
-      <option>University Hospitals of North Midlands NHS Trust</option>
-      <option>West Suffolk NHS Foundation Trust</option>
-      <option>Weston Area Health NHS Trust</option>
-      <option>Western Sussex Hospitals NHS Foundation Trust</option>
-      <option>Chelsea and Westminster Hospital NHS Foundation Trust</option>
-      <option>West Hertfordshire Hospitals NHS Trust</option>
-      <option>Great Western Hospitals NHS Foundation Trust</option>
-      <option>West London Mental Health NHS Trust</option>
-      <option>London North West Healthcare NHS Trust</option>
-      <option>Greater Manchester Mental Health NHS Foundation Trust</option>
-      <option>Great Western Hospitals NHS Foundation Trust</option>
-      <option>Great Ormond Street Hospital for Children NHS Foundation Trust</option>
+      {%- for organisation in organisationList %}
+        {%- set selected = ' selected' if req.session.data['rare-care-team'] === organisation else '' %}
+        <option value="{{ organisation }}"{{ selected }}>{{ organisation }}</option>
+        {%- endfor %}
+
     </select>
 
     <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
@@ -93,7 +101,7 @@ text: "Care team"
     <div style="margin-top: 3rem">
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit"
         draggable="false" role="button">
-        Continue
+        Save and continue
       </button>
     </div>
   </form>

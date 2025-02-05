@@ -51,7 +51,8 @@ text: "Care team"
     },
     id: "rare-fname",
     name: "rare-fname",
-    classes: "nhsuk-input--width-20"
+    classes: "nhsuk-input--width-20",
+    value: req.session.data['rare-fname']
     }) }}
 
     {{ input({
@@ -60,7 +61,8 @@ text: "Care team"
     },
     id: "rare-lname",
     name: "rare-lname",
-    classes: "nhsuk-input--width-20"
+    classes: "nhsuk-input--width-20",
+    value: req.session.data['rare-lname']
     }) }}
 
     {{ input({
@@ -68,7 +70,8 @@ text: "Care team"
     text: "Email"
     },
     id: "rare-email",
-    name: "rare-email"
+    name: "rare-email",
+    value: req.session.data['rare-email']
     }) }}
 
     {{ input({
@@ -77,7 +80,8 @@ text: "Care team"
     },
     id: "rare-phone",
     name: "rare-phone",
-    classes: "nhsuk-input--width-20 nhsuk-u-margin-bottom-6"
+    classes: "nhsuk-input--width-20 nhsuk-u-margin-bottom-6",
+    value: req.session.data['rare-phone']
     }) }}
 
     <div class="nhsuk-form-group">
@@ -90,7 +94,8 @@ text: "Care team"
 
         <div class="nhsuk-radios nhsuk-radios--conditional">
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="contact-2" name="contact" type="radio" value="yes"
+            <input class="nhsuk-radios__input" id="contact-2" name="rare-org-contact" type="radio" value="yes"
+            {{ " checked" if req.session.data['rare-org-contact'] === 'yes' }}
               aria-controls="conditional-contact-1">
             <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
               Yes
@@ -98,7 +103,8 @@ text: "Care team"
           </div>
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="no"
+            <input class="nhsuk-radios__input" id="contact-1" name="rare-org-contact" type="radio" value="no"
+            {{ " checked" if req.session.data['rare-org-contact'] === 'no' }}
               aria-controls="conditional-contact-1">
             <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
               No, add another email contact
@@ -113,6 +119,7 @@ text: "Care team"
                 id="rare-conditional_email"
                 name="rare-conditional_email"
                 type="text"
+                value="{{ req.session.data['rare-conditional_email'] }}"
               />
             </div>
           </div>
@@ -123,7 +130,7 @@ text: "Care team"
     <div style="margin-top: 3rem">
       <button class="nhsuk-button" data-module="nhsuk-button" type="submit"
         draggable="false" role="button">
-        Continue
+        Save and continue
       </button>
     </div>
     </form>

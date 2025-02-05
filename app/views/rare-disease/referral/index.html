@@ -28,9 +28,6 @@ endblock %} {% block outerContent %}
                 Patient (proband)
             </h4>
 
-            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">
-                Completed
-            </p>
         </div>
 
         <dl class="nhsuk-summary-list">
@@ -75,14 +72,10 @@ endblock %} {% block outerContent %}
             <h4 class="nhsuk-u-margin-bottom-0">
                 <a href="/rare-disease/referral/clinical-info">Clinical information</a>
             </h4>
-            {% if req.session.data['rare-notes'] %}
-            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">
-                Completed
-            </p>
-            {% else %}
-            <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
+            {% if not req.session.data['rare-notes'] %}
+                <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
                 Not started
-            </strong>
+                </strong>
             {% endif %}
         </div>
         {% if req.session.data['rare-notes'] %}
@@ -108,11 +101,7 @@ endblock %} {% block outerContent %}
                 <a href="/rare-disease/referral/test">Test request</a>
             </h4>
 
-            {% if req.session.data['rare-clinical-indication'] %}
-            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">
-                Completed
-            </p>
-            {% else %}
+            {% if not req.session.data['rare-clinical-indication'] %}
             <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
                 Not started
             </strong>
@@ -159,9 +148,9 @@ endblock %} {% block outerContent %}
             </div>
             <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">Suspected diseases</dt>
-                <dd class="nhsuk-summary-list__value">{{ req.session.data['rare-disease-suspected'] if req.session.data['rare-disease-suspected'] }}</dd>
+                <dd class="nhsuk-summary-list__value">{{ req.session.data['suspected-disease'] if req.session.data['suspected-disease'] }}</dd>
                 <dd class="nhsuk-summary-list__actions">
-                    <a href="/rare-disease/referral/test/details">{{ "Change" if req.session.data['rare-disease-suspected'] else "Add"}}</a>
+                    <a href="/rare-disease/referral/test/details/disease-status">{{ "Change" if req.session.data['suspected-disease'] else "Add"}}</a>
                 </dd>
             </div>
 
@@ -177,6 +166,8 @@ endblock %} {% block outerContent %}
                 <dd class="nhsuk-summary-list__actions">
                     {% if req.session.data['rare-add-panel-list'] and req.session.data['rare-add-panel-list'].length > 0 %}
                         <a href="/rare-disease/referral/test/test-request-summary">Change</a>
+                    {% else %}
+                        <a href="/rare-disease/referral/test/test-request-summary">Add</a>
                     {% endif %}
                 </dd>
             </div>
@@ -192,11 +183,7 @@ endblock %} {% block outerContent %}
                 <a href="/rare-disease/referral/family">Family</a>
             </h4>
 
-        {% if req.session.data['rare-relationship-picker'] and req.session.data['rare-family-member-disease-status'] %}
-            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">
-                Completed
-            </p>
-            {% else %}
+        {% if not req.session.data['rare-relationship-picker'] and not req.session.data['rare-family-member-disease-status'] %}
             <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
                 Not started
             </strong>
@@ -244,16 +231,16 @@ endblock %} {% block outerContent %}
             </div>
 
             <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Life status</dt>
-                <dd class="nhsuk-summary-list__value">Deceased</dd>
+                <dt class="nhsuk-summary-list__key">Ethnicity</dt>
+                <dd class="nhsuk-summary-list__value">White Irish</dd>
                 <dd class="nhsuk-summary-list__actions">
                     <a href=""></a>
                 </dd>
             </div>
 
             <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Ethnicity</dt>
-                <dd class="nhsuk-summary-list__value">White Irish</dd>
+                <dt class="nhsuk-summary-list__key">Life status</dt>
+                <dd class="nhsuk-summary-list__value">Deceased</dd>
                 <dd class="nhsuk-summary-list__actions">
                     <a href=""></a>
                 </dd>
@@ -286,9 +273,7 @@ endblock %} {% block outerContent %}
                 <a href="/rare-disease/referral/care-team">Care team</a>
             </h4>
 
-            {% if req.session.data['rare-care-team'] %}
-                <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">Completed</p>
-            {% else %}
+            {% if not req.session.data['rare-care-team'] %}
                 <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
                     Not started
                 </strong>
@@ -359,9 +344,7 @@ endblock %} {% block outerContent %}
                 <a href="/rare-disease/referral/glh">GLH</a>
             </h4>
 
-            {% if req.session.data['rare-glh-picker'] %}
-                <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">Completed</p>
-            {% else %}
+            {% if not req.session.data['rare-glh-picker'] %}
                 <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
                     Not started
                 </strong>
@@ -388,9 +371,7 @@ endblock %} {% block outerContent %}
             <h4 class="nhsuk-u-margin-bottom-0">
                 <a href="/rare-disease/referral/hpo/1">HPO terms</a>
             </h4>
-            {% if req.session.data['hpoCollection'] and req.session.data['hpoCollection'].length > 0 %}
-                <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">Completed</p>
-            {% else %}
+            {% if not req.session.data['hpoCollection'] and not req.session.data['hpoCollection'].length > 0 %}
                 <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto">
                     Not started
                 </strong>
@@ -398,16 +379,20 @@ endblock %} {% block outerContent %}
         </div>
 
         {% if req.session.data['hpoCollection'] and req.session.data['hpoCollection'].length > 0 %}
-        <dl class="nhsuk-summary-list">
-            {% for entry in data['hpoCollection'] -%}
-                {% set hpoTermArray = entry['hpo-term'].split ('[') %}
-                <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key">HPO terms</dt>
-                    <dd class="nhsuk-summary-list__value">{{ hpoTermArray[0] }}</dd>
-                    <dd class="nhsuk-summary-list__actions">
-                        <a href="/rare-disease/referral/glh">Change</a>
-                    </dd>
-                </div>
+       <dl class="nhsuk-summary-list">
+            {% for entry in req.session.data['hpoCollection'] -%}
+                {% if entry['hpo-term'] !== undefined %}
+                    {% set hpoTermArray = entry['hpo-term'].split ('[') %}
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">{{ 'HPO terms' if loop.index0 === 0 }}</dt>
+                        <dd class="nhsuk-summary-list__value">{{ hpoTermArray[0] }}</dd>
+                        <dd class="nhsuk-summary-list__actions">
+                            {% if loop.index0 === 0 %}
+                            <a href="/rare-disease/referral/hpo/1">Change</a>
+                            {% endif %}
+                        </dd>
+                    </div>
+                {% endif %}
             {%- endfor %}
         </dl>
         {% endif %}

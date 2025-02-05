@@ -36,27 +36,29 @@ text: "Test request"
 {% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
+        <form action="/rare-disease/referral/test/related-disease-summary" method="post">
         <h2>Related diseases</h2>
         {{ input({ label: { text: "Any suspected or confirmed diseases relevant
-        for analysis" }, id: "suspected-diease", name: "suspected-diease" }) }}
+        for analysis" }, id: "suspected-diease", name: "suspected-disease" }) }}
     </div>
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
-        {{ radios({ idPrefix: "example", name: "example", fieldset: { legend: {
+        {{ radios({ idPrefix: "example", name: "suspected-disease-status", fieldset: { legend: {
         text: "Is the diagnosis confirmed?", classes:
         "nhsuk-fieldset__legend--m", isPageHeading: false } }, items: [ { value:
         "suspect", text: "Suspect" }, { value: "confirmed", text: "Confirmed" }
         ] }) }}
     </div>
     <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-7">
-        <a
+        <button
             class="nhsuk-button"
             data-module="nhsuk-button"
-            href="/rare-disease/referral/test/related-disease-summary"
             draggable="false"
             role="button"
+            type="submit"
         >
-            Continue
-        </a>
+        Save and continue
+        </button>
     </div>
+</form>
 </div>
 {% endblock %}

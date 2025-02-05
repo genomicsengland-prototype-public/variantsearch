@@ -18,6 +18,7 @@
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 
+{% set ignorePatientData = true %}
 
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
@@ -46,15 +47,15 @@
       <hr>
 
       <h2>3-7/1/25</h2>
-      <h3>Cancer referral</h3>
-      <p>Transcription of <a href="/cancer/referral">Cancer referral WGS test request</a>.</p>
+      <h3>Referral one</h3>
+      <p>Transcription of <a href="/cancer/referral">WGS test request</a>.</p>
       <a class="nhsuk-button" data-module="nhsuk-button" href="/cancer/referral"
         draggable="false" role="button">
         Start test order
       </a>
-      <h3>Edit referral</h3>
+      <h3>Edit referral two</h3>
       <p>Editing a test order that has already been started.</p>
-      <a class="nhsuk-button  nhsuk-button--secondary" data-module="nhsuk-button" href="#"
+      <a class="nhsuk-button  nhsuk-button--secondary" data-module="nhsuk-button" href="/patient-search"
         draggable="false" role="button">
         Edit test order
       </a>
@@ -65,7 +66,7 @@
 
       <h3>20-25/11/24 usability testing</h3>
       <p>Transcription of HPO terms and recording which family members in a trio they are present for.</p>
-      <p><a href="/rare-disease/referral">Rare disease trio referral</a> </p>
+      <p><a href="/v1/referral">Rare disease trio referral</a> </p>
 
 
       <!-- End of content -->

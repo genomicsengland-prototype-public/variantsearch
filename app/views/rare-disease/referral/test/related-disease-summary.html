@@ -34,24 +34,10 @@ text: "Test request"
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
         <h2 class="nhsuk-u-margin-bottom-4">Related diseases summary</h2>
-
         <dl class="nhsuk-summary-list">
             <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Related rare disease</dt>
-                <dd class="nhsuk-summary-list__value">Confirmed</dd>
-                <dd class="nhsuk-summary-list__value">
-                    <a href="/rare-disease/referral/test/disease-status">Change</a>
-                </dd>
-                <dd class="nhsuk-summary-list__value">
-                    <a href="#">Remove</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                    The next disorder name goes here and may be quite long
-                </dt>
-                <dd class="nhsuk-summary-list__value">Suspected</dd>
+                <dt class="nhsuk-summary-list__key">{{ data['suspected-disease'] }}</dt>
+                <dd class="nhsuk-summary-list__value">{{ data['suspected-disease-status'] }}</dd>
                 <dd class="nhsuk-summary-list__value">
                     <a href="/rare-disease/referral/test/disease-status">Change</a>
                 </dd>
@@ -81,7 +67,7 @@ text: "Test request"
                 draggable="false"
                 role="button"
             >
-                Continue
+                Save and continue
             </a>
         </div>
     </div>

@@ -41,52 +41,61 @@ text: "Family"
         Relationship to patient (proband)
       </label>
 
+      {%- set relationshipList = [
+        'Mother',
+        'Father',
+        'Full Sibling',
+        'Daughter',
+        'Son',
+        'Twins Unknown',
+        'Twins Monozygous',
+        'Twins Dizygous',
+        'Maternal Half Sibling',
+        'Paternal Half Sibling',
+        'Maternal Grandparent',
+        'Paternal Grandparent',
+        "Maternal Grandfather's Parent",
+        "Maternal Grandmother's Parent",
+        "Paternal Grandfather's Parent",
+        "Paternal Grandmother's Parent",
+        'Maternal Aunt',
+        'Maternal Uncle',
+        'Paternal Aunt',
+        'Paternal Uncle',
+        'Maternal Cousin through Aunt',
+        'Maternal Cousin through Uncle',
+        'Paternal Cousin through Aunt',
+        'Paternal Cousin through Uncle',
+        'Maternal First Cousin once removed',
+        'Paternal First Cousin once removed',
+        'Maternal Second Cousin',
+        'Paternal Second Cousin',
+        'Maternal Second Cousin once removed',
+        'Paternal Second Cousin once removed',
+        'Maternal Third Cousin',
+        'Paternal Third Cousin',
+        'Double First Cousin',
+        'Other'
+        ] %}
       <select id="rare-relationship-picker" title="Select Relationship" name="rare-relationship-picker">
         <option></option>
-        <option>Mother</option>
-        <option>Father</option>
-        <option>Full Sibling</option>
-        <option>Daughter</option>
-        <option>Son</option>
-        <option>Twins Unknown</option>
-        <option>Twins Monozygous</option>
-        <option>Twins Dizygous</option>
-        <option>Maternal Half Sibling</option>
-        <option>Paternal Half Sibling</option>
-        <option>Maternal Grandparent</option>
-        <option>Paternal Grandparent</option>
-        <option>Maternal Grandfather's Parent</option>
-        <option>Maternal Grandmother's Parent</option>
-        <option>Paternal Grandfather's Parent</option>
-        <option>Paternal Grandmother's Parent</option>
-        <option>Maternal Aunt</option>
-        <option>Maternal Uncle</option>
-        <option>Paternal Aunt</option>
-        <option>Paternal Uncle</option>
-        <option>Maternal Cousin through Aunt</option>
-        <option>Maternal Cousin through Uncle</option>
-        <option>Paternal Cousin through Aunt</option>
-        <option>Paternal Cousin through Uncle</option>
-        <option>Maternal First Cousin once removed</option>
-        <option>Paternal First Cousin once removed</option>
-        <option>Maternal Second Cousin</option>
-        <option>Paternal Second Cousin</option>
-        <option>Maternal Second Cousin once removed</option>
-        <option>Paternal Second Cousin once removed</option>
-        <option>Maternal Third Cousin</option>
-        <option>Paternal Third Cousin</option>
-        <option>Double First Cousin</option>
-        <option>Other</option>
+        {%- for relationship in relationshipList %}
+        {%- set selected = ' selected' if req.session.data['rare-relationship-picker'] === relationship else '' %}
+        <option value="{{ relationship }}"{{ selected }}>{{ relationship }}</option>
+        {%- endfor %}
       </select>
 
       <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
       <script type="text/javascript" src="/js/accessible-autocomplete.min.js"></script>
 
       <script>
-        accessibleAutocomplete.enhanceSelectElement({
-          defaultValue: "",
-          selectElement: document.querySelector("#rare-relationship-picker"),
-        });
+        var selectEl = document.querySelector("#rare-relationship-picker")
+                accessibleAutocomplete.enhanceSelectElement({
+                    autoselect: true,
+                    defaultValue: selectEl.options[selectEl.options.selectedIndex].innerHTML,
+                    minLength: 2,
+                    selectElement: selectEl
+                })
       </script>
     </div>
 
@@ -97,7 +106,7 @@ text: "Family"
       draggable="false"
       type="submit"
         role="button">
-        Continue
+        Save and continue
       </button>
     </div>
     </form>

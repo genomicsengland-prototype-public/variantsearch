@@ -36,14 +36,23 @@
     </div>
   
     {% if not ignorePatientData %}
+
     <div class="nhsuk-navigation-container">
       <div class="nhsuk-second-header__patient-data">
         <div class="nhsuk-second-header__patient-data__container">
+          {% if cancerPatientData %}
+          <p class="nhsuk-body nhsuk-body__first">Patient: WINRODS, Charles </p>
+          <p class="nhsuk-body">NHS number: 944 030 6517</p>
+          <p class="nhsuk-body">Date of birth: 02 February 1965</p>
+          {% endif %}
+          {% if not cancerPatientData %}
           <p class="nhsuk-body nhsuk-body__first">Patient: CARSON, Ethan</p>
-          <p class="nhsuk-body">NHS number: CARSON, Ethan</p>
+          <p class="nhsuk-body">NHS number: 944 930 9266</p>
           <p class="nhsuk-body">Date of birth: 2 April 2018</p>
+          {% endif %}
       </div>
     </div>
+      
     {% endif %}
   </header>
 

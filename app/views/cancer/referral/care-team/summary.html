@@ -4,6 +4,7 @@
 NHS.UK prototype kit
 {% endblock %}
 
+{% set cancerPatientData = true %}
 {% block beforeContent %}
 {% from 'breadcrumb/macro.njk' import breadcrumb %}
 
@@ -95,7 +96,7 @@ text: "Care team"
     <div style="margin-top: 3rem">
       <a class="nhsuk-button" data-module="nhsuk-button" href="/cancer/referral/glh"
         draggable="false" role="button">
-        Continue
+        Save and continue
       </a>
     </div>
   </div>

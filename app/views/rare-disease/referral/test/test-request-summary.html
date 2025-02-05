@@ -17,7 +17,7 @@ breadcrumb %} {{ breadcrumb({ items: [ { href: "/rare-disease/referral", text: "
 based on the url, then this code bit is useful "{{req.query['test']}}" #}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <h1 class="nhsuk-u-margin-bottom-4">Test request</h1>
+        <h1 class="nhsuk-u-margin-bottom-4">Test panels</h1>
         <dl class="nhsuk-summary-list">
             <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
@@ -29,31 +29,6 @@ based on the url, then this code bit is useful "{{req.query['test']}}" #}
                 </dd>
             </div>
 
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Age of onset</dt>
-                <dd class="nhsuk-summary-list__value">{{ req.session.data['rare-date-onset-year'] if req.session.data['rare-date-onset-year'] }} years {{ req.session.data['rare-date-onset-month'] if req.session.data['rare-date-onset-month'] }} months</dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/rare-disease/referral/test/details">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Disease penetrance</dt>
-                <dd class="nhsuk-summary-list__value">{{ req.session.data['rare-disease-penetrance'] if req.session.data['rare-disease-penetrance'] }}</dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/rare-disease/referral/test/disease-status">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Suspected diseases</dt>
-                <dd class="nhsuk-summary-list__value">
-                    {{ req.session.data['rare-disease-suspected'] if req.session.data['rare-disease-suspected'] }}
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/rare-disease/referral/test/disease-status">Add</a>
-                </dd>
-            </div>
         </dl>
 
         <div class="nhsuk-summary-list__row nhsuk-u-margin-bottom-5">
@@ -98,7 +73,7 @@ based on the url, then this code bit is useful "{{req.query['test']}}" #}
                 draggable="false"
                 role="button"
             >
-                Continue
+                Save and continue
             </a>
         </div>
     </div>
