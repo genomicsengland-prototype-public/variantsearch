@@ -130,7 +130,7 @@ text: "Test request"
 
             </script>
         </div>
-
+        {% from 'checkboxes/macro.njk' import checkboxes %}
         {% from 'radios/macro.njk' import radios %} {% from 'fieldset/macro.njk'
         import fieldset %} {% from 'hint/macro.njk' import hint %}
 
@@ -143,16 +143,30 @@ text: "Test request"
             text: "There is currently no urgent WGS pathway. It may be possible to prioritise some cases."
         } }) }}
         {% endset -%}
+        
 
-        {{
-            radios({
-                idPrefix: "test-req",
-                name: "test-req",
-                fieldset: { legend: { text: "Is this test clinically urgent?", isPageHeading: false } },
-                
-                items: [ { value: "no", text: "No", checked: req.session.data['test-req'] === 'no' }, { value: "yes", text: "Yes", checked: req.session.data['test-req'] === 'yes', conditional: { html: textHtml } } ]
-            })
-        }}
+
+
+  {{ checkboxes({
+    idPrefix: "contact",
+    name: "contact",
+    fieldset: {
+      legend: {
+        text: "",
+        classes: "nhsuk-fieldset__legend--l",
+        isPageHeading: "false"
+      }
+    },
+    items: [
+      {
+        value: "urgent",
+        text: "Clinically urgent",
+        "conditional": {
+          "html": textHtml
+        }
+      }
+    ]
+  }) }}
 
 
         <button
