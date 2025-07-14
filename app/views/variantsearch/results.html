@@ -7,12 +7,12 @@ NHS.UK prototype kit
 
 
 {% block beforeContent %}
-{% from 'breadcrumb/macro.njk' import breadcrumb %}
-
-{{ breadcrumb({
-  href: "/cancer/referral",
-  text: "Referral #123456789"
-}) }}
+<!--{% from 'breadcrumb/macro.njk' import breadcrumb %}-->
+<!---->
+<!--{{ breadcrumb({-->
+<!--  href: "/cancer/referral",-->
+<!--  text: "Referral #123456789"-->
+<!--}) }}-->
 {% endblock %}
 
 {% block outerContent %}
@@ -24,439 +24,448 @@ NHS.UK prototype kit
           d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
         </path>
       </svg>
-      Go back</a>
+      Go back to edit your search</a>
   </div>
 {% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <h2>Referral #R321 1234 321</h2>
-
-        <p class="nhsuk-u-margin-bottom-6">
-            Data must be added to all mandatory fields before submission.
+        <h2>Search results</h2>
+        <p class="nhsuk-u-margin-bottom-4">
+            Matches from 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.
         </p>
+        
+        <p class="nhsuk-u-margin-bottom-4">
+        <strong>108</strong> matches for <strong>[SEARCHED VARIANT CODE]</strong> and <strong>[SEARCHED TUMOUR TYPE]</strong>
+        </p>
+        
 
-        <!-- PATIENT STAGE -->
-        <div
-            class="nhsuk-u-margin-bottom-4"
-            style="display: flex; align-items: center"
-        >
-            <h4 class="nhsuk-u-margin-bottom-0">
-                <!-- <a href="/referral/patient"> -->
-                    Patient (proband)
-                <!-- </a> -->
-            </h4>
 
-            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">
-                Completed
-            </p>
-        </div>
-
-        <dl class="nhsuk-summary-list">
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Name</dt>
-                <dd class="nhsuk-summary-list__value">Ethan Carson</dd>
-                <dd class="nhsuk-summary-list__actions"></dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">NHS number</dt>
-                <dd class="nhsuk-summary-list__value">944 930 3266</dd>
-                <dd class="nhsuk-summary-list__actions"></dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Date of birth</dt>
-                <dd class="nhsuk-summary-list__value">2 April 2018</dd>
-                <dd class="nhsuk-summary-list__actions"></dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Post code</dt>
-                <dd class="nhsuk-summary-list__value">LS1 4HY</dd>
-                <dd class="nhsuk-summary-list__actions"></dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Gender</dt>
-                <dd class="nhsuk-summary-list__value">Male</dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Ethnicity</dt>
-                <dd class="nhsuk-summary-list__value">
-                    Mixed White and Black Caribbean
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/">Change</a>
-                </dd>
-            </div>
-        </dl>
-
-        <!-- TEST STAGE -->
-        <div
-            class="nhsuk-u-margin-bottom-4"
-            style="display: flex; align-items: center"
-        >
-            <h4 class="nhsuk-u-margin-bottom-0">
-                <a href="/cancer/referral/test">Test request</a>
-            </h4>
-
-            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">
-                Completed
-            </p>
-            <!-- <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto;">
-        Not started
-      </strong> -->
-        </div>
-
-        <dl class="nhsuk-summary-list">
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Clinical indication</dt>
-                <dd class="nhsuk-summary-list__value">
-                -------------------------
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/test">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Presentation status</dt>
-                <dd class="nhsuk-summary-list__value">First diagnosis</dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/test">Change</a>
-                </dd>
-            </div>
-
-        </dl>
-
-        <!-- CLINICAL INFO STAGE -->
-        <div
-            class="nhsuk-u-margin-bottom-4"
-            style="display: flex; align-items: center"
-        >
-            <h4 class="nhsuk-u-margin-bottom-0">
-                <a href="/cancer/referral/clinical-info">Clinical information</a>
-            </h4>
-
-            <!-- <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">
-                Completed
-            </p> -->
-            <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto;">
-        Not started
-      </strong>
-        </div>
-
-        <!-- TUMOUR TYPE STAGE -->
-        <div
-            class="nhsuk-u-margin-bottom-4"
-            style="display: flex; align-items: center"
-        >
-            <h4 class="nhsuk-u-margin-bottom-0">
-                <a href="/cancer/referral/tumour-type">Tumour type</a>
-            </h4>
-
-            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">
-                Completed
-            </p>
-        </div>
-        <dl class="nhsuk-summary-list">
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Tumour Type</dt>
-                <dd class="nhsuk-summary-list__value">
-                    Solid tumour
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/tumour-type">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Histopathology Lab ID</dt>
-                <dd class="nhsuk-summary-list__value">Primary</dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/tumour-type">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Date of diagnosis</dt>
-                <dd class="nhsuk-summary-list__value">03/02/25</dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/tumour-type">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Additional tumour information</dt>
-                <dd class="nhsuk-summary-list__value">&nbsp;</dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/tumour-type">Add</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Tumour topography</dt>
-                <dd class="nhsuk-summary-list__value">----------</dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/tumour-type">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Tumour morphology</dt>
-                <dd class="nhsuk-summary-list__value">data added</dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/tumour-type">Change</a>
-                </dd>
-            </div>
-
-        </dl>
-
-        <!-- TUMOUR SAMPLES STAGE -->
-        <div
-            class="nhsuk-u-margin-bottom-4"
-            style="display: flex; align-items: center"
-        >
-            <h4 class="nhsuk-u-margin-bottom-0">
-                <a href="/cancer/referral/tumour-samples">Tumour sample</a>
-            </h4>
-
-            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">
-                Completed
-            </p>
-        </div>
-
-        <dl class="nhsuk-summary-list">
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Tumour sample</dt>
-                <dd class="nhsuk-summary-list__value">
-                    Fresh frozen tumour
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/tumour-samples">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Sample ID</dt>
-                <dd class="nhsuk-summary-list__value">
-                    ----- ----- --------
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/tumour-samples">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Date of collection</dt>
-                <dd class="nhsuk-summary-list__value">
-                    20/01/2025
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/tumour-samples">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Time of collection</dt>
-                <dd class="nhsuk-summary-list__value">
-                    14:40
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/tumour-samples">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">% malignant nuclei/blasts</dt>
-                <dd class="nhsuk-summary-list__value">
-                    ----------
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/tumour-samples">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">If BM/PM. provide volume and nucleated cell count</dt>
-                <dd class="nhsuk-summary-list__value">
-                    --------
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/tumour-samples">Change</a>
-                </dd>
-            </div>
-        </dl>
-
-        <!-- GERMLINE SAMPLES STAGE -->
-        <div
-            class="nhsuk-u-margin-bottom-4"
-            style="display: flex; align-items: center"
-        >
-            <h4 class="nhsuk-u-margin-bottom-0">
-                <a href="/cancer/referral/germline-samples">Germline samples</a>
-            </h4>
-
-            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">
-                Completed
-            </p>
-        </div>
-
-        <dl class="nhsuk-summary-list">
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Sample ID</dt>
-                <dd class="nhsuk-summary-list__value">
-                    ----- ----- --------
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/germline-samples">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Date of collection</dt>
-                <dd class="nhsuk-summary-list__value">
-                    20/01/2025
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/germline-samples">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Time of collection</dt>
-                <dd class="nhsuk-summary-list__value">
-                    14:40
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/germline-samples">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Sample type</dt>
-                <dd class="nhsuk-summary-list__value">
-                    ----------
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/germline-samples">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Sample volume</dt>
-                <dd class="nhsuk-summary-list__value">
-                    ----------
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/germline-samples">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Comments</dt>
-                <dd class="nhsuk-summary-list__value">
-                    ----------
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/germline-samples">Add</a>
-                </dd>
-            </div>
-
-        </dl>
-
-        <!-- CARE TEAM STAGE -->
-        <div
-            class="nhsuk-u-margin-bottom-4"
-            style="display: flex; align-items: center"
-        >
-            <h4 class="nhsuk-u-margin-bottom-0">
-                <a href="/cancer/referral/care-team">Care team</a>
-            </h4>
-
-            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">
-                Completed
-            </p>
-        </div>
-
-        <dl class="nhsuk-summary-list">
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Organisation</dt>
-                <dd class="nhsuk-summary-list__value">
-                    Great Ormond Street Hospital
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/care-team">Change</a>
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Responsible clinician</dt>
-                <dd class="nhsuk-summary-list__value">Dr Sue Donim</dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/care-team/responsible-clinician"
-                        >Change</a
-                    >
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Clinician contact</dt>
-                <dd class="nhsuk-summary-list__value">
-                    <p>0208 965 5244</p>
-                    <p>sue.donim@nhs.net</p>
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/care-team/responsible-clinician"
-                        >Change</a
-                    >
-                </dd>
-            </div>
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Main contact email</dt>
-                <dd class="nhsuk-summary-list__value">
-                    admins_GOSH_genetics@nhs.net
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/care-team/responsible-clinician"
-                        >Change</a
-                    >
-                </dd>
-            </div>
-        </dl>
-
-        <!-- GLH STAGE -->
-        <div
-            class="nhsuk-u-margin-bottom-4"
-            style="display: flex; align-items: center"
-        >
-            <h4 class="nhsuk-u-margin-bottom-0">
-                <a href="/cancer/referral/glh">GLH</a>
-            </h4>
-
-            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">
-                Completed
-            </p>
-            <!-- <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto;">
-        Not started
-      </strong> -->
-        </div>
-
-        <dl class="nhsuk-summary-list">
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Receiving GLH</dt>
-                <dd class="nhsuk-summary-list__value">South East GLH</dd>
-                <dd class="nhsuk-summary-list__actions">
-                    <a href="/cancer/referral/glh">Change</a>
-                </dd>
-            </div>
-        </dl>
-
+<!--        <p class="nhsuk-u-margin-bottom-6">-->
+<!--            Data must be added to all mandatory fields before submission.-->
+<!--        </p>-->
+<!---->
+<!--        <!-- PATIENT STAGE -->-->
+<!--        <div-->
+<!--            class="nhsuk-u-margin-bottom-4"-->
+<!--            style="display: flex; align-items: center"-->
+<!--        >-->
+<!--            <h4 class="nhsuk-u-margin-bottom-0">-->
+<!--                <!-- <a href="/referral/patient"> -->-->
+<!--                    Patient (proband)-->
+<!--                <!-- </a> -->-->
+<!--            </h4>-->
+<!---->
+<!--            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">-->
+<!--                Completed-->
+<!--            </p>-->
+<!--        </div>-->
+<!---->
+<!--        <dl class="nhsuk-summary-list">-->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Name</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">Ethan Carson</dd>-->
+<!--                <dd class="nhsuk-summary-list__actions"></dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">NHS number</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">944 930 3266</dd>-->
+<!--                <dd class="nhsuk-summary-list__actions"></dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Date of birth</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">2 April 2018</dd>-->
+<!--                <dd class="nhsuk-summary-list__actions"></dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Post code</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">LS1 4HY</dd>-->
+<!--                <dd class="nhsuk-summary-list__actions"></dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Gender</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">Male</dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Ethnicity</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    Mixed White and Black Caribbean-->
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!--        </dl>-->
+<!---->
+<!--        <!-- TEST STAGE -->-->
+<!--        <div-->
+<!--            class="nhsuk-u-margin-bottom-4"-->
+<!--            style="display: flex; align-items: center"-->
+<!--        >-->
+<!--            <h4 class="nhsuk-u-margin-bottom-0">-->
+<!--                <a href="/cancer/referral/test">Test request</a>-->
+<!--            </h4>-->
+<!---->
+<!--            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">-->
+<!--                Completed-->
+<!--            </p>-->
+<!--            <!-- <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto;">-->
+<!--        Not started-->
+<!--      </strong> -->-->
+<!--        </div>-->
+<!---->
+<!--        <dl class="nhsuk-summary-list">-->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Clinical indication</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                --------------------------->
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/test">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Presentation status</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">First diagnosis</dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/test">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--        </dl>-->
+<!---->
+<!--        <!-- CLINICAL INFO STAGE -->-->
+<!--        <div-->
+<!--            class="nhsuk-u-margin-bottom-4"-->
+<!--            style="display: flex; align-items: center"-->
+<!--        >-->
+<!--            <h4 class="nhsuk-u-margin-bottom-0">-->
+<!--                <a href="/cancer/referral/clinical-info">Clinical information</a>-->
+<!--            </h4>-->
+<!---->
+<!--            <!-- <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">-->
+<!--                Completed-->
+<!--            </p> -->-->
+<!--            <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto;">-->
+<!--        Not started-->
+<!--      </strong>-->
+<!--        </div>-->
+<!---->
+<!--        <!-- TUMOUR TYPE STAGE -->-->
+<!--        <div-->
+<!--            class="nhsuk-u-margin-bottom-4"-->
+<!--            style="display: flex; align-items: center"-->
+<!--        >-->
+<!--            <h4 class="nhsuk-u-margin-bottom-0">-->
+<!--                <a href="/cancer/referral/tumour-type">Tumour type</a>-->
+<!--            </h4>-->
+<!---->
+<!--            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">-->
+<!--                Completed-->
+<!--            </p>-->
+<!--        </div>-->
+<!--        <dl class="nhsuk-summary-list">-->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Tumour Type</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    Solid tumour-->
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/tumour-type">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Histopathology Lab ID</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">Primary</dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/tumour-type">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Date of diagnosis</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">03/02/25</dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/tumour-type">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Additional tumour information</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">&nbsp;</dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/tumour-type">Add</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Tumour topography</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">----------</dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/tumour-type">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Tumour morphology</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">data added</dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/tumour-type">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--        </dl>-->
+<!---->
+<!--        <!-- TUMOUR SAMPLES STAGE -->-->
+<!--        <div-->
+<!--            class="nhsuk-u-margin-bottom-4"-->
+<!--            style="display: flex; align-items: center"-->
+<!--        >-->
+<!--            <h4 class="nhsuk-u-margin-bottom-0">-->
+<!--                <a href="/cancer/referral/tumour-samples">Tumour sample</a>-->
+<!--            </h4>-->
+<!---->
+<!--            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">-->
+<!--                Completed-->
+<!--            </p>-->
+<!--        </div>-->
+<!---->
+<!--        <dl class="nhsuk-summary-list">-->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Tumour sample</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    Fresh frozen tumour-->
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/tumour-samples">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Sample ID</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    ----- ----- ---------->
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/tumour-samples">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Date of collection</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    20/01/2025-->
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/tumour-samples">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Time of collection</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    14:40-->
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/tumour-samples">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">% malignant nuclei/blasts</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    ------------>
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/tumour-samples">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">If BM/PM. provide volume and nucleated cell count</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    ---------->
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/tumour-samples">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!--        </dl>-->
+<!---->
+<!--        <!-- GERMLINE SAMPLES STAGE -->-->
+<!--        <div-->
+<!--            class="nhsuk-u-margin-bottom-4"-->
+<!--            style="display: flex; align-items: center"-->
+<!--        >-->
+<!--            <h4 class="nhsuk-u-margin-bottom-0">-->
+<!--                <a href="/cancer/referral/germline-samples">Germline samples</a>-->
+<!--            </h4>-->
+<!---->
+<!--            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">-->
+<!--                Completed-->
+<!--            </p>-->
+<!--        </div>-->
+<!---->
+<!--        <dl class="nhsuk-summary-list">-->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Sample ID</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    ----- ----- ---------->
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/germline-samples">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Date of collection</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    20/01/2025-->
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/germline-samples">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Time of collection</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    14:40-->
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/germline-samples">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Sample type</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    ------------>
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/germline-samples">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Sample volume</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    ------------>
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/germline-samples">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Comments</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    ------------>
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/germline-samples">Add</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--        </dl>-->
+<!---->
+<!--        <!-- CARE TEAM STAGE -->-->
+<!--        <div-->
+<!--            class="nhsuk-u-margin-bottom-4"-->
+<!--            style="display: flex; align-items: center"-->
+<!--        >-->
+<!--            <h4 class="nhsuk-u-margin-bottom-0">-->
+<!--                <a href="/cancer/referral/care-team">Care team</a>-->
+<!--            </h4>-->
+<!---->
+<!--            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">-->
+<!--                Completed-->
+<!--            </p>-->
+<!--        </div>-->
+<!---->
+<!--        <dl class="nhsuk-summary-list">-->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Organisation</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    Great Ormond Street Hospital-->
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/care-team">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Responsible clinician</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">Dr Sue Donim</dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/care-team/responsible-clinician"-->
+<!--                        >Change</a-->
+<!--                    >-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Clinician contact</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    <p>0208 965 5244</p>-->
+<!--                    <p>sue.donim@nhs.net</p>-->
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/care-team/responsible-clinician"-->
+<!--                        >Change</a-->
+<!--                    >-->
+<!--                </dd>-->
+<!--            </div>-->
+<!---->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Main contact email</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+<!--                    admins_GOSH_genetics@nhs.net-->
+<!--                </dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/care-team/responsible-clinician"-->
+<!--                        >Change</a-->
+<!--                    >-->
+<!--                </dd>-->
+<!--            </div>-->
+<!--        </dl>-->
+<!---->
+<!--        <!-- GLH STAGE -->-->
+<!--        <div-->
+<!--            class="nhsuk-u-margin-bottom-4"-->
+<!--            style="display: flex; align-items: center"-->
+<!--        >-->
+<!--            <h4 class="nhsuk-u-margin-bottom-0">-->
+<!--                <a href="/cancer/referral/glh">GLH</a>-->
+<!--            </h4>-->
+<!---->
+<!--            <p class="nhsuk-u-margin-bottom-0" style="margin-left: auto">-->
+<!--                Completed-->
+<!--            </p>-->
+<!--            <!-- <strong class="nhsuk-tag nhsuk-tag--blue" style="margin-left: auto;">-->
+<!--        Not started-->
+<!--      </strong> -->-->
+<!--        </div>-->
+<!---->
+<!--        <dl class="nhsuk-summary-list">-->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">Receiving GLH</dt>-->
+<!--                <dd class="nhsuk-summary-list__value">South East GLH</dd>-->
+<!--                <dd class="nhsuk-summary-list__actions">-->
+<!--                    <a href="/cancer/referral/glh">Change</a>-->
+<!--                </dd>-->
+<!--            </div>-->
+<!--        </dl>-->
+<!---->
 
 
         <!-- CONSENT RECORD STAGE -->
