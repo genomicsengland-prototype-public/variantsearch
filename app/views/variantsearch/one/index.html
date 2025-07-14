@@ -58,35 +58,44 @@ NHS.UK prototype kit
         {% from 'radios/macro.njk' import radios %}
         {% from 'input/macro.njk' import input %}
 
-        {% set emailHtml %}
+        {% set HGVScHtml %}
           {{ input({
-            id: "email",
-            name: "email",
+            id: "HGVSc",
+            name: "HGVSc",
             classes: "nhsuk-u-width-two-thirds",
             label: {
-              text: "Email address"
+              text: "HGVSc variant"
+            },
+            hint: {
+              text: "For example ENST00000324856.13:c.1113dup"
             }
           }) }}
         {% endset -%}
 
-        {% set phoneHtml %}
+        {% set HGVSpHtml %}
           {{ input({
-            id: "phone",
-            name: "phone",
+            id: "HGVSp",
+            name: "HGVSp",
             classes: "nhsuk-u-width-two-thirds",
             label: {
-              text: "Phone number"
+              text: "HGVSp variant"
+            },
+            hint: {
+              text: "For example ENST00000493543.1:p(Val600Glu)"
             }
           }) }}
         {% endset -%}
 
-        {% set mobileHtml %}
+        {% set geneHtml %}
           {{ input({
-            id: "mobile",
-            name: "mobile",
+            id: "gene",
+            name: "gene",
             classes: "nhsuk-u-width-two-thirds",
             label: {
-              text: "Mobile phone number"
+              text: "HGNC gene symbol"
+            },
+            hint: {
+              text: "For example BRAF"
             }
           }) }}
         {% endset -%}
@@ -97,7 +106,10 @@ NHS.UK prototype kit
             name: "position",
             classes: "nhsuk-u-width-two-thirds",
             label: {
-              text: "Genomic position"
+              text: "Variant position (GRCh38)"
+            },
+            hint: {
+              text: "For example chr7:140753336:A:T"
             }
           }) }}
         {% endset -%}
@@ -109,44 +121,47 @@ NHS.UK prototype kit
             classes: "nhsuk-u-width-two-thirds",
             label: {
               text: "Region"
+            },
+            hint: {
+              text: "For example chr7:140750000-140800000"
             }
           }) }}
         {% endset -%}
 
 
         {{ radios({
-          idPrefix: "contact",
-          name: "contact",
+          idPrefix: "searchtype",
+          name: "searchtype",
           fieldset: {
             legend: {
-              text: "How would you prefer to be contacted?",
-              classes: "nhsuk-fieldset__legend--l",
+              text: "Search type",
+              classes: "nhsuk-fieldset__legend--s",
               isPageHeading: "true"
             }
           },
-          hint: {
-            text: "Select one option"
-          },
+          
+          
+          
           items: [
             {
-              value: "email",
-              text: "Email",
+              value: "HGVSc",
+              text: "HGVSc",
               conditional: {
-                html: emailHtml
+                html: HGVScHtml
               }
             },
             {
-              value: "phone",
-              text: "Phone",
+              value: "HGVSp",
+              text: "HGVSp",
               conditional: {
-                html: phoneHtml
+                html: HGVSpHtml
               }
             },
             {
-              value: text,
-              text: "Text message",
+              value: gene,
+              text: "Gene",
               conditional: {
-                html: mobileHtml
+                html: geneHtml
               }
             },
             {
