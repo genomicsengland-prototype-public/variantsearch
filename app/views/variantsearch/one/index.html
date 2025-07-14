@@ -18,16 +18,7 @@ NHS.UK prototype kit
 {% block beforeContent %}
 {% from 'breadcrumb/macro.njk' import breadcrumb %}
 
-{{ breadcrumb({
-items: [
-{
-href: "/cancer/referral",
-text: "Referral #123456789"
-}
-],
-href: "/cancer/referral/test",
-text: "Test request"
-}) }}
+
 {% endblock %}
 
 {% block outerContent %}
@@ -44,16 +35,146 @@ text: "Test request"
 {% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-4">[ONE PAGE]</h1>
+        <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-2">Variant search</h1>
+        <p class="nhsuk-u-margin-bottom-6">Use this tool to search available datasets to find  variance linked to different type types of cancer.</p>
+        
+        {{
+            radios({
+                classes: "nhsuk-u-margin-bottom-4",
+                idPrefix: "test-req",
+                name: "test-req",
+                fieldset: {
+                    legend: {
+                        text: "Select data source",
+                        classes: "nhsuk-fieldset__legend--s",
+                        isPageHeading: false
+                        }
+                    },
+                hint: { html: hintHtml },
+                items: [ { value: "100K Genomes Project Pan-Cancer data", text: "100K Genomes Project Pan-Cancer data" }, { value: "Genomics England haematological and solid tumour cancers data", text: "Genomics England haematological and solid tumour cancers data" } ]
+            })
+        }}
+        
+        {% from 'radios/macro.njk' import radios %}
+        {% from 'input/macro.njk' import input %}
 
-        <div class="nhsuk-form-group  nhsuk-u-margin-bottom-6">
-            <label class="nhsuk-label" for="input-with-hint-text">
-                Clinical Indication and code
+        {% set emailHtml %}
+          {{ input({
+            id: "email",
+            name: "email",
+            classes: "nhsuk-u-width-two-thirds",
+            label: {
+              text: "Email address"
+            }
+          }) }}
+        {% endset -%}
+
+        {% set phoneHtml %}
+          {{ input({
+            id: "phone",
+            name: "phone",
+            classes: "nhsuk-u-width-two-thirds",
+            label: {
+              text: "Phone number"
+            }
+          }) }}
+        {% endset -%}
+
+        {% set mobileHtml %}
+          {{ input({
+            id: "mobile",
+            name: "mobile",
+            classes: "nhsuk-u-width-two-thirds",
+            label: {
+              text: "Mobile phone number"
+            }
+          }) }}
+        {% endset -%}
+
+        {% set positionHtml %}
+          {{ input({
+            id: "position",
+            name: "position",
+            classes: "nhsuk-u-width-two-thirds",
+            label: {
+              text: "Genomic position"
+            }
+          }) }}
+        {% endset -%}
+
+        {% set regionHtml %}
+          {{ input({
+            id: "region",
+            name: "region",
+            classes: "nhsuk-u-width-two-thirds",
+            label: {
+              text: "Region"
+            }
+          }) }}
+        {% endset -%}
+
+
+        {{ radios({
+          idPrefix: "contact",
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "How would you prefer to be contacted?",
+              classes: "nhsuk-fieldset__legend--l",
+              isPageHeading: "true"
+            }
+          },
+          hint: {
+            text: "Select one option"
+          },
+          items: [
+            {
+              value: "email",
+              text: "Email",
+              conditional: {
+                html: emailHtml
+              }
+            },
+            {
+              value: "phone",
+              text: "Phone",
+              conditional: {
+                html: phoneHtml
+              }
+            },
+            {
+              value: text,
+              text: "Text message",
+              conditional: {
+                html: mobileHtml
+              }
+            },
+            {
+              value: text,
+              text: "Genomic position ",
+              conditional: {
+                html: positionHtml
+              }
+            },
+            {
+              value: text,
+              text: "Region",
+              conditional: {
+                html: regionHtml
+              }
+            }
+          ]
+        }) }}
+
+
+        <div class="nhsuk-form-group  nhsuk-u-margin-bottom-8
+">
+            <label class="nhsuk-label nhsuk-label--s" for="input-with-hint-text">
+                Tumour type (optional)
             </label>
             <form id="clinical-indication-code-form" action="/cancer/referral/clinical-info" method="post">
             <div class="nhsuk-hint" id="input-with-hint-text-hint">
-                Search by clinical indication or code listed in the
-                <a href="#">Test directory</a>
+                Filter variant search results by phenotype. For example breast invasive carcinoma.
             </div>
 
             <select title="Clinical Indication code" name="clinical-indication-code" id="clinical-indication-code">
@@ -114,16 +235,6 @@ text: "Test request"
         </p>
         {%- endset %}
 
-        {{
-            radios({
-                classes: "nhsuk-u-margin-bottom-4",
-                idPrefix: "test-req",
-                name: "test-req",
-                fieldset: { legend: { text: "Presentation status", isPageHeading: false } },
-                hint: { html: hintHtml },
-                items: [ { value: "First diagnosis", text: "First diagnosis" }, { value: "Recurrence / Relapse", text: "Recurrence / Relapse" }, { value: "Unknown", text: "Unknown" } ]
-            })
-        }}
 
 
         <button
@@ -133,7 +244,7 @@ text: "Test request"
             role="button"
             type="submit"
         >
-            Save and continue
+            Search
         </button>
     </div>
 </div>
