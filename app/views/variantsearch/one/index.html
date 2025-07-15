@@ -244,22 +244,9 @@ NHS.UK prototype kit
             </script>
         </div>
 
-        {% from 'radios/macro.njk' import radios %} {% from 'fieldset/macro.njk'
-        import fieldset %} {% from 'hint/macro.njk' import hint %} {% set
-        hintHtml -%}
-        <label for="test-req" class="nhsuk-u-margin-bottom-2">
-
-        {%- endset %} {% set hintHtmlCi -%}
-        <p for="test-req" class="nhsuk-u-margin-bottom-2">
-            Search by clinical indication or code listed in the
-            <a href="#">Test directory</a>
-        </p>
-        {%- endset %}
-
-
 
         <button
-            class="nhsuk-button"
+            class="nhsuk-button nhsuk-u-margin-bottom-8"
             data-module="nhsuk-button"
             draggable="false"
             role="button"
@@ -267,6 +254,11 @@ NHS.UK prototype kit
         >
             Search
         </button>
+        
+        <p class="nhsuk-u-margin-bottom-4">
+        100K Genomes Project Pan-Cancer data is from "<a href="">Table S1: Somatic small variant protein changes</a>", Sosinsky et al., Nat Med 30, 279–289 (2024)
+        </p>
+
     </div>
 </div>
 {% endblock %}
