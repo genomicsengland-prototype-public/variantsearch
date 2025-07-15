@@ -38,7 +38,19 @@ NHS.UK prototype kit
         <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-2">Variant search</h1>
         <p class="nhsuk-u-margin-bottom-6">Use this tool to search available datasets to find  variance linked to different type types of cancer.</p>
         
-        {{
+
+
+
+        <div class="nhsuk-form-group  nhsuk-u-margin-bottom-8
+">
+
+
+
+
+
+            <form id="clinical-indication-code-form" action="/variantsearch/results" method="post">
+            
+                    {{
             radios({
                 classes: "nhsuk-u-margin-bottom-4",
                 idPrefix: "test-req",
@@ -60,8 +72,8 @@ NHS.UK prototype kit
 
         {% set HGVScHtml %}
           {{ input({
-            id: "HGVSc",
-            name: "HGVSc",
+            id: "HGVScV",
+            name: "HGVScV",
             classes: "nhsuk-u-width-two-thirds",
             label: {
               text: "HGVSc variant"
@@ -74,8 +86,8 @@ NHS.UK prototype kit
 
         {% set HGVSpHtml %}
           {{ input({
-            id: "HGVSp",
-            name: "HGVSp",
+            id: "HGVSpV",
+            name: "HGVSpV",
             classes: "nhsuk-u-width-two-thirds",
             label: {
               text: "HGVSp variant"
@@ -88,8 +100,8 @@ NHS.UK prototype kit
 
         {% set geneHtml %}
           {{ input({
-            id: "gene",
-            name: "gene",
+            id: "geneV",
+            name: "geneV",
             classes: "nhsuk-u-width-two-thirds",
             label: {
               text: "HGNC gene symbol"
@@ -98,12 +110,23 @@ NHS.UK prototype kit
               text: "For example BRAF"
             }
           }) }}
+          {{ input({
+            id: "geneVT",
+            name: "geneVT",
+            classes: "nhsuk-u-width-two-thirds",
+            label: {
+              text: "Variant type (optional)"
+            },
+            hint: {
+              text: "For example missense"
+            }
+          }) }}
         {% endset -%}
 
         {% set positionHtml %}
           {{ input({
-            id: "position",
-            name: "position",
+            id: "positionV",
+            name: "positionV",
             classes: "nhsuk-u-width-two-thirds",
             label: {
               text: "Variant position (GRCh38)"
@@ -112,25 +135,47 @@ NHS.UK prototype kit
               text: "For example chr7:140753336:A:T"
             }
           }) }}
-        {% endset -%}
-
-        {% set regionHtml %}
           {{ input({
-            id: "region",
-            name: "region",
+            id: "positionVT",
+            name: "positionVT",
             classes: "nhsuk-u-width-two-thirds",
             label: {
-              text: "Region"
+              text: "Variant type (optional)"
+            },
+            hint: {
+              text: "For example missense"
+            }
+          }) }}
+        {% endset -%}
+        
+        {% set regionHtml %}
+          {{ input({
+            id: "regionV",
+            name: "regionV",
+            classes: "nhsuk-u-width-two-thirds",
+            label: {
+              text: "Genomic region (GRCh38)"
             },
             hint: {
               text: "For example chr7:140750000-140800000"
+            }
+          }) }}
+          {{ input({
+            id: "regionVT",
+            name: "regionVT",
+            classes: "nhsuk-u-width-two-thirds",
+            label: {
+              text: "Variant type (optional)"
+            },
+            hint: {
+              text: "For example missense"
             }
           }) }}
         {% endset -%}
 
 
         {{ radios({
-        classes: "nhsuk-u-margin-bottom-4",
+        classes: "nhsuk-u-margin-bottom-",
           idPrefix: "searchtype",
           name: "searchtype",
           fieldset: {
@@ -144,6 +189,7 @@ NHS.UK prototype kit
           
           
           items: [
+
             {
               value: "HGVSc",
               text: "HGVSc",
@@ -159,36 +205,35 @@ NHS.UK prototype kit
               }
             },
             {
-              value: gene,
+              value: "gene",
               text: "Gene",
               conditional: {
                 html: geneHtml
               }
             },
             {
-              value: text,
+              value: "position",
               text: "Genomic position ",
               conditional: {
                 html: positionHtml
               }
             },
             {
-              value: text,
+              value: "region",
               text: "Region",
               conditional: {
                 html: regionHtml
               }
             }
+
           ]
         }) }}
 
-
-        <div class="nhsuk-form-group  nhsuk-u-margin-bottom-8
-">
+            
             <label class="nhsuk-label nhsuk-label--s" for="input-with-hint-text">
                 Tumour type (optional)
             </label>
-            <form id="clinical-indication-code-form" action="/variantsearch/results" method="post">
+            
             <div class="nhsuk-hint" id="input-with-hint-text-hint">
                 Filter variant search results by phenotype. For example breast invasive carcinoma.
             </div>
