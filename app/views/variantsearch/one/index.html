@@ -1,13 +1,3 @@
-{% set textHtml %}
-{% from 'textarea/macro.njk' import textarea %}
-{{ textarea({
-name: "example", id: "example", label: { text: "Details of why this referral
-considered urgent. "},
-hint: {
-    text: "There is currently no urgent WGS pathway. It may be possible to prioritise some cases."
-   } }) }}
-{% endset -%}
-
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
