@@ -100,7 +100,7 @@ NHS.UK prototype kit
               text: "For example BRAF"
             }
           }) }}
-          {{ input({
+          {# {{ input({
             id: "geneVT",
             name: "geneVT",
             classes: "nhsuk-u-width-two-thirds",
@@ -110,7 +110,7 @@ NHS.UK prototype kit
             hint: {
               text: "For example missense"
             }
-          }) }}
+          }) }} #}
         {% endset -%}
 
         {% set positionHtml %}
@@ -125,7 +125,7 @@ NHS.UK prototype kit
               text: "For example chr7:140753336:A:T"
             }
           }) }}
-          {{ input({
+          {# {{ input({
             id: "positionVT",
             name: "positionVT",
             classes: "nhsuk-u-width-two-thirds",
@@ -135,7 +135,7 @@ NHS.UK prototype kit
             hint: {
               text: "For example missense"
             }
-          }) }}
+          }) }} #}
         {% endset -%}
         
         {% set regionHtml %}
@@ -150,7 +150,7 @@ NHS.UK prototype kit
               text: "For example chr7:140750000-140800000"
             }
           }) }}
-          {{ input({
+          {# {{ input({
             id: "regionVT",
             name: "regionVT",
             classes: "nhsuk-u-width-two-thirds",
@@ -160,7 +160,7 @@ NHS.UK prototype kit
             hint: {
               text: "For example missense"
             }
-          }) }}
+          }) }} #}
         {% endset -%}
 
 
@@ -219,7 +219,46 @@ NHS.UK prototype kit
           ]
         }) }}
 
+
+            <div class="nhsuk-u-margin-bottom-6">
+            <label class="nhsuk-label nhsuk-label--s" for="input-with-hint-text">
+                Variant type (optional)
+            </label>
             
+            <div class="nhsuk-hint" id="input-with-hint-text-hint">
+                For example missense
+            </div>
+
+            <select title="Variant type" name="varType" id="varType">
+                <option></option>
+                <option>missense variant  </option>
+                <option>synonymous variant   </option>
+                <option>initiator codon variant   </option>
+                <option>stop codon variant   </option>
+                <option>indel   </option>
+                <option>non coding transcript variant   </option>
+                <option>splice acceptor variant   </option>
+                <option>intron variant   </option>
+                <option>splice donor variant   </option>
+                <option>frameshift variant   </option>
+                <option>start loss   </option>
+                <option>transcript amplification   </option>
+                <option>transcript fusion   </option>
+                <option>structural variant   </option>
+            </select>
+            
+            <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
+            <script type="text/javascript" src="/js/accessible-autocomplete.min.js"></script>
+
+
+            <script>
+                accessibleAutocomplete.enhanceSelectElement({
+                    defaultValue: "",
+                    selectElement: document.querySelector("#varType"),
+                });
+            </script>
+            </div>
+
             <label class="nhsuk-label nhsuk-label--s" for="input-with-hint-text">
                 Tumour type (optional)
             </label>
@@ -267,9 +306,6 @@ NHS.UK prototype kit
                 <option>Uterine Corpus Endometrial Serous Carcinoma </option>
                 <option>Uveal Melanoma </option>
             </select>
-
-            <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
-            <script type="text/javascript" src="/js/accessible-autocomplete.min.js"></script>
 
             <script>
                 accessibleAutocomplete.enhanceSelectElement({
