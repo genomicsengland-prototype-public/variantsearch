@@ -1,0 +1,140 @@
+{% set textHtml %}
+{% from 'textarea/macro.njk' import textarea %}
+{{ textarea({
+name: "example", id: "example", label: { text: "Details of why this referral
+considered urgent. "},
+hint: {
+    text: "There is currently no urgent WGS pathway. It may be possible to prioritise some cases."
+   } }) }}
+{% endset -%}
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+NHS.UK prototype kit
+{% endblock %}
+{% set cancerPatientData = true %}
+
+{% block beforeContent %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+
+{{ breadcrumb({
+items: [
+{
+href: "/cancer/referral",
+text: "Referral #123456789"
+}
+],
+href: "/cancer/referral/test",
+text: "Test request"
+}) }}
+{% endblock %}
+
+{% block outerContent %}
+<div class="nhsuk-back-link" style="margin-top: 2rem">
+    <a class="nhsuk-back-link__link" href="javascript:history.back();">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            aria-hidden="true" height="24" width="24">
+            <path
+                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+            </path>
+        </svg>
+        Go back</a>
+</div>
+{% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-4">[START PATH]</h1>
+
+        <div class="nhsuk-form-group  nhsuk-u-margin-bottom-6">
+            <label class="nhsuk-label" for="input-with-hint-text">
+                Clinical Indication and code
+            </label>
+            <form id="clinical-indication-code-form" action="/cancer/referral/clinical-info" method="post">
+            <div class="nhsuk-hint" id="input-with-hint-text-hint">
+                Search by clinical indication or code listed in the
+                <a href="#">Test directory</a>
+            </div>
+
+            <select title="Clinical Indication code" name="clinical-indication-code" id="clinical-indication-code">
+                <option></option>
+                <option>Cancer of Unknown Primary - M226</option>
+                <option>Cystic Nephroma - Paediatric - M131</option>
+                <option>Undifferentiated tumour - M204</option>
+                <option>Primary Mediastinal B Cell Lymphoma - M100</option>
+                <option>Paediatric Type Follicular Lymphoma - M110</option>
+                <option>T Cell Non-Hodgkin Lymphoma - M111</option>
+                <option>Hepatosplenic T Cell Lymphoma - M116</option>
+                <option>CNS High-Grade Neuroepithelial Tumour with MN1 Alteration - Paediatric - M126</option>
+                <option>Desmoplastic Medulloblastoma - Paediatric - M133</option>
+                <option>Ganglioglioma - Paediatric - 137</option>
+                <option>Medulloblastoma Group 3/4 - Paediatric - 147</option>
+                <option>Melanotic Tumours - Paediatric - 149</option>
+                <option>Midline Carcinoma - Paediatric - 151</option>
+                <option>Neuroblastoma - Paediatric - M152</option>
+                <option>Oligoastrocytoma - Paediatric - M155</option>
+                <option>Thyroid Papillary Carcinoma - Paediatric - M157</option>
+                <option>Pituitary Blastoma - Paediatric - M159</option>
+                <option>Wilms Tumours - Paediatric - M178</option>
+                <option>WNT Medulloblastoma - Paediatric - M179</option>
+                <option>Diffuse Midline Glioma - Paediatric - M183</option>
+                <option>Glioma - Paediatric - M184</option>
+                <option>Low Grade Glioma - Paediatric - M186</option>
+                <option>Embryonal Tumour Differential - Adult and Paediatric - M190</option>
+                <option>Low Grade Intrinsic Brain Tumour Differential - Adult - M191</option>
+                <option>Round Cell Sarcoma of Soft Tissue Differential - M197</option>
+                <option>Vascular Soft Tissue Tumour Differential - M198</option>
+                <option>Spindle Cell Soft Tissue Tumour Differential - M199</option>
+                <option>Adipocytic Soft Tissue Tumour Differential - M201</option>
+                <option>Cartilage Forming Bone Tumour Differential - M205</option>
+                <option>Astrocytoma - Adult - M21</option>
+                <option>Acute Lympoblastic Leukaemia - M91.1</option>
+            </select>
+
+            <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
+            <script type="text/javascript" src="/js/accessible-autocomplete.min.js"></script>
+
+            <script>
+                accessibleAutocomplete.enhanceSelectElement({
+                    defaultValue: "",
+                    selectElement: document.querySelector("#clinical-indication-code"),
+                });
+            </script>
+        </div>
+
+        {% from 'radios/macro.njk' import radios %} {% from 'fieldset/macro.njk'
+        import fieldset %} {% from 'hint/macro.njk' import hint %} {% set
+        hintHtml -%}
+        <label for="test-req" class="nhsuk-u-margin-bottom-2">
+
+        {%- endset %} {% set hintHtmlCi -%}
+        <p for="test-req" class="nhsuk-u-margin-bottom-2">
+            Search by clinical indication or code listed in the
+            <a href="#">Test directory</a>
+        </p>
+        {%- endset %}
+
+        {{
+            radios({
+                classes: "nhsuk-u-margin-bottom-4",
+                idPrefix: "test-req",
+                name: "test-req",
+                fieldset: { legend: { text: "Presentation status", isPageHeading: false } },
+                hint: { html: hintHtml },
+                items: [ { value: "First diagnosis", text: "First diagnosis" }, { value: "Recurrence / Relapse", text: "Recurrence / Relapse" }, { value: "Unknown", text: "Unknown" } ]
+            })
+        }}
+
+
+        <button
+            class="nhsuk-button"
+            data-module="nhsuk-button"
+            draggable="false"
+            role="button"
+            type="submit"
+        >
+            Save and continue
+        </button>
+    </div>
+</div>
+{% endblock %}
