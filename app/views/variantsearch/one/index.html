@@ -66,10 +66,10 @@ NHS.UK prototype kit
             name: "HGVScV",
             classes: "nhsuk-u-width-two-thirds",
             label: {
-              text: "HGVSc variant"
+              text: "Coding DNA Sequence change"
             },
             hint: {
-              text: "For example ENST00000324856.13:c.1113dup"
+              text: "For example ENST00000324856.13:c.1113dup or NM_006015.6:c.1113dup"
             }
           }) }}
         {% endset -%}
@@ -80,7 +80,7 @@ NHS.UK prototype kit
             name: "HGVSpV",
             classes: "nhsuk-u-width-two-thirds",
             label: {
-              text: "HGVSp variant"
+              text: "Protein change"
             },
             hint: {
               text: "For example ENST00000493543.1:p(Val600Glu)"
@@ -182,14 +182,14 @@ NHS.UK prototype kit
 
             {
               value: "HGVSc",
-              text: "HGVSc",
+              text: "Coding",
               conditional: {
                 html: HGVScHtml
               }
             },
             {
               value: "HGVSp",
-              text: "HGVSp",
+              text: "Protein",
               conditional: {
                 html: HGVSpHtml
               }
