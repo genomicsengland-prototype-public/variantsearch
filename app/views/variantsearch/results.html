@@ -24,20 +24,21 @@ NHS.UK prototype kit
 {% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <h2>Search results</h2>
-        <p class="nhsuk-u-margin-bottom-4">
+        <h1 class="nhsuk-heading-l">Search results</h1>
+        <!-- <p class="nhsuk-u-margin-bottom-4">
             Matches from 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.
-        </p>
+        </p> -->
         
-        <p class="nhsuk--l nhsuk-u-margin-bottom-6">
-        <strong>108</strong> matches for <strong>{{ data["HGVScV"]}} {{ data["HGVSpV"]}} {{ data["geneV"]}} {{ data["geneVT"]}} {{ data["positionV"]}} {{ data["positionVT"]}} {{ data["regionV"]}} {{ data["regionVT"]}}</strong> and <strong>{{ data["clinical-indication-code"] }}</strong>
-        </p>
+        <h2 class="nhsuk-heading-s">
+        <strong>111</strong> matches for <strong>{{ data["HGVScV"]}} {{ data["HGVSpV"]}} {{ data["geneV"]}} {{ data["positionV"]}} {{ data["regionV"]}} {{ data["varType"]}}</strong> and <strong>{{ data["clinical-indication-code"] }}</strong>
+        </h2>
+        <p class="nhsuk-u-margin-bottom-6">Of 333 instances of {{ data["clinical-indication-code"] }} in the 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.</p>
         
-        <p><strong>632</strong> total matches for <strong> {{ data["HGVScV"]}} {{ data["HGVSpV"]}} {{ data["geneV"]}} {{ data["geneVT"]}} {{ data["positionV"]}} {{ data["positionVT"]}} {{ data["regionV"]}} {{ data["regionVT"]}}</strong></p>
+        <p><strong>635</strong> total matches for <strong>{{ data["HGVScV"]}} {{ data["HGVSpV"]}} {{ data["geneV"]}} {{ data["positionV"]}} {{ data["regionV"]}} {{ data["varType"]}} </strong>of 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.</p>
         
         <ul class="nhsuk-u-margin-bottom-6">
             <li>434 matches for [more frequently associated tumour]</li>
-            <li><strong>108 matches for {{ data["clinical-indication-code"] }}</strong></li>
+            <li><strong>111 matches for {{ data["clinical-indication-code"] }}</strong></li>
             <li>57 matches for [different tumour]</li>
             <li>29 matches for [rarer tumour]</li>
             <li>4 matches for a [very rare tumour]</li>
