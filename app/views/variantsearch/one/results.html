@@ -32,7 +32,7 @@ NHS.UK prototype kit
         <h2 class="nhsuk-heading-s">
         <strong>111</strong> matches for <strong>{{ data["HGVScV"]}} {{ data["HGVSpV"]}} {{ data["geneV"]}} {{ data["positionV"]}} {{ data["regionV"]}} {{ data["varType"]}}</strong> and <strong>{{ data["tumourType"] }}</strong>
         </h2>
-        <p class="nhsuk-u-margin-bottom-6">Of 132 instances of {{ data["tumourType"] }} found in the 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.</p>
+        <p class="nhsuk-u-margin-bottom-6">Across 132 samples of {{ data["tumourType"] }} found in the 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.</p>
 {#         
         <h2 class="nhsuk-heading-s">
             <strong>635</strong> total matches for <strong>{{ data["HGVScV"]}} {{ data["HGVSpV"]}} {{ data["geneV"]}} {{ data["positionV"]}} {{ data["regionV"]}} {{ data["varType"]}} </strong>
@@ -58,8 +58,9 @@ NHS.UK prototype kit
   <thead class="nhsuk-table__head" role="rowgroup">
     <tr role="row">
       <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-half" role="columnheader">Tumour</th>
-      <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-quarter" role="columnheader">With variant</th>
-      <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-quarter" role="columnheader">Total</th>
+      <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-quarter" role="columnheader">Variant instances</th>
+
+      <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-quarter" role="columnheader">Total # samples</th>
     </tr>
   </thead>
   <tbody class="nhsuk-table__body">
@@ -71,7 +72,7 @@ NHS.UK prototype kit
     <tr class="nhsuk-table__row" role="row">
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour </span><strong>{{ data["tumourType"] }}</strong></td>
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">With variant </span><strong>111</strong></td>
-      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Total</span><strong>131</strong></td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Total</span><strong>132</strong></td>
     </tr>
     <tr class="nhsuk-table__row" role="row">
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">tumour </span>Diferent tumour</td>

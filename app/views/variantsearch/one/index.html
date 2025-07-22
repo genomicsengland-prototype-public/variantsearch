@@ -53,7 +53,7 @@ NHS.UK prototype kit
                         }
                     },
                 hint: { html: hintHtml },
-                items: [ { value: "100K Genomes Project Pan-Cancer data", text: "100K Genomes Project Pan-Cancer data" }, { value: "Genomics England haematological and solid tumour cancers data", text: "Genomics England haematological and solid tumour cancers data" } ]
+                items: [ { value: "100K Genomes Project Solid Tumour Pan-Cancer Data", text: "100K Genomes Project Solid Tumour Pan-Cancer Data" }, { value: "Genomics England & 100K Genomes Project Haematological Tumour Data", text: "Genomics England & 100K Genomes Project Haematological Tumour Data" } ]
             })
         }}
         
@@ -80,7 +80,7 @@ NHS.UK prototype kit
             name: "HGVSpV",
             classes: "nhsuk-u-width-two-thirds",
             label: {
-              text: "Protein change"
+              text: "Amino acid sequence change"
             },
             hint: {
               text: "For example ENST00000493543.1:p(Val600Glu)"
@@ -182,14 +182,14 @@ NHS.UK prototype kit
 
             {
               value: "HGVSc",
-              text: "Coding",
+              text: "CDS change",
               conditional: {
                 html: HGVScHtml
               }
             },
             {
               value: "HGVSp",
-              text: "Protein",
+              text: "Protein change",
               conditional: {
                 html: HGVSpHtml
               }
@@ -222,7 +222,7 @@ NHS.UK prototype kit
 
             <div class="nhsuk-u-margin-bottom-6">
             <label class="nhsuk-label nhsuk-label--s" for="input-with-hint-text">
-                Variant type (optional)
+                Variant consequence type (optional)
             </label>
             
             <div class="nhsuk-hint" id="input-with-hint-text-hint">
