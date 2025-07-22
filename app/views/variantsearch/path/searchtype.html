@@ -32,12 +32,52 @@ NHS.UK prototype kit
         <ul class="nhsuk-grid-row nhsuk-card-group">
             <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
             {{ card({
-                href: "searchtype",
+                href: "cds",
                 primary: "true",
                 clickable: "true",
-                heading: "title",
+                heading: "CDS change",
                 headingClasses: "nhsuk-heading-m",
-                description: "desc "
+                description: "Search for specific variant based on coding DNA sequence change. "
+            }) }}
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+            {{ card({
+                href: "protein",
+                primary: "true",
+                clickable: "true",
+                heading: "Protein change",
+                headingClasses: "nhsuk-heading-m",
+                description: "Search for specific variant based on amino acid sequence change "
+            }) }}
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+            {{ card({
+                href: "gene",
+                primary: "true",
+                clickable: "true",
+                heading: "Gene",
+                headingClasses: "nhsuk-heading-m",
+                description: "Search for variants in a gene by its HGNC gene symbol. "
+            }) }}
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+            {{ card({
+                href: "position",
+                primary: "true",
+                clickable: "true",
+                heading: "Genomic position",
+                headingClasses: "nhsuk-heading-m",
+                description: "Search for specific variant by its genomic position. "
+            }) }}
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+            {{ card({
+                href: "region",
+                primary: "true",
+                clickable: "true",
+                heading: "Region",
+                headingClasses: "nhsuk-heading-m",
+                description: "Search for variants within a genomic region. "
             }) }}
             </li>
         </ul>
