@@ -24,30 +24,20 @@ NHS.UK prototype kit
 </div>
 {% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="">
         <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-6">Variant search databases</h1>
         
         {% from 'card/macro.njk' import card %}
 
         <ul class="nhsuk-grid-row nhsuk-card-group">
-            <li class=" nhsuk-card-group__item">
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
             {{ card({
-                href: "searchtype.html",
+                href: "searchtype",
                 primary: "true",
                 clickable: "true",
-                heading: "100K Genomes Project Pan-Cancer data",
+                heading: "title",
                 headingClasses: "nhsuk-heading-m",
-                description: "This dataset consists of XXXXXX entries, of which XX% are haematological and XX% are solid tumour cancers. "
-            }) }}
-            </li>
-            <li class=" nhsuk-card-group__item">
-            {{ card({
-                href: "path/searchtype.html",
-                primary: "true",
-                clickable: "true",
-                heading: "Genomics England haematological and solid tumour cancers data",
-                headingClasses: "nhsuk-heading-m",
-                description: "This dataset consists of XXXXXX entries, of which XX% are haematological and XX% are solid tumour cancers"
+                description: "desc "
             }) }}
             </li>
         </ul>
