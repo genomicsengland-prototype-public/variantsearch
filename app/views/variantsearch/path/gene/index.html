@@ -25,199 +25,32 @@ NHS.UK prototype kit
 {% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-        <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-2">Variant search</h1>
-        <p class="nhsuk-u-margin-bottom-6">Use this tool to search available datasets to find  variance linked to different type types of cancer.</p>
-        
-
-
 
         <div class="nhsuk-form-group  nhsuk-u-margin-bottom-8
 ">
-
-
-
-
-
-            <form id="tumourType-form" action="/variantsearch/one/results" method="post">
+            <form id="tumourType-form" action="/variantsearch/path/results" method="post">
             
-                    {{
-            radios({
-                classes: "nhsuk-u-margin-bottom-4",
-                idPrefix: "test-req",
-                name: "test-req",
-                fieldset: {
-                    legend: {
-                        text: "Select data source",
-                        classes: "nhsuk-fieldset__legend--s",
-                        isPageHeading: false
-                        }
-                    },
-                hint: { html: hintHtml },
-                items: [ { value: "100K Genomes Project Solid Tumour Pan-Cancer Data", text: "100K Genomes Project Solid Tumour Pan-Cancer Data" }, { value: "Genomics England & 100K Genomes Project Haematological Tumour Data", text: "Genomics England & 100K Genomes Project Haematological Tumour Data" } ]
-            })
-        }}
-        
-        {% from 'radios/macro.njk' import radios %}
+        {% call fieldset({
+          legend: {
+            text: "HGNC gene symbol",
+            classes: "nhsuk-fieldset__legend--l ",
+            isPageHeading: true
+          }
+        }) %}
+
         {% from 'input/macro.njk' import input %}
 
-        {% set HGVScHtml %}
-          {{ input({
-            id: "HGVScV",
-            name: "HGVScV",
-            classes: "nhsuk-u-width-two-thirds",
-            label: {
-              text: "Coding DNA Sequence change"
-            },
-            hint: {
-              text: "For example ENST00000324856.13:c.1113dup or NM_006015.6:c.1113dup"
-            }
-          }) }}
-        {% endset -%}
-
-        {% set HGVSpHtml %}
-          {{ input({
-            id: "HGVSpV",
-            name: "HGVSpV",
-            classes: "nhsuk-u-width-two-thirds",
-            label: {
-              text: "Amino acid sequence change"
-            },
-            hint: {
-              text: "For example ENST00000493543.1:p(Val600Glu)"
-            }
-          }) }}
-        {% endset -%}
-
-        {% set geneHtml %}
           {{ input({
             id: "geneV",
             name: "geneV",
-            classes: "nhsuk-u-width-two-thirds",
+            classes: "nhsuk-u-width-two-thirds nhsuk-u-margin-bottom-6",
             label: {
-              text: "HGNC gene symbol"
             },
             hint: {
               text: "For example BRAF"
             }
           }) }}
-          {# {{ input({
-            id: "geneVT",
-            name: "geneVT",
-            classes: "nhsuk-u-width-two-thirds",
-            label: {
-              text: "Variant type (optional)"
-            },
-            hint: {
-              text: "For example missense"
-            }
-          }) }} #}
-        {% endset -%}
-
-        {% set positionHtml %}
-          {{ input({
-            id: "positionV",
-            name: "positionV",
-            classes: "nhsuk-u-width-two-thirds",
-            label: {
-              text: "Variant position (GRCh38)"
-            },
-            hint: {
-              text: "For example chr7:140753336:A:T"
-            }
-          }) }}
-          {# {{ input({
-            id: "positionVT",
-            name: "positionVT",
-            classes: "nhsuk-u-width-two-thirds",
-            label: {
-              text: "Variant type (optional)"
-            },
-            hint: {
-              text: "For example missense"
-            }
-          }) }} #}
-        {% endset -%}
-        
-        {% set regionHtml %}
-          {{ input({
-            id: "regionV",
-            name: "regionV",
-            classes: "nhsuk-u-width-two-thirds",
-            label: {
-              text: "Genomic region (GRCh38)"
-            },
-            hint: {
-              text: "For example chr7:140750000-140800000"
-            }
-          }) }}
-          {# {{ input({
-            id: "regionVT",
-            name: "regionVT",
-            classes: "nhsuk-u-width-two-thirds",
-            label: {
-              text: "Variant type (optional)"
-            },
-            hint: {
-              text: "For example missense"
-            }
-          }) }} #}
-        {% endset -%}
-
-
-        {{ radios({
-        classes: "nhsuk-u-margin-bottom-",
-          idPrefix: "searchtype",
-          name: "searchtype",
-          fieldset: {
-            legend: {
-              text: "Search type",
-              classes: "nhsuk-fieldset__legend--s",
-              isPageHeading: "true"
-            }
-          },
-          
-          
-          
-          items: [
-
-            {
-              value: "HGVSc",
-              text: "CDS change",
-              conditional: {
-                html: HGVScHtml
-              }
-            },
-            {
-              value: "HGVSp",
-              text: "Protein change",
-              conditional: {
-                html: HGVSpHtml
-              }
-            },
-            {
-              value: "gene",
-              text: "Gene",
-              conditional: {
-                html: geneHtml
-              }
-            },
-            {
-              value: "position",
-              text: "Genomic position ",
-              conditional: {
-                html: positionHtml
-              }
-            },
-            {
-              value: "region",
-              text: "Region",
-              conditional: {
-                html: regionHtml
-              }
-            }
-
-          ]
-        }) }}
+        {% endcall %}
 
 
             <div class="nhsuk-u-margin-bottom-6">
