@@ -1,0 +1,168 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+NHS.UK prototype kit
+{% endblock %}
+{% set cancerPatientData = true %}
+
+{% block beforeContent %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+
+
+{% endblock %}
+
+{% block outerContent %}
+<div class="nhsuk-back-link" style="margin-top: 2rem">
+    <a class="nhsuk-back-link__link" href="javascript:history.back();">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            aria-hidden="true" height="24" width="24">
+            <path
+                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+            </path>
+        </svg>
+        Go back</a>
+</div>
+{% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <div class="nhsuk-form-group  nhsuk-u-margin-bottom-8
+">
+            <form id="tumourType-form" action="/variantsearch/path/results" method="post">
+            
+        {% call fieldset({
+          legend: {
+            text: "HGNC gene symbol",
+            classes: "nhsuk-fieldset__legend--l ",
+            isPageHeading: true
+          }
+        }) %}
+
+        {% from 'input/macro.njk' import input %}
+
+          {{ input({
+            id: "geneV",
+            name: "geneV",
+            classes: "nhsuk-u-width-two-thirds nhsuk-u-margin-bottom-6",
+            label: {
+            },
+            hint: {
+              text: "For example BRAF"
+            }
+          }) }}
+        {% endcall %}
+
+
+            <div class="nhsuk-u-margin-bottom-6">
+            <label class="nhsuk-label nhsuk-label--s" for="input-with-hint-text">
+                Variant consequence type (optional)
+            </label>
+            
+            <div class="nhsuk-hint" id="input-with-hint-text-hint">
+                For example missense
+            </div>
+
+            <select title="Variant type" name="varType" id="varType">
+                <option></option>
+                <option>missense variant  </option>
+                <option>synonymous variant   </option>
+                <option>initiator codon variant   </option>
+                <option>stop codon variant   </option>
+                <option>indel   </option>
+                <option>non coding transcript variant   </option>
+                <option>splice acceptor variant   </option>
+                <option>intron variant   </option>
+                <option>splice donor variant   </option>
+                <option>frameshift variant   </option>
+                <option>start loss   </option>
+                <option>transcript amplification   </option>
+                <option>transcript fusion   </option>
+                <option>structural variant   </option>
+            </select>
+            
+            <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
+            <script type="text/javascript" src="/js/accessible-autocomplete.min.js"></script>
+
+
+            <script>
+                accessibleAutocomplete.enhanceSelectElement({
+                    defaultValue: "",
+                    selectElement: document.querySelector("#varType"),
+                });
+            </script>
+            </div>
+
+            <label class="nhsuk-label nhsuk-label--s" for="input-with-hint-text">
+                Tumour type (optional)
+            </label>
+            
+            <div class="nhsuk-hint" id="input-with-hint-text-hint">
+                Filter variant search results by phenotype. For example breast invasive carcinoma.
+            </div>
+
+            <select title="Tumour type" name="tumourType" id="tumourType">
+                <option></option>
+                <option>Acute Lymphoblastic Leukaemia </option>
+                <option>Acute Myeloid Lukaemia </option>
+                <option>Chronic Lymphocytic Leukaemia </option>
+                <option>Lymphoid </option>
+                <option>Myeloid </option>
+                <option>Bladder Urothelial Carcinoma </option>
+                <option>Breast Invasive Carcinoma </option>
+                <option>Cholangiocarcinoma </option>
+                <option>Colon Adenocarcinoma </option>
+                <option>Esophageal Adenocarcinoma </option>
+                <option>Ovarian Endometrioid Adenocarcinoma </option>
+                <option>Esophageal Squamous Cell Carcinoma </option>
+                <option>Glioblastoma Multiforme </option>
+                <option>Colorectal and Upper GI Neuroendocrine </option>
+                <option>Ovarian High Grade Serous Carcinoma </option>
+                <option>Head and Neck Squamous Cell Carcinoma </option>
+                <option>Kidney Chromophobe </option>
+                <option>Kidney Renal Clear Cell Carcinoma </option>
+                <option>Kidney Renal Papillary Cell Carcinoma </option>
+                <option>Lung Neuroendocrine </option>
+                <option>Low Grade Glioma </option>
+                <option>Ovarian Serous Carcinoma </option>
+                <option>Liver Hepatocellular Carcinoma </option>
+                <option>Lung Adenocarcinoma </option>
+                <option>Lung Squamous Cell Carcinoma </option>
+                <option>Mesothelioma </option>
+                <option>Pancreatic Adenocarcinoma </option>
+                <option>Prostate Adenocarcinoma </option>
+                <option>Rectum Adenocarcinoma </option>
+                <option>Sarcoma </option>
+                <option>Skin Cutaneous Melanoma </option>
+                <option>Stomach Adenocarcinoma </option>
+                <option>Testicular Germ Cell Tumours </option>
+                <option>Uterine Corpus Endometrial Carcinoma </option>
+                <option>Uterine Corpus Endometrial Serous Carcinoma </option>
+                <option>Uveal Melanoma </option>
+            </select>
+
+            <script>
+                accessibleAutocomplete.enhanceSelectElement({
+                    defaultValue: "",
+                    selectElement: document.querySelector("#tumourType"),
+                });
+            </script>
+        </div>
+
+
+        <button
+            class="nhsuk-button nhsuk-u-margin-bottom-8"
+            data-module="nhsuk-button"
+            draggable="false"
+            role="button"
+            type="submit"
+        >
+            Search
+        </button>
+        
+        <p class="nhsuk-u-margin-bottom-4">
+        100K Genomes Project Pan-Cancer data is from "<a href="">Table S1: Somatic small variant protein changes</a>", Sosinsky et al., Nat Med 30, 279–289 (2024)
+        </p>
+
+    </div>
+</div>
+{% endblock %}

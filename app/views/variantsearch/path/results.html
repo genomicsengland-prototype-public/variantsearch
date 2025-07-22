@@ -1,0 +1,131 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+NHS.UK prototype kit
+{% endblock %}
+{% set cancerPatientData = true %}
+
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block outerContent %}
+<div class="nhsuk-back-link" style="margin-top: 2rem">
+    <a class="nhsuk-back-link__link" href="javascript:history.back();">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+        aria-hidden="true" height="24" width="24">
+        <path
+          d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+        </path>
+      </svg>
+      Go back to edit your search</a>
+  </div>
+{% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-l">Search results</h1>
+        <p class="nhsuk-u-margin-bottom-4">
+            Matches from 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.
+        </p>
+        
+        <h2 class="nhsuk-heading-s">
+        <strong>111</strong> matches for <strong>{{ data["HGVScV"]}} {{ data["HGVSpV"]}} {{ data["geneV"]}} {{ data["positionV"]}} {{ data["regionV"]}} {{ data["varType"]}}</strong> and <strong>{{ data["tumourType"] }}</strong>
+        </h2>
+        <p class="nhsuk-u-margin-bottom-6">Across 132 samples of {{ data["tumourType"] }} found in the 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.</p>
+{#         
+        <h2 class="nhsuk-heading-s">
+            <strong>635</strong> total matches for <strong>{{ data["HGVScV"]}} {{ data["HGVSpV"]}} {{ data["geneV"]}} {{ data["positionV"]}} {{ data["regionV"]}} {{ data["varType"]}} </strong>
+        </h2>
+         #}
+
+        {# <p>Of 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.</p> #}
+        
+{# 
+        <ul class="nhsuk-u-margin-bottom-6">
+            <li>434 matches for [more frequently associated tumour]</li>
+            <li><strong>111 matches for {{ data["tumourType"] }}</strong></li>
+            <li>57 matches for [different tumour]</li>
+            <li>29 matches for [rarer tumour]</li>
+            <li>4 matches for a [very rare tumour]</li>
+
+        </ul>
+ #}
+
+<table class="nhsuk-table-responsive nhsuk-u-margin-bottom-6" role="table">
+  <caption class="nhsuk-table__caption">635 total matches for {{ data["HGVScV"]}} {{ data["HGVSpV"]}} {{ data["geneV"]}} {{ data["positionV"]}} {{ data["regionV"]}} {{ data["varType"]}} 
+    </caption>
+  <thead class="nhsuk-table__head" role="rowgroup">
+    <tr role="row">
+      <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-half" role="columnheader">Tumour</th>
+      <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-quarter" role="columnheader">Variant instances</th>
+
+      <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-quarter" role="columnheader">Total # samples</th>
+    </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour </span>Frequently found tumour</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">With variant </span>434</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Total</span>987</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour </span><strong>{{ data["tumourType"] }}</strong></td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">With variant </span><strong>111</strong></td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Total</span><strong>132</strong></td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">tumour </span>Diferent tumour</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">With variant </span>57</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Total</span>98</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour </span>Rarer tumour</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">With variant </span>29</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Total</span>30</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">tumour </span>Very rare tumour</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">With variant </span>4</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Total</span>546</td>
+    </tr>
+  </tbody>
+</table>
+
+        <p class="nhsuk-u-margin-bottom-6">
+            <a href="">Download results</a>
+        </p>
+
+        <!-- <p>{{ data | dump }}</p> -->
+
+        <a
+            class="nhsuk-button  nhsuk-button--secondary"
+            data-module="nhsuk-button"
+            href="javascript:history.back();"
+            draggable="false"
+            role="button"
+        >
+            Edit this search
+        </a>
+
+
+        <div>
+            <a
+                class="nhsuk-button nhsuk-u-margin-bottom-8"
+                data-module="nhsuk-button"
+                href="/variantsearch/one/"
+                draggable="false"
+                role="button"
+            >
+                Start a new search
+            </a>
+
+        </div>
+        
+        <p class="nhsuk-u-margin-top-4">
+        100K Genomes Project Pan-Cancer data is from "<a href="">Table S1: Somatic small variant protein changes</a>", Sosinsky et al., Nat Med 30, 279–289 (2024)
+        </p>
+
+    </div>
+</div>
+{% endblock %}
