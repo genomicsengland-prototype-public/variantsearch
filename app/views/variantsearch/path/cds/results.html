@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Variant search prototype results
+CDS change results
 {% endblock %}
 {% set cancerPatientData = true %}
 
@@ -26,10 +26,9 @@ Variant search prototype results
     <div class="nhsuk-grid-column-two-thirds">
         <h1 class="nhsuk-heading-l">Search results</h1>
         <p class="nhsuk-u-margin-bottom-4">
-            Matches from 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.
+            13,873 entries in the dataset searched.
         </p>
         
-{# coding RESULTS #}
 
 {% if data["HGVScV"] %} 
 
@@ -38,12 +37,14 @@ Variant search prototype results
         <h2 class="nhsuk-heading-s">
         0 matches for {{ data["HGVScV"]}} and {{ data["tumourType"] }}
         </h2>
-        <p class="nhsuk-u-margin-bottom-6">Across 2925 samples of {{ data["tumourType"] }} found in the 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.</p>
+        <p>2925 samples of {{ data["tumourType"] }} found in the dataset.<p>
+        <p>0 with CDS change {{ data["HGVScV"]}}.<p>
+        <p class="nhsuk-u-margin-bottom-8">65 total nested in-frame deletions (by aminoacid).</p>
         
         {% endif %}
 
-<table class="nhsuk-table-responsive nhsuk-u-margin-bottom-6" role="table">
-  <caption class="nhsuk-table__caption">3 total matches for {{ data["HGVScV"]}} 
+<table class="nhsuk-table-responsive nhsuk-u-margin-bottom-8" role="table">
+  <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-2">3 matches for {{ data["HGVScV"]}} and any solid tumour type
     </caption>
   <thead class="nhsuk-table__head" role="rowgroup">
     <tr role="row">
@@ -54,11 +55,6 @@ Variant search prototype results
     </tr>
   </thead>
   <tbody class="nhsuk-table__body">
-    <tr class="nhsuk-table__row" role="row">
-      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span><strong>All solid tumour  types</strong></td>
-      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># CDS change </span><strong>3</strong></td>
-      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span><strong>13873</strong></td>
-    </tr>
     <tr class="nhsuk-table__row" role="row">
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Colon Adenocarcinoma</td>
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># CDS change </span>2</td>
@@ -76,15 +72,18 @@ Variant search prototype results
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>{% if data["tumourType"] %}<strong>{% endif %}2925{% if data["tumourType"] %}</strong>{% endif %}</td>
     </tr>
     {% endif %}
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span><strong>Total for all solid tumour  types</strong></td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># CDS change </span><strong>3</strong></td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span><strong>13873</strong></td>
+    </tr>
   </tbody>
 </table>
 {% endif %}
 
         <p class="nhsuk-u-margin-bottom-6">
-            <a href="">Download results</a>
+            <a href="">Download full results</a>
         </p>
-
-        <!-- <p>{{ data | dump }}</p> -->
 
         <a
             class="nhsuk-button  nhsuk-button--secondary"
@@ -109,10 +108,7 @@ Variant search prototype results
             </a>
 
         </div>
-        
-        <p class="nhsuk-u-margin-top-4">
-        100K Genomes Project Pan-Cancer data is from "<a href="">Table S1: Somatic small variant protein changes</a>", Sosinsky et al., Nat Med 30, 279–289 (2024)
-        </p>
+
 
     </div>
 </div>
