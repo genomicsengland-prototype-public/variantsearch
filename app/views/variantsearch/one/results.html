@@ -2,6 +2,7 @@
 
 {% block pageTitle %}
 Variant search results
+
 {% endblock %}
 {% set cancerPatientData = true %}
 
@@ -27,6 +28,7 @@ Variant search results
         <h1 class="nhsuk-heading-l">Search results</h1>
         <p class="nhsuk-u-margin-bottom-4">
             13,873 entries in the dataset searched.
+
         </p>
         
 {# coding RESULTS #}
@@ -50,6 +52,7 @@ Variant search results
 
 <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-8" role="table">
   <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-2">3 matches for {{ data["HGVScV"]}} and any solid tumour type
+
     </caption>
   <thead class="nhsuk-table__head" role="rowgroup">
     <tr role="row">
@@ -60,6 +63,12 @@ Variant search results
     </tr>
   </thead>
   <tbody class="nhsuk-table__body">
+    <tr class="nhsuk-table__row" role="row">
+
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span><strong>All solid tumour  types</strong></td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># CDS change </span><strong>3</strong></td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span><strong>13873</strong></td>
+    </tr>
     <tr class="nhsuk-table__row" role="row">
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Colon Adenocarcinoma</td>
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># CDS change </span>2</td>
@@ -82,6 +91,7 @@ Variant search results
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># CDS change </span><strong>3</strong></td>
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span><strong>13873</strong></td>
     </tr>
+
   </tbody>
 </table>
 {% endif %}
@@ -105,6 +115,7 @@ Variant search results
 
 <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-8" role="table">
   <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-2">3 matches for {{ data["HGVSpV"]}} and any solid tumour type
+
     </caption>
   <thead class="nhsuk-table__head" role="rowgroup">
     <tr role="row">
@@ -115,6 +126,12 @@ Variant search results
     </tr>
   </thead>
   <tbody class="nhsuk-table__body">
+    <tr class="nhsuk-table__row" role="row">
+
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span><strong>All solid tumour  types</strong></td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># Protein change </span><strong>3</strong></td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span><strong>13873</strong></td>
+    </tr>
     <tr class="nhsuk-table__row" role="row">
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Colon Adenocarcinoma</td>
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># Protein change </span>2</td>
@@ -137,6 +154,7 @@ Variant search results
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># Protein change </span><strong>3</strong></td>
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span><strong>13873</strong></td>
     </tr>
+
   </tbody>
 </table>
 {% endif %}
@@ -156,11 +174,13 @@ Variant search results
 
 <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-8" role="table">
   <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-2">301 matches for {{ data["geneV"]}} {{ data["varType"]}} and any solid tumour type
+
     </caption>
   <thead class="nhsuk-table__head" role="rowgroup">
     <tr role="row">
       <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-half" role="columnheader">Tumour type</th>
       <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-quarter" role="columnheader"># gene</th>
+
 
       <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-quarter" role="columnheader"># samples</th>
     </tr>
@@ -199,6 +219,7 @@ Variant search results
     <tr class="nhsuk-table__row" role="row">
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Rectum Adenocarcinoma</td>
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># gene </span>15</td>
+
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>830</td>
     </tr>
     <tr class="nhsuk-table__row" role="row">
@@ -224,7 +245,7 @@ Variant search results
     <tr class="nhsuk-table__row" role="row">
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Uterine Corpus Endometrial Serous Carcinoma</td>
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># gene </span>3</td>
-      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>113</td>
+     <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>113</td>
     </tr>
     <tr class="nhsuk-table__row" role="row">
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Esophageal Adenocarcinoma</td>
@@ -244,7 +265,7 @@ Variant search results
     <tr class="nhsuk-table__row" role="row">
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Head and Neck Squamous Cell Carcinoma </td>
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># gene </span>1</td>
-      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>245</td>
+     <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>245</td>
     </tr>
     <tr class="nhsuk-table__row" role="row">
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Uveal Melanoma</td>
@@ -255,6 +276,9 @@ Variant search results
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span><strong>All solid tumour  types</strong></td>
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># gene </span><strong>301</strong></td>
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span><strong>13873</strong></td>
+    </tr>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>1</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>16</td>
     </tr>
   </tbody>
 </table>
@@ -285,7 +309,6 @@ Variant search results
     <tr role="row">
       <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-half" role="columnheader">Tumour type</th>
       <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-quarter" role="columnheader"># position </th>
-
       <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-quarter" role="columnheader"># samples</th>
     </tr>
   </thead>
@@ -293,7 +316,7 @@ Variant search results
     <tr class="nhsuk-table__row" role="row">
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Colon Adenocarcinoma</td>
       <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># position </span>2</td>
-      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>1948</td>
+     <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>1948</td>
     </tr>
     {% if data["tumourType"] %}
     <tr class="nhsuk-table__row" role="row">
@@ -331,7 +354,6 @@ Variant search results
     <tr role="row">
       <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-half" role="columnheader">Tumour type</th>
       <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-quarter" role="columnheader"># region</th>
-
       <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-quarter" role="columnheader"># samples</th>
     </tr>
   </thead>
