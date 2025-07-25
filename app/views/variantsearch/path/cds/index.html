@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Variant search prototype
+NHS.UK prototype kit
 {% endblock %}
 {% set cancerPatientData = true %}
 
@@ -28,7 +28,7 @@ Variant search prototype
 
         <div class="nhsuk-form-group  nhsuk-u-margin-bottom-8
 ">
-            <form id="tumourType-form" action="/variantsearch/path/cds/results" method="post">
+            <form id="tumourType-form" action="/variantsearch/path/results" method="post">
             
         {% call fieldset({
           legend: {
