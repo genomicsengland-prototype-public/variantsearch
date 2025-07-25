@@ -35,14 +35,15 @@ Position results
         <h2 class="nhsuk-heading-s">
         0 matches for {{ data["positionV"]}} {{ data["varType"]}} and {{ data["tumourType"] }}
         </h2>
-        <p>2925 samples of {{ data["tumourType"] }} found in the dataset.<p>
-        <p>0 with position {{ data["HGVSpV"]}}.<p>
-        <p class="nhsuk-u-margin-bottom-8">65 total with nested in-frame deletions (by aminoacid).</p>
-        
+        <p>2925 samples of {{ data["tumourType"] }} searched.</p>
+        <ul class="nhsuk-u-margin-bottom-8">
+          <li>0 position {{ data["positionV"]}} {{ data["varType"]}}</li>
+          <li>65 total nested in-frame deletions (by aminoacid)</li>
+        </ul>
         {% endif %}
 
 <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-8" role="table">
-  <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-2">2 total matches for {{ data["positionV"]}} {{ data["varType"]}} 
+  <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-2">2 matches for {{ data["positionV"]}} {{ data["varType"]}} and any solid tumour type
     </caption>
   <thead class="nhsuk-table__head" role="rowgroup">
     <tr role="row">
