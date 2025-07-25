@@ -1,0 +1,190 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Variant search prototype results
+{% endblock %}
+{% set cancerPatientData = true %}
+
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block outerContent %}
+<div class="nhsuk-back-link" style="margin-top: 2rem">
+    <a class="nhsuk-back-link__link" href="javascript:history.back();">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+        aria-hidden="true" height="24" width="24">
+        <path
+          d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+        </path>
+      </svg>
+      Go back to edit your search</a>
+  </div>
+{% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-l">Search results</h1>
+        <p class="nhsuk-u-margin-bottom-4">
+            Matches from 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.
+        </p>
+        
+
+
+{# GENE RESULTS #}
+
+{% if data["geneV"] %} 
+
+        {% if data["tumourType"] %} 
+
+        <h2 class="nhsuk-heading-s">
+        67 matches for {{ data["geneV"]}} {{ data["varType"]}} and {{ data["tumourType"] }}
+        </h2>
+        <p class="nhsuk-u-margin-bottom-6">Across 2925 samples of {{ data["tumourType"] }} found in the 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.</p>
+        
+        {% endif %}
+
+<table class="nhsuk-table-responsive nhsuk-u-margin-bottom-6" role="table">
+  <caption class="nhsuk-table__caption">301 total matches for {{ data["geneV"]}} {{ data["varType"]}} 
+    </caption>
+  <thead class="nhsuk-table__head" role="rowgroup">
+    <tr role="row">
+      <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-half" role="columnheader">Tumour type</th>
+      <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-quarter" role="columnheader">{{ data["geneV"]}}</th>
+
+      <th scope="col" class="nhsuk-table__header nhsuk-u-width-one-quarter" role="columnheader"># samples</th>
+    </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span><strong>All solid tumour  types</strong></td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span><strong>301</strong></td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span><strong>13873</strong></td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>{% if data["tumourType"] %}<strong>{{ data["tumourType"] }}</strong>{% else %}Breast Invasive Carcinoma{% endif %}</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>{% if data["tumourType"] %}<strong>{% endif %}67{% if data["tumourType"] %}</strong>{% endif %}</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>{% if data["tumourType"] %}<strong>{% endif %}2925{% if data["tumourType"] %}</strong>{% endif %}</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Colon Adenocarcinoma</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>40</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>1948</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Prostate Adenocarcinoma</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>36</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>572</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Sarcoma</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>29</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>1617</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Uterine Corpus Endometrial Carcinoma</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>29</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>706</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Lung Adenocarcinoma</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>20</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>813</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Rectum Adenocarcinoma</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>15</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>830</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Kidney Renal Clear Cell Carcinoma</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>8</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>1163</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Lung Squamous Cell Carcinoma</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>6</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>448</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Ovarian High Grade Serous Carcinoma</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>5</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>372</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Ovarian Endometrioid Adenocarcinoma</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>3</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>102</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Uterine Corpus Endometrial Serous Carcinoma</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>3</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>113</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Esophageal Adenocarcinoma</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>2</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>91</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Mesothelioma</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>2</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>46</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Colorectal and Upper GI Neuroendocrine</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>1</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>76</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Head and Neck Squamous Cell Carcinoma </td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>1</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>245</td>
+    </tr>
+    <tr class="nhsuk-table__row" role="row">
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">Tumour type </span>Uveal Melanoma</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true">{{ data["geneV"]}} </span>1</td>
+      <td class="nhsuk-table__cell" role="cell"><span class="nhsuk-table-responsive__heading" aria-hidden="true"># samples </span>16</td>
+    </tr>
+  </tbody>
+</table>
+{% endif %}
+
+
+        <p class="nhsuk-u-margin-bottom-6">
+            <a href="">Download results</a>
+        </p>
+
+        <!-- <p>{{ data | dump }}</p> -->
+
+        <a
+            class="nhsuk-button  nhsuk-button--secondary"
+            data-module="nhsuk-button"
+            href="javascript:history.back();"
+            draggable="false"
+            role="button"
+        >
+            Edit this search
+        </a>
+
+
+        <div>
+            <a
+                class="nhsuk-button nhsuk-u-margin-bottom-8"
+                data-module="nhsuk-button"
+                href="/variantsearch/one/"
+                draggable="false"
+                role="button"
+            >
+                Start a new search
+            </a>
+
+        </div>
+        
+        <p class="nhsuk-u-margin-top-4">
+        100K Genomes Project Pan-Cancer data is from "<a href="">Table S1: Somatic small variant protein changes</a>", Sosinsky et al., Nat Med 30, 279–289 (2024)
+        </p>
+
+    </div>
+</div>
+{% endblock %}

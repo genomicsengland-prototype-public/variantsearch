@@ -1,0 +1,95 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Variant search prototype
+{% endblock %}
+{% set cancerPatientData = true %}
+
+{% block beforeContent %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+
+
+{% endblock %}
+
+{% block outerContent %}
+<div class="nhsuk-back-link" style="margin-top: 2rem">
+    <a class="nhsuk-back-link__link" href="javascript:history.back();">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            aria-hidden="true" height="24" width="24">
+            <path
+                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+            </path>
+        </svg>
+        Go back</a>
+</div>
+{% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+    <div class="">
+        <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-6">Variant search databases</h1>
+        
+        {% from 'card/macro.njk' import card %}
+
+        <ul class="nhsuk-grid-row nhsuk-card-group">
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+            {{ card({
+                href: "cds",
+                primary: "true",
+                clickable: "true",
+                heading: "CDS change",
+                headingClasses: "nhsuk-heading-m",
+                description: "Search for specific variant based on coding DNA sequence change. "
+            }) }}
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+            {{ card({
+                href: "protein",
+                primary: "true",
+                clickable: "true",
+                heading: "Protein change",
+                headingClasses: "nhsuk-heading-m",
+                description: "Search for specific variant based on amino acid sequence change. "
+            }) }}
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+            {{ card({
+                href: "gene",
+                primary: "true",
+                clickable: "true",
+                heading: "Gene",
+                headingClasses: "nhsuk-heading-m",
+                description: "Search for variants in a gene by its HGNC gene symbol. "
+            }) }}
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+            {{ card({
+                href: "position",
+                primary: "true",
+                clickable: "true",
+                heading: "Genomic position",
+                headingClasses: "nhsuk-heading-m",
+                description: "Search for specific variant by its genomic position. "
+            }) }}
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+            {{ card({
+                href: "region",
+                primary: "true",
+                clickable: "true",
+                heading: "Region",
+                headingClasses: "nhsuk-heading-m",
+                description: "Search for variants within a genomic region. "
+            }) }}
+            </li>
+        </ul>
+
+        <h2 class="nhsuk-heading-s ">Data sources </h2>
+        <p>
+            100K Genomes Project Pan-Cancer data is from "<a href="">Table S1: Somatic small variant protein changes</a>", Sosinsky et al., Nat Med 30, 279-289 (2024).
+        </p>
+        <p>
+            Genomics England haematological and solid tumour cancers data is from <a href="">haematological somatic frequency table</a> on NHS Futures.
+        </p>
+
+    </div>
+</div>
+{% endblock %}
