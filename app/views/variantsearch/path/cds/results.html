@@ -37,10 +37,11 @@ CDS change results
         <h2 class="nhsuk-heading-s">
         0 matches for {{ data["HGVScV"]}} and {{ data["tumourType"] }}
         </h2>
-        <p>2925 samples of {{ data["tumourType"] }} found in the dataset.<p>
-        <p>0 with CDS change {{ data["HGVScV"]}}.<p>
-        <p class="nhsuk-u-margin-bottom-8">65 total nested in-frame deletions (by aminoacid).</p>
-        
+        <p>2925 samples of {{ data["tumourType"] }} searched.</p>
+        <ul class="nhsuk-u-margin-bottom-8">
+          <li>0 CDS change {{ data["HGVScV"]}}.</li>
+          <li>65 total nested in-frame deletions (by aminoacid).</li>
+        </ul>
         {% endif %}
 
 <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-8" role="table">
