@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Variant search prototype results
+Variant search results
 {% endblock %}
 {% set cancerPatientData = true %}
 
@@ -26,7 +26,7 @@ Variant search prototype results
     <div class="nhsuk-grid-column-two-thirds">
         <h1 class="nhsuk-heading-l">Search results</h1>
         <p class="nhsuk-u-margin-bottom-4">
-            Matches from 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.
+            13,873 entries in the dataset searched.
         </p>
         
 {# coding RESULTS #}
@@ -38,12 +38,14 @@ Variant search prototype results
         <h2 class="nhsuk-heading-s">
         0 matches for {{ data["HGVScV"]}} and {{ data["tumourType"] }}
         </h2>
-        <p class="nhsuk-u-margin-bottom-6">Across 2925 samples of {{ data["tumourType"] }} found in the 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.</p>
+        <p>2925 samples of {{ data["tumourType"] }} found in the dataset.<p>
+        <p>0 with protein change {{ data["HGVSpV"]}}.<p>
+        <p class="nhsuk-u-margin-bottom-8">65 total with nested in-frame deletions (by aminoacid).</p>
         
         {% endif %}
 
 <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-6" role="table">
-  <caption class="nhsuk-table__caption">3 total matches for {{ data["HGVScV"]}} 
+  <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-2">3 total matches for {{ data["HGVScV"]}} 
     </caption>
   <thead class="nhsuk-table__head" role="rowgroup">
     <tr role="row">
@@ -89,12 +91,14 @@ Variant search prototype results
         <h2 class="nhsuk-heading-s">
         0 matches for  {{ data["HGVSpV"]}} and {{ data["tumourType"] }}
         </h2>
-        <p class="nhsuk-u-margin-bottom-6">Across 2925 samples of {{ data["tumourType"] }} found in the 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.</p>
+        <p>2925 samples of {{ data["tumourType"] }} found in the dataset.<p>
+        <p>0 with protein change {{ data["HGVSpV"]}}.<p>
+        <p class="nhsuk-u-margin-bottom-8">65 total with nested in-frame deletions (by aminoacid).</p>
         
         {% endif %}
 
 <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-6" role="table">
-  <caption class="nhsuk-table__caption">3 total matches for {{ data["HGVSpV"]}}
+  <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-2">3 total matches for {{ data["HGVSpV"]}}
     </caption>
   <thead class="nhsuk-table__head" role="rowgroup">
     <tr role="row">
@@ -140,12 +144,14 @@ Variant search prototype results
         <h2 class="nhsuk-heading-s">
         67 matches for {{ data["geneV"]}} {{ data["varType"]}} and {{ data["tumourType"] }}
         </h2>
-        <p class="nhsuk-u-margin-bottom-6">Across 2925 samples of {{ data["tumourType"] }} found in the 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.</p>
+        <p>2925 samples of {{ data["tumourType"] }} found in the dataset.<p>
+        <p>0 with protein change {{ data["HGVSpV"]}}.<p>
+        <p class="nhsuk-u-margin-bottom-8">65 total with nested in-frame deletions (by aminoacid).</p>
         
         {% endif %}
 
 <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-6" role="table">
-  <caption class="nhsuk-table__caption">301 total matches for {{ data["geneV"]}} {{ data["varType"]}} 
+  <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-2">301 total matches for {{ data["geneV"]}} {{ data["varType"]}} 
     </caption>
   <thead class="nhsuk-table__head" role="rowgroup">
     <tr role="row">
@@ -259,12 +265,14 @@ Variant search prototype results
         <h2 class="nhsuk-heading-s">
         0 matches for {{ data["positionV"]}} {{ data["varType"]}} and {{ data["tumourType"] }}
         </h2>
-        <p class="nhsuk-u-margin-bottom-6">Across 2925 samples of {{ data["tumourType"] }} found in the 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.</p>
+        <p>2925 samples of {{ data["tumourType"] }} found in the dataset.<p>
+        <p>0 with protein change {{ data["HGVSpV"]}}.<p>
+        <p class="nhsuk-u-margin-bottom-8">65 total with nested in-frame deletions (by aminoacid).</p>
         
         {% endif %}
 
 <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-6" role="table">
-  <caption class="nhsuk-table__caption">2 total matches for {{ data["positionV"]}} {{ data["varType"]}} 
+  <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-2">2 total matches for {{ data["positionV"]}} {{ data["varType"]}} 
     </caption>
   <thead class="nhsuk-table__head" role="rowgroup">
     <tr role="row">
@@ -305,12 +313,14 @@ Variant search prototype results
         <h2 class="nhsuk-heading-s">
         0 matches for {{ data["regionV"]}} {{ data["varType"]}} and {{ data["tumourType"] }}
         </h2>
-        <p class="nhsuk-u-margin-bottom-6">Across 2925 samples of {{ data["tumourType"] }} found in the 13,880 entries in the 100K Genomes Project Pan-Cancer dataset.</p>
+        <p>2925 samples of {{ data["tumourType"] }} found in the dataset.<p>
+        <p>0 with protein change {{ data["HGVSpV"]}}.<p>
+        <p class="nhsuk-u-margin-bottom-8">65 total with nested in-frame deletions (by aminoacid).</p>
         
         {% endif %}
 
 <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-6" role="table">
-  <caption class="nhsuk-table__caption">0 total matches for {{ data["regionV"]}} {{ data["varType"]}} 
+  <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-2">0 total matches for {{ data["regionV"]}} {{ data["varType"]}} 
     </caption>
   <thead class="nhsuk-table__head" role="rowgroup">
     <tr role="row">
@@ -338,10 +348,8 @@ Variant search prototype results
 {% endif %}
 
         <p class="nhsuk-u-margin-bottom-6">
-            <a href="">Download results</a>
+            <a href="">Download full results</a>
         </p>
-
-        <!-- <p>{{ data | dump }}</p> -->
 
         <a
             class="nhsuk-button  nhsuk-button--secondary"
