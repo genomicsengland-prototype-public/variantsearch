@@ -41,14 +41,14 @@ Variant search prototype
         {% from 'input/macro.njk' import input %}
 
           {{ input({
-            id: "positionV",
-            name: "positionV",
-            classes: "nhsuk-u-width-two-thirds ",
+            id: "HGVSpV",
+            name: "HGVSpV",
+            classes: "nhsuk-u-width-two-thirds",
             label: {
-              text: "Variant position (GRCh38)"
+              visuallyHiddenText: "Protein change"
             },
             hint: {
-              text: "For example chr7:140753336:A:T"
+              text: "For example ENST00000493543.1:p(Val600Glu)"
             }
           }) }}
         {% endcall %}
