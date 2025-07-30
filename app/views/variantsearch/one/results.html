@@ -31,7 +31,7 @@ Variant search results
         
 {# coding RESULTS #}
 
-{% if data["HGVScV"] %} 
+{% if (data['searchtype'] == 'HGVSc') %}
 
         {% if data["tumourType"] %} 
 
@@ -93,7 +93,7 @@ Variant search results
 
 {# protien RESULTS #}
 
-{% if data["HGVSpV"] %} 
+{% if (data['searchtype'] == 'HGVSp') %}
 
         {% if data["tumourType"] %} 
 
@@ -153,7 +153,7 @@ Variant search results
 
 {# GENE RESULTS #}
 
-{% if data["geneV"] %} 
+{% if (data['searchtype'] == 'gene') %}
 
         {% if data["tumourType"] %} 
 
@@ -272,7 +272,7 @@ Variant search results
 
 {# position RESULTS #}
 
-{% if data["positionV"] %} 
+{% if (data['searchtype'] == 'position') %}
 
         {% if data["tumourType"] %} 
 
@@ -328,8 +328,7 @@ Variant search results
 
 {# region RESULTS #}
 
-{% if data["regionV"] %} 
-
+{% if (data['searchtype'] == 'region') %}
         {% if data["tumourType"] %} 
 
         <h2 class="nhsuk-heading-s">
