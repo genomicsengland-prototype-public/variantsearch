@@ -31,7 +31,7 @@ Variant search results
         
 {# coding RESULTS #}
 
-{% if data["HGVScV"] %} 
+{% if (data['searchtype'] == 'HGVSc') %}
 
         {% if data["tumourType"] %} 
 
@@ -48,7 +48,7 @@ Variant search results
         
         {% endif %}
 
-<table class="nhsuk-table-responsive nhsuk-u-margin-bottom-8" role="table">
+<table class="nhsuk-table-responsive nhsuk-u-margin-bottom-2" role="table">
   <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-2">3 matches for {{ data["HGVScV"]}} and any solid tumour type
     </caption>
   <thead class="nhsuk-table__head" role="rowgroup">
@@ -84,11 +84,16 @@ Variant search results
     </tr>
   </tbody>
 </table>
+
+<p class="nhsuk-u-margin-bottom-8">
+  267 total nested in-frame deletions (by aminoacid) found in All solid tumour types.
+</p>
+
 {% endif %}
 
 {# protien RESULTS #}
 
-{% if data["HGVSpV"] %} 
+{% if (data['searchtype'] == 'HGVSp') %}
 
         {% if data["tumourType"] %} 
 
@@ -103,7 +108,7 @@ Variant search results
         
         {% endif %}
 
-<table class="nhsuk-table-responsive nhsuk-u-margin-bottom-8" role="table">
+<table class="nhsuk-table-responsive nhsuk-u-margin-bottom-2" role="table">
   <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-2">3 matches for {{ data["HGVSpV"]}} and any solid tumour type
     </caption>
   <thead class="nhsuk-table__head" role="rowgroup">
@@ -139,11 +144,16 @@ Variant search results
     </tr>
   </tbody>
 </table>
+
+<p class="nhsuk-u-margin-bottom-8">
+  267 total nested in-frame deletions (by aminoacid) found in All solid tumour types.
+</p>
+
 {% endif %}
 
 {# GENE RESULTS #}
 
-{% if data["geneV"] %} 
+{% if (data['searchtype'] == 'gene') %}
 
         {% if data["tumourType"] %} 
 
@@ -262,7 +272,7 @@ Variant search results
 
 {# position RESULTS #}
 
-{% if data["positionV"] %} 
+{% if (data['searchtype'] == 'position') %}
 
         {% if data["tumourType"] %} 
 
@@ -278,7 +288,7 @@ Variant search results
         
         {% endif %}
 
-<table class="nhsuk-table-responsive nhsuk-u-margin-bottom-8" role="table">
+<table class="nhsuk-table-responsive nhsuk-u-margin-bottom-2" role="table">
   <caption class="nhsuk-table__caption nhsuk-u-margin-bottom-2">2 matches for {{ data["positionV"]}} {{ data["varType"]}} and any solid tumour type
     </caption>
   <thead class="nhsuk-table__head" role="rowgroup">
@@ -309,12 +319,16 @@ Variant search results
     </tr>
   </tbody>
 </table>
+
+<p class="nhsuk-u-margin-bottom-8">
+  267 total nested in-frame deletions (by aminoacid) found in All solid tumour types.
+</p>
+
 {% endif %}
 
 {# region RESULTS #}
 
-{% if data["regionV"] %} 
-
+{% if (data['searchtype'] == 'region') %}
         {% if data["tumourType"] %} 
 
         <h2 class="nhsuk-heading-s">

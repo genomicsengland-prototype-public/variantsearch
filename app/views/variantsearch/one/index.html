@@ -53,7 +53,7 @@ Variant search prototype
                         }
                     },
                 hint: { html: hintHtml },
-                items: [ { value: "100K Genomes Project Solid Tumour Pan-Cancer Data", text: "100K Genomes Project Solid Tumour Pan-Cancer Data" }, { value: "Genomics England & 100K Genomes Project Haematological Tumour Data", text: "Genomics England and 100K Genomes Project Haematological Tumour Data" } ]
+                items: [ { value: "100K Genomes Project Solid Tumour Pan-Cancer Data", text: "100K Genomes Project Solid Tumour Pan-Cancer Data" }, { value: "Genomics England & 100K Genomes Project Haematological Tumour Data", text: "Genomics England & 100K Genomes Project Haematological Tumour Data" } ]
             })
         }}
         
@@ -170,7 +170,7 @@ Variant search prototype
           name: "searchtype",
           fieldset: {
             legend: {
-              text: "Search type",
+              text: "Search by",
               classes: "nhsuk-fieldset__legend--s",
               isPageHeading: "true"
             }
@@ -195,13 +195,6 @@ Variant search prototype
               }
             },
             {
-              value: "gene",
-              text: "Gene",
-              conditional: {
-                html: geneHtml
-              }
-            },
-            {
               value: "position",
               text: "Genomic position ",
               conditional: {
@@ -213,6 +206,13 @@ Variant search prototype
               text: "Region",
               conditional: {
                 html: regionHtml
+              }
+            },
+            {
+              value: "gene",
+              text: "Gene",
+              conditional: {
+                html: geneHtml
               }
             }
 
