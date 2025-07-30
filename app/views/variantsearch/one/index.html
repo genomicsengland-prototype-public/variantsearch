@@ -170,7 +170,7 @@ Variant search prototype
           name: "searchtype",
           fieldset: {
             legend: {
-              text: "Search type",
+              text: "Search by",
               classes: "nhsuk-fieldset__legend--s",
               isPageHeading: "true"
             }
@@ -195,13 +195,6 @@ Variant search prototype
               }
             },
             {
-              value: "gene",
-              text: "Gene",
-              conditional: {
-                html: geneHtml
-              }
-            },
-            {
               value: "position",
               text: "Genomic position ",
               conditional: {
@@ -213,6 +206,13 @@ Variant search prototype
               text: "Region",
               conditional: {
                 html: regionHtml
+              }
+            },
+            {
+              value: "gene",
+              text: "Gene",
+              conditional: {
+                html: geneHtml
               }
             }
 
