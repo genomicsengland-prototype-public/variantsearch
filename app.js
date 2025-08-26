@@ -193,58 +193,6 @@ app.use(function (req, res, next) {
   next();
 });
 
-/** OLD VERSION 1 */
-app.post("/v1/referral/hpo/1/summary-by-term", (req, res, next) => {
-  if (!req.session.data.hpoCollection) {
-    req.session.data.hpoCollection = [];
-  }
-  req.session.data.hpoCollection.push([req.session.data['hpo-picker'], req.session.data['hpo-question-observed-proband'], req.session.data['hpo-question-observed-family1'],]);
-  next();
-});
-
-app.post("/rare-disease/referral/hpo/1", (req, res, next) => {
-  if (req.session.data['posting-hpo']) {
-    if (!req.session.data.hpoCollection) {
-      req.session.data.hpoCollection = [];
-    }
-    req.session.data.hpoCollection = req.session.data.hpoCollection.filter((info) => info['hpo-term'] !== req.session.data['rare-hpo-picker'])
-    req.session.data.hpoCollection.push(
-      {
-        'hpo-term': req.session.data['rare-hpo-picker'],
-        'observed-proband': req.session.data['rare-hpo-question-observed-proband'], 
-        'observed-family-member': req.session.data['rare-hpo-question-observed-family1']
-      });
-  }
-  next();
-});
-
-/** OLD VERSION 1 */
-app.post("/v1/referral/test/answer", (req, res) => {
-  // Make a variable and give it the value from 'know-nhs-number'
-  const diseaseSuspected = req.session.data["disease"];
-  // Check whether the variable matches a condition
-  if (diseaseSuspected === "yes") {
-    // Send user to next page
-    res.redirect("/v1/referral/test/disease-status");
-  } else {
-    // Send user to ineligible page
-    res.redirect("/v1/referral/test/test-request-summary");
-  }
-});
-
-app.post("/rare-disease/referral/test/answer", (req, res) => {
-  // Make a variable and give it the value from 'know-nhs-number'
-  const diseaseSuspected = req.session.data["rare-disease-suspected"];
-  // Check whether the variable matches a condition
-  if (diseaseSuspected === "Yes") {
-    // Send user to next page
-    res.redirect("/rare-disease/referral/test/disease-status");
-  } else {
-    // Send user to ineligible page
-    res.redirect("/rare-disease/referral/test/test-request-summary");
-  }
-});
-
 // Automatically route pages
 app.get(/^([^.]+)$/, (req, res, next) => {
   automaticRouting.matchRoutes(req, res, next);
@@ -292,12 +240,6 @@ if (useDocumentation || onlyDocumentation === "true") {
     automaticRouting.matchRoutes(req, res, next);
   });
 }
-
-// Clear all data in session if you open /examples/passing-data/clear-data
-app.post("/examples/passing-data/clear-data", (req, res) => {
-  req.session.data = {};
-  res.render("examples/passing-data/clear-data-success");
-});
 
 app.get("/clear-data", (req, res) => {
   req.session.data = {};
