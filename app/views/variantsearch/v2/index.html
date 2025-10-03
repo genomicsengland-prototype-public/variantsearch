@@ -12,6 +12,8 @@ Variant search prototype
 {% endblock %}
 
 {% block outerContent %}
+<div class="nhsuk-grid-row nhsuk-u-margin-0">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-0">
 <div class="nhsuk-warning-callout">
   <h3 class="nhsuk-warning-callout__label"> <span role="text">
       <span class="nhsuk-u-visually-hidden">Important: </span>
@@ -19,40 +21,21 @@ Variant search prototype
     </span> </h3>
   <p>The data shown is not verified and must not be used to make medical decisions or diagnoses.</p>
 </div>
+</div>
+</div>
 {% endblock %} {% block content %}
-<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-row" style="margin-top: -68px">
     <div class="nhsuk-grid-column-two-thirds">
-        <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-2">Variant search</h1>
+        <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-2">Search 100K Cancer Variant dataset</h1>
         <p class="nhsuk-u-margin-bottom-6">Use this tool to search available datasets to find variants linked to different types of cancer.</p>
-        
+  
+</div>
+   
+        <div class="nhsuk-form-group  nhsuk-u-margin-bottom-8">
 
 
 
-        <div class="nhsuk-form-group  nhsuk-u-margin-bottom-8
-">
-
-
-
-
-
-            <form id="tumourType-form" action="/variantsearch/one/results" method="post">
-            
-                    {{
-            radios({
-                classes: "nhsuk-u-margin-bottom-4",
-                idPrefix: "test-req",
-                name: "test-req",
-                fieldset: {
-                    legend: {
-                        text: "Select data source",
-                        classes: "nhsuk-fieldset__legend--s",
-                        isPageHeading: false
-                        }
-                    },
-                hint: { html: hintHtml },
-                items: [ { value: "100K Genomes Project Solid Tumour Pan-Cancer Data", text: "100K Genomes Project Solid Tumour Pan-Cancer Data" }, { value: "Genomics England & 100K Genomes Project Haematological Tumour Data", text: "Genomics England & 100K Genomes Project Haematological Tumour Data" } ]
-            })
-        }}
+            <form id="tumourType-form" action="/variantsearch/v2/results" method="post">
         
         {% from 'radios/macro.njk' import radios %}
         {% from 'input/macro.njk' import input %}
@@ -61,9 +44,9 @@ Variant search prototype
           {{ input({
             id: "HGVScV",
             name: "HGVScV",
-            classes: "nhsuk-u-width-two-thirds",
+            classes: "nhsuk-u-width-full",
             label: {
-              visuallyHiddenText: "CDS change"
+              text: "Coding DNA Sequence change"
             },
             hint: {
               text: "For example ENST00000324856.13:c.1113dup or NM_006015.6:c.1113dup"
@@ -75,9 +58,9 @@ Variant search prototype
           {{ input({
             id: "HGVSpV",
             name: "HGVSpV",
-            classes: "nhsuk-u-width-two-thirds",
+            classes: "nhsuk-u-width-full",
             label: {
-              visuallyHiddenText: "Protein change"
+              text: "Protein change"
             },
             hint: {
               text: "For example ENST00000493543.1:p(Val600Glu)"
@@ -114,25 +97,32 @@ Variant search prototype
           {{ input({
             id: "positionV",
             name: "positionV",
-            classes: "nhsuk-u-width-two-thirds",
+            classes: "nhsuk-u-width-full",
             label: {
-              visuallyHiddenText: "Variant position (GRCh38)"
+              text: "Genomic position (GRCh38)"
             },
             hint: {
               text: "For example chr7:140753336:A:T"
             }
           }) }}
-          {# {{ input({
+          <div class="nhsuk-checkboxes__item nhsuk-u-width-two-thirds">
+        <input class="nhsuk-checkboxes__input " id="contact" name="contact" checked="checked" type="checkbox" value="email">
+        <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">
+          Include variants in range plus and minus 10 base pairs of this position
+        </label>
+      </div>
+
+          {{ input({
             id: "positionVT",
             name: "positionVT",
-            classes: "nhsuk-u-width-two-thirds",
+            classes: "nhsuk-u-width-one-third",
             label: {
               text: "Variant type (optional)"
             },
             hint: {
               text: "For example missense"
             }
-          }) }} #}
+          }) }}
         {% endset -%}
         
         {% set regionHtml %}
@@ -160,6 +150,7 @@ Variant search prototype
           }) }} #}
         {% endset -%}
 
+<div class="nhsuk-grid-column-three-quarters">
 
         {{ radios({
         classes: "nhsuk-u-margin-bottom-",
@@ -167,9 +158,8 @@ Variant search prototype
           name: "searchtype",
           fieldset: {
             legend: {
-              text: "Search by",
-              classes: "nhsuk-fieldset__legend--s",
-              isPageHeading: "true"
+              text: "Search type",
+              isPageHeading: "false"
             }
           },
           
@@ -178,8 +168,8 @@ Variant search prototype
           items: [
 
             {
-              value: "HGVSc",
-              text: "CDS change",
+              value: "codingChange",
+              text: "Coding change",
               conditional: {
                 html: HGVScHtml
               }
@@ -197,28 +187,15 @@ Variant search prototype
               conditional: {
                 html: positionHtml
               }
-            },
-            {
-              value: "region",
-              text: "Region",
-              conditional: {
-                html: regionHtml
-              }
-            },
-            {
-              value: "gene",
-              text: "Gene",
-              conditional: {
-                html: geneHtml
-              }
             }
 
           ]
         }) }}
-
+</div>
+<div class="nhsuk-grid-column-three-quarters">
 
             <div class="nhsuk-u-margin-bottom-6">
-            <label class="nhsuk-label nhsuk-label--s" for="input-with-hint-text">
+            {# <label class="nhsuk-label nhsuk-label--s" for="input-with-hint-text">
                 Variant consequence type (optional)
             </label>
             
@@ -246,11 +223,11 @@ Variant search prototype
                 <option>start lost</option>
                 <option>transcript amplification</option>
             </select>
-            
+            #}
             <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
             <script type="text/javascript" src="/js/accessible-autocomplete.min.js"></script>
 
-
+{#
             <script>
                 accessibleAutocomplete.enhanceSelectElement({
                     defaultValue: "",
@@ -258,7 +235,7 @@ Variant search prototype
                 });
             </script>
             </div>
-
+#}
             <label class="nhsuk-label nhsuk-label--s" for="input-with-hint-text">
                 Tumour type (optional)
             </label>
