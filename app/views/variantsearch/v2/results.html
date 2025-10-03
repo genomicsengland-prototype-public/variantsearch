@@ -93,17 +93,16 @@ tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
       </p>
     </div>
     <h1 class="nhsuk-heading-l">
-      60 cases 5:112780895:C:T and Colon Adenocarcinoma
+      11 Colon Adenocarcinoma cases with genomic position variant 9:20414306:GCTGCTA:G 
     </h1>
     <p class="nhsuk-body">
-      72.29% of Colon Adenocarcinoma cases in this dataset at position
-      5:112780895:C:T.
+      0.56% of Colon Adenocarcinoma cases in this dataset are at position 9:20414306:GCTGCTA:G.
     </p>
 
     <h2 class="nhsuk-heading-l">
-      80 cases at position 5:112780895:C:T, of 13,873 solid tumours in this
-      dataset
+      18 cases at position 9:20414306:GCTGCTA:G
     </h2>
+    <p  class="nhsuk-body ">0.13% of 13,873 solid tumour cases in this dataset are at position 9:20414306:GCTGCTA:G.</p>
 
     {{ select({ id: "sort", name: "sort", classes: "nhsuk-u-margin-bottom-2",
     label: { text: "Sort table" }, items: [ { value: 'a-z', text: "Tumour type
@@ -186,7 +185,7 @@ tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
       dataRow)
      %} 
 
-    {{ table({ head: [ {text: "Tumour type" }, { text: "Cases with APC:c.637C>T" }, { text: "In frame deletions within these amino acids" }, {text: "Truncating variants in this position and downstream" }, { text: "Total cases with this variant in the dataset" } ], rows: dataRow }) }}
+    {{ table({ head: [ {text: "Tumour type" }, { text: "Cases with variant 9:20414306: GCTGCTA:G" }, { text: "In frame deletions within these amino acids" }, {text: "Truncating variants in this position and downstream" }, { text: "Total cases with this variant in the dataset" } ], rows: dataRow }) }}
 
     <p>
       <a href="#" class="nhsuk-link"
