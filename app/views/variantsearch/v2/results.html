@@ -116,16 +116,77 @@ tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
     items: [ 
     { value: "showInFrame", text: "Show in-frame deletions within the same amino acid region", checked: true }, 
     { value: "showAllTruncating", text: "Show all truncating variants at the same position of further downstream", checked: true }, 
-    { value: "includeTumours", text: "Include tumours with zero values for this variant, in-frame deletions, or truncating variants", checked: true } ] }) }} {% set dataRow = [] %} {% set
-    temp2 = [ {text: '2'}, {text: '3'}, {text: ''}, {text: '5'}, {text: '6'} ]
-    %} {% set dataRow = (dataRow.push(temp2), dataRow) %} {% for i in
-    range(0,30) %} {% set temp = [ {text: '[number]'}, {text: '[number]'},
-    {text: '[number]'}, {text: '[number]'}, {text: '[number]'} ] %} {% set
-    dataRow = (dataRow.push(temp), dataRow) %} {% endfor %} {{ table({ head: [ {
-    text: "Tumour type" }, { text: "Cases with APC:c.637C>T" }, { text: "In
-    frame deletions within these amino acids" }, { text: "Truncating variants in
-    this position and downstream" }, { text: "Total cases with this variant in
-    the dataset" } ], rows: dataRow }) }}
+    { value: "includeTumours", text: "Include tumours with zero values for this variant, in-frame deletions, or truncating variants", checked: true } ] }) }} 
+    {% set dataRow = [] %} 
+    {% set tot = [ {text: 'TOTAL'}, {text: '18'}, {text: '161'}, {text: '690'}, {text: '13873'} ]%} 
+    {% set temp6 = [ {text: 'Bladder Urothelial Carcinoma'}, {text: '0'}, {text: '1'}, {text: '0'}, {text: '259'} ]%} 
+    {% set temp7 = [ {text: 'Breast Invasive Carcinoma'},   {text: '0'},  {text: '1'},  {text: '0'},  {text: '2925'} ]%} 
+    {% set temp8 = [ {text: 'Cholangiocarcinoma'},   {text: '0'},  {text: '0'},  {text: '0'},  {text: '31'} ]%} 
+    {% set temp9 = [ {text: 'Colon Adenocarcinoma'},   {text: '11'},  {text: '123'},  {text: '556'},  {text: '1948'} ]%} 
+    {% set temp10 = [ {text: 'Esophageal Adenocarcinoma'},  {text: '0'},  {text: '3'},  {text: '0'},  {text: '91'} ]%} 
+    {% set temp11 = [ {text: 'Ovarian Endometrioid Adenocarcinoma'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '102'} ]%} 
+    {% set temp12 = [ {text: 'Esophageal Squamous Cell Carcinoma'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '16'} ]%} 
+    {% set temp13 = [ {text: 'Glioblastoma Multiforme'},  {text: '0'},  {text: '2'},  {text: '5'},  {text: '315'} ]%} 
+    {% set temp14 = [ {text: 'Colorectal and Upper GI Neuroendocrine'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '76'} ]%} 
+    {% set temp15 = [ {text: 'Ovarian High Grade Serous Carcinoma'},  {text: '0'},  {text: '1'},  {text: '0'},  {text: '372'} ]%} 
+    {% set temp16 = [ {text: 'Head and Neck Squamous Cell Carcinoma'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '245'} ]%} 
+    {% set temp17 = [ {text: 'Kidney Chromophobe'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '96'} ]%} 
+    {% set temp18 = [ {text: 'Kidney Renal Clear Cell Carcinoma'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '1163'} ]%} 
+    {% set temp19 = [ {text: 'Kidney Renal Papillary Cell Carcinoma'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '114'} ]%} 
+    {% set temp20 = [ {text: 'Lung Neuroendocrine'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '122'} ]%} 
+    {% set temp21 = [ {text: 'Low Grade Glioma'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '176'} ]%} 
+    {% set temp22 = [ {text: 'Ovarian Serous Carcinoma'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '24'} ]%} 
+    {% set temp23 = [ {text: 'Liver Hepatocellular Carcinoma'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '25'} ]%} 
+    {% set temp24 = [ {text: 'Lung Adenocarcinoma'},  {text: '2'},  {text: '18'},  {text: '67'},  {text: '813'} ]%} 
+    {% set temp25 = [ {text: 'Lung Squamous Cell Carcinoma'},  {text: '5'},  {text: '22'},  {text: '0'},  {text: '448'} ]%} 
+    {% set temp26 = [ {text: 'Mesothelioma'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '48'} ]%} 
+    {% set temp27 = [ {text: 'Pancreatic Adenocarcinoma'},  {text: '0'},  {text: '1'},  {text: '0'},  {text: '121'} ]%} 
+    {% set temp28 = [ {text: 'Prostate Adenocarcinoma'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '572'} ]%} 
+    {% set temp29 = [ {text: 'Rectum Adenocarcinoma'},  {text: '0'},  {text: '1'},  {text: '0'},  {text: '830'} ]%} 
+    {% set temp30 = [ {text: 'Sarcoma'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '1617'} ]%} 
+    {% set temp31 = [ {text: 'Skin Cutaneous Melanoma'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '325'} ]%} 
+    {% set temp32 = [ {text: 'Stomach Adenocarcinoma'},  {text: '0'},  {text: '3'},  {text: '7'},  {text: '105'} ]%} 
+    {% set temp33 = [ {text: 'Testicular Germ Cell Tumours'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '61'} ]%} 
+    {% set temp34 = [ {text: 'Uterine Corpus Endometrial Carcinoma'},  {text: '0'},  {text: '25'},  {text: '122'},  {text: '706'} ]%} 
+    {% set temp35 = [ {text: 'Uterine Corpus Endometrial Serous Carcinoma'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '113'} ]%} 
+    {% set temp36 = [ {text: 'Uveal Melanoma'},  {text: '0'},  {text: '0'},  {text: '0'},  {text: '16'} ]%} 
+    {% set dataRow = (
+      dataRow.push(tot), 
+      dataRow.push(temp6), 
+      dataRow.push(temp7), 
+      dataRow.push(temp8), 
+      dataRow.push(temp9), 
+      dataRow.push(temp10), 
+      dataRow.push(temp11), 
+      dataRow.push(temp12), 
+      dataRow.push(temp13), 
+      dataRow.push(temp14), 
+      dataRow.push(temp15), 
+      dataRow.push(temp16), 
+      dataRow.push(temp17), 
+      dataRow.push(temp18), 
+      dataRow.push(temp19), 
+      dataRow.push(temp20), 
+      dataRow.push(temp21), 
+      dataRow.push(temp22), 
+      dataRow.push(temp23), 
+      dataRow.push(temp24), 
+      dataRow.push(temp25), 
+      dataRow.push(temp26), 
+      dataRow.push(temp27), 
+      dataRow.push(temp28), 
+      dataRow.push(temp29), 
+      dataRow.push(temp30), 
+      dataRow.push(temp31), 
+      dataRow.push(temp32), 
+      dataRow.push(temp33), 
+      dataRow.push(temp34), 
+      dataRow.push(temp35), 
+      dataRow.push(temp36), 
+      dataRow)
+     %} 
+
+    {{ table({ head: [ {text: "Tumour type" }, { text: "Cases with APC:c.637C>T" }, { text: "In frame deletions within these amino acids" }, {text: "Truncating variants in this position and downstream" }, { text: "Total cases with this variant in the dataset" } ], rows: dataRow }) }}
 
     <p>
       <a href="#" class="nhsuk-link"
@@ -161,9 +222,18 @@ tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
         </tr>
       </thead>
       <tbody class="nhsuk-table__body">
-        {{tableFiller(["1:140753302"], ["A:ACTGCTGCTGCTGCTGCTGCTACTGCTGCTGCTGCTGCTGCTG"], [2]) }}
-        {{tableFiller(["1:140753301"], ["G>A","G>C"], [200, 2], true) }} 
-        {{tableFiller(["1:140753302"]) }}
+        {{tableFiller(["9:20414296","9:20414297","9:20414298","9:20414299"]) }}
+        {{tableFiller(["9:20414300"], ["A:ACTGCTGCTGCTACTGCTGCTGCTGCTG","A:ACTGCTGCTACTGCTGCTGCTGCTGCTG","A:ACTGCTGCTGCTGCTGCTGCTGCTGCT","A:ACTGCTGCTGCTA","A:ACTGCTGCTGCTGC","A:ACTG","A:ACTGCTGCT"], [33, 4, 2, 1, 17, 23, 1]) }}
+        {{tableFiller(["9:20414301","9:20414302"]) }}
+        {{tableFiller(["9:20414303"], ["G:GCTGCTGCTACTGC", "GCTGCTGCTA:G"], [1,1]) }}
+        {{tableFiller(["9:20414304","9:20414305"]) }}
+        {{tableFiller(["9:20414306"], ["GCTGCTA:G"], [18], true) }}
+        {{tableFiller(["9:20414307","9:20414308","9:20414309","9:20414310","9:20414311"]) }}
+        {{tableFiller(["9:20414312"], ["ACTG:A","A:ACTG","A:ACTGCTG","ACTGCTG:A","A:ACTGCTGCTG","A:ACTGCTGCTGCTGCTGCTG","A:ACTGCTGCTGCTGCTGCTGCTACTGCTGCTGCTGCTGCTGCTG","A:ACTGCTGCTGCTGCTGCTGCTG","A:ACTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG","ACTGCTGCTGCTG:A","ACTGCTGCTGCTGCTGCTGCTG:A","ACTGCTGCTG:A"], [53,39,2,5,1,3,1,2,1,7,12,1]) }}
+        {{tableFiller(["9:20414313"], ["C:T"], [3]) }}
+        {{tableFiller(["9:20414314"]) }}
+        {{tableFiller(["9:20414315"], ["G:GCTGCTGCTGCTGCTGCTGCTGCTGCTA","GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTA:G","G:GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTA"], [11,3,2]) }}
+        {{tableFiller(["9:20414316"], ["C:T"], [1]) }}
       </tbody>
     </table>
   </div>
