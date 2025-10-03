@@ -45,3 +45,17 @@ padding: 6px 0 6px 16px;
 margin-left: 16px;
 border-left:solid 1px #fff;
 }
+
+.nhsuk-table__middle {
+  vertical-align: middle;
+}
+
+.nhsuk-u-text-break-word {
+  word-break: break-word !important;
+  overflow-wrap: break-word;
+  min-width: 230px;
+}
+
+.nhsuk-link--reverse {
+  color: #FFF;
+}
