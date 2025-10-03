@@ -32,7 +32,11 @@
 'tables/macro.njk' import table %} {% from 'select/macro.njk' import select %}
 {% extends 'layout.html' %} {% block pageTitle %} Variant search results {%
 endblock %} {% set cancerPatientData = true %} {% block beforeContent %} {%
-endblock %} {% block outerContent %} {% endblock %} {% block content %} {% macro
+endblock %} {% block outerContent %} {% endblock %} 
+
+{% block content %} 
+
+{% macro
 tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
 <tr
   class="nhsuk-table__row"
@@ -59,13 +63,13 @@ tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
     </div>
     {% else %} {%- for variant in variants %}
     <div style="display: flex">
-      <div style="width: 190px">
+      <div style="width: 190px;  line-height: 99%;" class="nhsuk-u-margin-bottom-3">
         <a href="#" class="nhsuk-link nhsuk-link--reverse">{{ variant }}</a>
       </div>
-      <div style="width: 100px; text-align: left; padding-left: 14px">
+      <div style="width: 100px; text-align: left; padding-left: 14px; line-height: 0.952em;" class="nhsuk-u-margin-bottom-3">
         {{ cases[loop.index0] }}
       </div>
-      <div style="width: 520px" class="nhsuk-u-text-break-word">
+      <div style="width: 520px; line-height: 0.952em;" class="nhsuk-u-text-break-word nhsuk-u-margin-bottom-3">
         {% for c in range(0, cases[loop.index0]) -%}|{%- endfor %}
       </div>
     </div>
@@ -101,7 +105,7 @@ tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
       dataset
     </h2>
 
-    {{ select({ id: "sort", name: "sort", classes: "nhsuk-u-margin-bottom-7",
+    {{ select({ id: "sort", name: "sort", classes: "nhsuk-u-margin-bottom-2",
     label: { text: "Sort table" }, items: [ { value: 'a-z', text: "Tumour type
     A-Z", selected: true }, { value: 'z-a', text: "Tumour Z-A" }, { value:
     'high-low', text: "Cases with searched variant high to low" }, { value:
