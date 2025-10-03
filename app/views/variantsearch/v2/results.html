@@ -63,13 +63,13 @@ tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
     </div>
     {% else %} {%- for variant in variants %}
     <div style="display: flex">
-      <div style="width: 190px;  line-height: 99%;" class="nhsuk-u-margin-bottom-3">
+      <div style="width: 190px;  line-height: 99%;" class="{{ 'nhsuk-u-margin-bottom-3' if not loop.last }}">
         <a href="#" class="nhsuk-link{{ ' nhsuk-link--reverse' if isSearched }} nhsuk-u-text-break-word">{{ variant }}</a>
       </div>
-      <div style="width: 100px; text-align: left; padding-left: 14px; line-height: 0.952em;" class="nhsuk-u-margin-bottom-3">
+      <div style="width: 100px; text-align: left; padding-left: 14px; line-height: 0.952em;" class="{{ 'nhsuk-u-margin-bottom-3' if not loop.last }}">
         {{ cases[loop.index0] }}
       </div>
-      <div style="width: 520px; line-height: 0.952em;" class="nhsuk-u-text-break-word nhsuk-u-margin-bottom-3">
+      <div style="width: 520px; line-height: 0.952em;" class="nhsuk-u-text-break-word{{ ' nhsuk-u-margin-bottom-3' if not loop.last }}">
         {% for c in range(0, cases[loop.index0]) -%}|{%- endfor %}
       </div>
     </div>
