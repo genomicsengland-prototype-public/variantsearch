@@ -1,0 +1,192 @@
+{# 
+<tr class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">{%- for genomicPosition in genomicPositions %}<div>{{ genomicPosition }}</div>{%- endfor %}</td>
+      <td class="nhsuk-table__cell {{ 'nhsuk-table__middle' if variants | length == 0 }}">{%- if variants | length == 0 %} No variants {%- else %}{%- for variant in variants %}<div><a href="#" class="nhsuk-link">{{ variant }}</a></div>{%- endfor %}{% endif %}</td>
+      <td class="nhsuk-table__cell {{ 'nhsuk-table__middle' if cases | length == 0 }} nhsuk-table__cell--numeric">{%- if cases | length == 0 %} - {%- else %}{%- for case in cases %}<div style="margin-bottom:50px;">{{ case }}</div>{%- endfor %}{% endif %}</td>
+      <td class="nhsuk-table__cell nhsuk-u-text-break-word">{% for case in cases -%}<div style="{{'width:530px;' if case >= 90 }}">{% for c in range(0, case) -%}|{%- endfor %}</div>{%- endfor %}&nbsp;</td>
+    </tr>
+#}
+{% from 'checkboxes/macro.njk' import checkboxes %}
+{% from 'tables/macro.njk' import table %}
+{% from 'select/macro.njk' import select %}
+{% extends 'layout.html' %} {% block pageTitle %} Variant search results {%
+endblock %} {% set cancerPatientData = true %} {% block beforeContent %} {%
+endblock %} {% block outerContent %} {% endblock %} {% block content %}
+
+{% macro tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
+    <tr class="nhsuk-table__row" style="{{ 'background: #005EB8; color: #fff' if isSearched }}">
+      <td class="nhsuk-table__cell" style="width: 200px; padding-left: 16px;">{%- for genomicPosition in genomicPositions %}<div>
+        {% if isSearched %}
+        <strong class="nhsuk-tag nhsuk-tag--white">
+  Searched
+</strong> {% endif %}{{ genomicPosition }}</div>{%- endfor %}</td>
+      <td class="nhsuk-table__cell {{ 'nhsuk-table__middle' if variants | length == 0 }}" colspan="3">
+        {% if variants | length == 0 %}
+          <div style="display: flex">
+          <div style="width: 210px;">No variants</div>
+      <div style="width: 120px;"> - </div>
+      <div style="width: 520px;" class="nhsuk-u-text-break-word">&nbsp;</div>
+    </div>
+        {% else %}
+          {%- for variant in variants %}
+    <div style="display: flex">
+      <div style="width: 190px;"><a href="#" class="nhsuk-link nhsuk-link--reverse">{{ variant }}</a></div>
+      <div style="width: 100px; text-align: left; padding-left: 14px;">{{ cases[loop.index0] }}</div>
+      <div style="width: 520px;" class="nhsuk-u-text-break-word">{% for c in range(0, cases[loop.index0]) -%}|{%- endfor %}</div>
+    </div>
+    {% endfor %}
+{% endif %}
+      </td>
+    </tr>
+    {% endmacro %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-warning-callout">
+      <h3 class="nhsuk-warning-callout__label">
+        <span role="text">
+          <span class="nhsuk-u-visually-hidden">Important: </span>
+          For research use only
+        </span>
+      </h3>
+      <p>
+        The data shown is not verified and must not be used to make medical
+        decisions or diagnoses.
+      </p>
+    </div>
+    <h1 class="nhsuk-heading-l">
+      60 cases 5:112780895:C:T and Colon Adenocarcinoma
+    </h1>
+    <p class="nhsuk-body">72.29% of Colon Adenocarcinoma cases in this dataset at position 5:112780895:C:T.</p>
+
+    <h2 class="nhsuk-heading-l">80 cases at position 5:112780895:C:T, of 13,873 solid tumours in this dataset</h2>
+    
+{{ select({
+  id: "sort",
+  name: "sort",
+  classes: "nhsuk-u-margin-bottom-7",
+  label: {
+    text: "Sort table"
+  },
+  items: [
+    {
+      value: 'a-z',
+      text: "Tumour type A-Z",
+      selected: true
+    },
+    {
+      value: 'z-a',
+      text: "Tumour Z-A"
+    },
+    {
+      value: 'high-low',
+      text: "Cases with searched variant high to low"
+    },
+    {
+      value: 'low-high',
+      text: "Cases with searched variant low to high"
+    }
+  ]
+  }) }}
+
+    {{ checkboxes({
+  idPrefix: "filterTable",
+  name: "filterTable",
+  fieldset: {
+    legend: {
+      text: "Filter table",
+      isPageHeading: false
+    }
+  },
+  items: [
+    {
+      value: "showInFrame",
+      text: "Show in-frame deletions within the same amino acid region"
+    },
+    {
+      value: "showAllTruncating",
+      text: "Show all truncating variants at the same position of further downstream"
+    },
+    {
+      value: "includeTumours",
+      text: "Include tumours with zero values for this variant, in-frame deletions, or truncating variants"
+    }
+  ]
+}) }}
+
+{% set dataRow = [] %}
+
+{% set temp2 = [
+    {text: '2'},
+    {text: '3'},
+    {text: ''},
+    {text: '5'},
+    {text: '6'}
+  ] %}
+
+   {% set dataRow = (dataRow.push(temp2), dataRow) %}
+
+  {% for i in range(0,30) %}
+    {% set temp = [
+    {text: '[number]'},
+    {text: '[number]'},
+    {text: '[number]'},
+    {text: '[number]'},
+    {text: '[number]'}
+    ] %}
+    {% set dataRow = (dataRow.push(temp), dataRow) %}
+   {% endfor %}
+
+  
+
+{{ table({
+  head: [
+    {
+      text: "Tumour type"
+    },
+    {
+      text: "Cases with APC:c.637C>T"
+    },
+    {
+      text: "In frame deletions within these amino acids"
+    },
+    {
+      text: "Truncating variants in this position and downstream"
+    },
+    {
+      text: "Total cases with this variant in the dataset"
+    }
+  ],
+  rows: dataRow
+}) }}
+
+<p><a href="#" class="nhsuk-link">Download results as a CSV file for Excel</a></p>
+
+<h3 class="nhsuk-heading-m">Variants in the region of 1:140753311:C:T</h3>
+
+<p>Somatic variants plus or minus 10 base pairs of the searched position:</p>
+
+
+<table class="nhsuk-table">
+  <thead class="nhsuk-table__head">
+    <tr>
+      <th scope="col" class="nhsuk-table__header" style="min-width: 290px;">Genomic position</th>
+      <th scope="col" class="nhsuk-table__header" style="width: 120px;">Change</th>
+      <th scope="col" class="nhsuk-table__header nhsuk-table__header--numeric" style="width: 110px;">Cases</th>
+      <th scope="col" class="nhsuk-table__header" style="width: 520px;">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+      {{ tableFiller(["1:140753301"], ["G>A","G>C"], [200, 2], true) }}
+      {{ tableFiller(["1:140753302"]) }}
+
+
+    
+  </tbody>
+</table>
+
+<button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+  Start a new search
+</button>
+    
+{% endblock %}
