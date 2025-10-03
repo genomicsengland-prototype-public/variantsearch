@@ -161,8 +161,9 @@ tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
         </tr>
       </thead>
       <tbody class="nhsuk-table__body">
-        {{ tableFiller(["1:140753301"], ["G>A","G>C"], [200, 2], true) }} {{
-        tableFiller(["1:140753302"]) }}
+        {{tableFiller(["1:140753302"], ["A:ACTGCTGCTGCTGCTGCTGCTACTGCTGCTGCTGCTGCTGCTG"], [2]) }}
+        {{tableFiller(["1:140753301"], ["G>A","G>C"], [200, 2], true) }} 
+        {{tableFiller(["1:140753302"]) }}
       </tbody>
     </table>
   </div>
