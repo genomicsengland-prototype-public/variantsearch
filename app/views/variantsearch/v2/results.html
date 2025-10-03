@@ -10,7 +10,7 @@
   >
     {%- if variants | length == 0 %} No variants {%- else %}{%- for variant in
     variants %}
-    <div><a href="#" class="nhsuk-link">{{ variant }}</a></div>
+    <div><a href="" class="nhsuk-link">{{ variant }}</a></div>
     {%- endfor %}{% endif %}
   </td>
   <td
@@ -102,7 +102,7 @@ tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
     <h2 class="nhsuk-heading-l">
       18 cases at position 9:20414306:GCTGCTA:G
     </h2>
-    <p  class="nhsuk-body ">0.13% of 13,873 solid tumour cases in this dataset are at position 9:20414306:GCTGCTA:G.</p>
+    <p  class="nhsuk-body nhsuk-u-margin-bottom-8">0.13% of 13,873 solid tumour cases in this dataset are at position 9:20414306:GCTGCTA:G.</p>
 
     {{ select({ id: "sort", name: "sort", classes: "nhsuk-u-margin-bottom-2",
     label: { text: "Sort table" }, items: [ { value: 'a-z', text: "Tumour type
@@ -187,7 +187,7 @@ tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
 
     {{ table({ head: [ {text: "Tumour type" }, { text: "Cases with variant 9:20414306: GCTGCTA:G" }, { text: "In frame deletions within these amino acids" }, {text: "Truncating variants in this position and downstream" }, { text: "Total cases with this variant in the dataset" } ], rows: dataRow }) }}
 
-    <p>
+    <p class="nhsuk-u-margin-bottom-8">
       <a href="#" class="nhsuk-link"
         >Download results as a CSV file for Excel</a
       >
@@ -231,7 +231,7 @@ tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
         {{tableFiller(["9:20414312"], ["ACTG:A","A:ACTG","A:ACTGCTG","ACTGCTG:A","A:ACTGCTGCTG","A:ACTGCTGCTGCTGCTGCTG","A:ACTGCTGCTGCTGCTGCTGCTACTGCTGCTGCTGCTGCTGCTG","A:ACTGCTGCTGCTGCTGCTGCTG","A:ACTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG","ACTGCTGCTGCTG:A","ACTGCTGCTGCTGCTGCTGCTG:A","ACTGCTGCTG:A"], [53,39,2,5,1,3,1,2,1,7,12,1]) }}
         {{tableFiller(["9:20414313"], ["C:T"], [3]) }}
         {{tableFiller(["9:20414314"]) }}
-        {{tableFiller(["9:20414315"], ["G:GCTGCTGCTGCTGCTGCTGCTGCTGCTA","GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTA:G","G:GCTGCTGCTGCTGCTGCTGCTGCTGCTGCTA"], [11,3,2]) }}
+        {{tableFiller(["9:20414315"], ["G:GCTGCTGCTGCTGCTGCTGCTGCTGCTA","GCTGCTGCTGCTGCTGCTGCTGCTGC:G","G:GCTGCTGCTGCTGCTGCTGCTGC"], [11,3,2]) }}
         {{tableFiller(["9:20414316"], ["C:T"], [1]) }}
       </tbody>
     </table>
