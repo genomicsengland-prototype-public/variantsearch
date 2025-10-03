@@ -105,14 +105,14 @@ tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
     label: { text: "Sort table" }, items: [ { value: 'a-z', text: "Tumour type
     A-Z", selected: true }, { value: 'z-a', text: "Tumour Z-A" }, { value:
     'high-low', text: "Cases with searched variant high to low" }, { value:
-    'low-high', text: "Cases with searched variant low to high" } ] }) }} {{
+    'low-high', text: "Cases with searched variant low to high" } ] }) }} 
+    {{
     checkboxes({ idPrefix: "filterTable", name: "filterTable", fieldset: {
-    legend: { text: "Filter table", isPageHeading: false } }, items: [ { value:
-    "showInFrame", text: "Show in-frame deletions within the same amino acid
-    region" }, { value: "showAllTruncating", text: "Show all truncating variants
-    at the same position of further downstream" }, { value: "includeTumours",
-    text: "Include tumours with zero values for this variant, in-frame
-    deletions, or truncating variants" } ] }) }} {% set dataRow = [] %} {% set
+    legend: { text: "Filter table", isPageHeading: false } }, 
+    items: [ 
+    { value: "showInFrame", text: "Show in-frame deletions within the same amino acid region", checked: true }, 
+    { value: "showAllTruncating", text: "Show all truncating variants at the same position of further downstream", checked: true }, 
+    { value: "includeTumours", text: "Include tumours with zero values for this variant, in-frame deletions, or truncating variants", checked: true } ] }) }} {% set dataRow = [] %} {% set
     temp2 = [ {text: '2'}, {text: '3'}, {text: ''}, {text: '5'}, {text: '6'} ]
     %} {% set dataRow = (dataRow.push(temp2), dataRow) %} {% for i in
     range(0,30) %} {% set temp = [ {text: '[number]'}, {text: '[number]'},
