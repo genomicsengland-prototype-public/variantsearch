@@ -35,7 +35,7 @@ Variant search prototype
 
 
 
-            <form id="tumourType-form" action="/variantsearch/v2/results" method="post">
+            <form id="tumourType-form" action="/variantsearch/v2/results" method="post" class="nhsuk-u-margin-bottom-6">
         
         {% from 'radios/macro.njk' import radios %}
         {% from 'input/macro.njk' import input %}
@@ -46,7 +46,7 @@ Variant search prototype
             name: "HGVScV",
             classes: "nhsuk-u-width-full",
             label: {
-              text: "Coding DNA Sequence change"
+              text: "Coding DNA Sequence (CDS) change"
             },
             hint: {
               text: "For example ENST00000324856.13:c.1113dup or NM_006015.6:c.1113dup"
@@ -99,7 +99,7 @@ Variant search prototype
             name: "positionV",
             classes: "nhsuk-u-width-full",
             label: {
-              text: "Genomic position (GRCh38)"
+              text: "GRCh38 genomic position"
             },
             hint: {
               text: "For example chr7:140753336:A:T"
@@ -131,7 +131,7 @@ Variant search prototype
             name: "regionV",
             classes: "nhsuk-u-width-two-thirds",
             label: {
-              visuallyHiddenText: "Genomic region (GRCh38)"
+              visuallyHiddenText: "GRCh38 genomic region"
             },
             hint: {
               text: "For example chr7:140750000-140800000"
@@ -150,7 +150,7 @@ Variant search prototype
           }) }} #}
         {% endset -%}
 
-<div class="nhsuk-grid-column-three-quarters">
+<div class="nhsuk-grid-column-three-quarters  nhsuk-u-margin-bottom-4">
 
         {{ radios({
         classes: "nhsuk-u-margin-bottom-",
@@ -236,7 +236,7 @@ Variant search prototype
             </script>
             </div>
 #}
-            <label class="nhsuk-label nhsuk-label--s" for="input-with-hint-text">
+            <label class="nhsuk-label" for="input-with-hint-text">
                 Tumour type (optional)
             </label>
             
