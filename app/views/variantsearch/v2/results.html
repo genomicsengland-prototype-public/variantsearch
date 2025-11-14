@@ -80,42 +80,28 @@ tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
 
 <div class="nhsuk-grid-row nhsuk-u-margin-bottom-6">
   <div class="nhsuk-grid-column-full">
-    <div class="nhsuk-warning-callout">
-      <h3 class="nhsuk-warning-callout__label">
-        <span role="text">
-          <span class="nhsuk-u-visually-hidden">Important: </span>
-          For research use only
-        </span>
-      </h3>
-      <p>
-        The data shown is not verified and must not be used to make medical
-        decisions or diagnoses.
-      </p>
-    </div>
-    <h1 class="nhsuk-heading-m">
-      11 Colon Adenocarcinoma cases with genomic position variant 9:20414306:GCTGCTA:G 
+    <h1 class="nhsuk-heading-l">
+      Search results for 9:20414306:GCTGCTA:G Colon Adenocarcinoma
     </h1>
     <p class="nhsuk-body">
-      0.56% of 1948 Colon Adenocarcinoma cases in this dataset are at position 9:20414306:GCTGCTA:G.
+      Gene: [ARID1A....] </br>
+      Ensembl Transcript ID: [ENST....] </br>
+      Ensembl Protein ID: [ENSP.....]
     </p>
 
     <h2 class="nhsuk-heading-m">
-      18 cases with any tumour at position 9:20414306:GCTGCTA:G
+      11 cases of 9:20414306:GCTGCTA:G of 1948 Colon Adenocarcinoma cases in this dataset
     </h2>
-    <p  class="nhsuk-body nhsuk-u-margin-bottom-8">0.13% of 13,873 solid tumour cases in this dataset are at position 9:20414306:GCTGCTA:G.</p>
+
+    <h2 class="nhsuk-heading-m">
+      18 cases of 9:20414306:GCTGCTA:G of 11374 solid tumours in this dataset
+    </h2>
 
     {{ select({ id: "sort", name: "sort", classes: "nhsuk-u-margin-bottom-2",
     label: { text: "Sort table" }, items: [ { value: 'a-z', text: "Tumour type
     A-Z", selected: true }, { value: 'z-a', text: "Tumour Z-A" }, { value:
     'high-low', text: "Cases with searched variant high to low" }, { value:
     'low-high', text: "Cases with searched variant low to high" } ] }) }} 
-    {{
-    checkboxes({ idPrefix: "filterTable", name: "filterTable", fieldset: {
-    legend: { text: "Filter table", isPageHeading: false } }, 
-    items: [ 
-    { value: "showInFrame", text: "Show in-frame deletions within the same amino acid region", checked: true }, 
-    { value: "showAllTruncating", text: "Show all truncating variants at the same position of further downstream", checked: true }, 
-    { value: "includeTumours", text: "Include tumours with zero values for this variant, in-frame deletions, or truncating variants", checked: true } ] }) }} 
     {% set dataRow = [] %} 
     {% set tot = [ {text: 'TOTAL'}, {text: '18'}, {text: '161'}, {text: '690'}, {text: '13873'} ]%} 
     {% set temp6 = [ {text: 'Bladder Urothelial Carcinoma'}, {text: '0'}, {text: '1'}, {text: '0'}, {text: '259'} ]%} 
@@ -185,50 +171,12 @@ tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
       dataRow)
      %} 
 
-    {{ table({ head: [ {text: "Tumour type" }, { text: "Cases with variant 9:20414306: GCTGCTA:G" }, { text: "In frame deletions within these amino acids" }, {text: "Truncating variants in this position and downstream" }, { text: "Total cases in the dataset" } ], rows: dataRow }) }}
+    {{ table({ head: [ {text: "Tumour type" }, { text: "Cases with variant [1]" }, { text: "In frame deletions within these amino acids [2]" }, {text: "Truncating variants in this position and downstream [3]" }, { text: "Total cases in the dataset" } ], rows: dataRow }) }}
 
-    <p class="nhsuk-u-margin-bottom-8">
+    <p class="nhsuk-u-margin-bottom-4">
       <a href="#" class="nhsuk-link">Download results as a CSV file for Excel</a>
     </p>
 
-    <h3 class="nhsuk-heading-m">Variants in the region of 9:20414306:GCTGCTA:G</h3>
-
-    <table class="nhsuk-table">
-      <thead class="nhsuk-table__head">
-        <tr>
-          <th scope="col" class="nhsuk-table__header" style="min-width: 290px">
-            Genomic position
-          </th>
-          <th scope="col" class="nhsuk-table__header" style="width: 120px">
-            Change
-          </th>
-          <th
-            scope="col"
-            class="nhsuk-table__header nhsuk-table__header--numeric"
-            style="width: 110px"
-          >
-            Cases
-          </th>
-          <th scope="col" class="nhsuk-table__header" style="width: 520px">
-            &nbsp;
-          </th>
-        </tr>
-      </thead>
-      <tbody class="nhsuk-table__body">
-        {{tableFiller(["9:20414296","9:20414297","9:20414298","9:20414299"]) }}
-        {{tableFiller(["9:20414300"], ["A:ACTGCTGCTGCTACTGCTGCTGCTGCTG","A:ACTGCTGCTACTGCTGCTGCTGCTGCTG","A:ACTGCTGCTGCTGCTGCTGCTGCTGCT","A:ACTGCTGCTGCTA","A:ACTGCTGCTGCTGC","A:ACTG","A:ACTGCTGCT"], [33, 4, 2, 1, 17, 23, 1]) }}
-        {{tableFiller(["9:20414301","9:20414302"]) }}
-        {{tableFiller(["9:20414303"], ["G:GCTGCTGCTACTGC", "GCTGCTGCTA:G"], [3,7]) }}
-        {{tableFiller(["9:20414304","9:20414305"]) }}
-        {{tableFiller(["9:20414306"], ["GCTGCTA:G"], [18], true) }}
-        {{tableFiller(["9:20414307","9:20414308","9:20414309","9:20414310","9:20414311"]) }}
-        {{tableFiller(["9:20414312"], ["ACTG:A","A:ACTG","A:ACTGCTG","ACTGCTG:A","A:ACTGCTGCTG","A:ACTGCTGCTGCTGCTGCTG","A:ACTGCTGCTGCTGCTGCTGCTACTGCTGCTGCTGCTGCTGCTG","A:ACTGCTGCTGCTGCTGCTGCTG","A:ACTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTGCTG","ACTGCTGCTGCTG:A","ACTGCTGCTGCTGCTGCTGCTG:A","ACTGCTGCTG:A"], [53,39,62,5,31,3,164,2,135,7,12,1]) }}
-        {{tableFiller(["9:20414313"], ["C:T"], [3]) }}
-        {{tableFiller(["9:20414314"]) }}
-        {{tableFiller(["9:20414315"], ["G:GCTGCTGCTGCTGCTGCTGCTGCTGCTA","GCTGCTGCTGCTGCTGCTGCTGCTGC:G","G:GCTGCTGCTGCTGCTGCTGCTGC"], [11,3,2]) }}
-        {{tableFiller(["9:20414316"], ["C:T"], [1]) }}
-      </tbody>
-    </table>
   </div>
   </div>
 <div class="nhsuk-grid-row">
@@ -243,17 +191,54 @@ tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
     Edit this search
   </button>
 </div>
-<div class="nhsuk-form-group nhsuk-u-margin-bottom-6">
+<div class="nhsuk-form-group nhsuk-u-margin-bottom-8">
   <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
     Start a new search
   </button>
 </div>
-<h3 class="nhsuk-heading-s">Data sources</h3>
-<p>
-  100K Genomes Project Pan-Cancer data is from "<a href="#"
-    >Table S1: Somatic small variant protein changes</a
-  >", Sosinsky et al., Nat Med 30, 279-289 (2024)
-</p>
+
+    <div class="nhsuk-warning-callout">
+      <h3 class="nhsuk-warning-callout__label">
+        <span role="text">
+          <span class="nhsuk-u-visually-hidden">Important: </span>
+          For research use only
+        </span>
+      </h3>
+      <p>
+        The data shown is not verified and must not be used to make medical
+        decisions or diagnoses.
+      </p>
+    </div>
+
+<h3 class="nhsuk-heading-s">References</h3>
+<p class="nhsuk-body-s">
+  This table is an extended version of <a href="">Table S1 from Sosinsky et al. 2024</a> "Insights for precision oncology from the integration of genomic and clinical data of 13,880 tumours from the 100,000 Genomes Cancer Programme". 
+
+<a href="">
+
+</a>
+
+<h3 class="nhsuk-heading-s">About the data</h3>
+<p class="nhsuk-body-s">All data has been calculated in accordance with <a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.acgs.uk.com/media/12832/svig-uk-supplementary-material-post-acgs-ratification-final3007.pdf">SVIG version 1.0</a>.</p>
+<p class="nhsuk-body-s">These variants were re-annotated using <a href="https://useast.ensembl.org/">Ensembl</a> v107 and <a href="https://www.ncbi.nlm.nih.gov/refseq/MANE/">MANE Select</a> transcripts where applicable. If no MANE Select transcript was available, an Ensembl Canonical transcript was used. Variants which had no impact on the protein or splicing after re-annotation (i.e. annotated as synonymous, intronic, upstream or downstream variants) were omitted.</p>
+<p class="nhsuk-body-s">Tumour types with less than 5 cases were omitted from the analysis.</p>
+<p class="nhsuk-body-s">Please note that HGVSp. predictions were generated automatically and should be double-checked, especially for small insertion or deletion variants where a minority of variants may have complex nomenclature varying between prediction tools. Inserted protein sequence for complex insertions (inframe_insertions resulting in a delins of amino acids) in this data set were re-annotated using VariantValidator version 3.0.2.dev143+g6213c80fe.</p>
+
+<h3 class="nhsuk-heading-s">Definitions</h3>
+<dl>
+  <dt id="def_1"><strong>[1] Cases with this variant</strong></dt>
+    <dd class="nhsuk-u-margin-bottom-2">Number of samples where a variant with the same change occurred
+      <a href="#">⌃&nbsp;back to results</a>
+    </dd>
+  <dt id="def_2"><strong>[2] In-frame deletions</strong></dt>
+    <dd class="nhsuk-u-margin-bottom-2">Sum of nucleotide change counts for the variant under assessment (VUA) or any in-frame deletion smaller than and within the deleted region of the VUA based on affected amino acids.
+      <a href="#">⌃&nbsp;back to results</a>
+</dd>
+  <dt id="def_3"><strong>[3] Truncating variants</strong></dt>
+    <dd class="nhsuk-u-margin-bottom-2">Frameshift variant, stop gained - sum of nucleotide change counts for all truncating variants at the same amino acid position or further downstream.
+            <a href="#">⌃&nbsp;back to results</a>
+    </dd>
+</dl>
 
 </div>
 </div>

@@ -269,11 +269,19 @@ Variant search prototype
             Search
         </button>
         
-        <h2 class="nhsuk-heading-s ">Data sources </h2>
-        <p>
-            100K Genomes Project Pan-Cancer data is from "<a href="">Table S1: Somatic small variant protein changes</a>", Sosinsky et al., Nat Med 30, 279-289 (2024)
-        </p>
+<h3 class="nhsuk-heading-s">References</h3>
+<p class="nhsuk-body-s">
+  This table is an extended version of <a href="">Table S1 from Sosinsky et al. 2024</a> "Insights for precision oncology from the integration of genomic and clinical data of 13,880 tumours from the 100,000 Genomes Cancer Programme". 
 
+<a href="">
+
+</a>
+
+<h3 class="nhsuk-heading-s">About the data</h3>
+<p class="nhsuk-body-s">All data has been calculated in accordance with <a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.acgs.uk.com/media/12832/svig-uk-supplementary-material-post-acgs-ratification-final3007.pdf">SVIG version 1.0</a>.</p>
+<p class="nhsuk-body-s">These variants were re-annotated using <a href="https://useast.ensembl.org/">Ensembl</a> v107 and <a href="https://www.ncbi.nlm.nih.gov/refseq/MANE/">MANE Select</a> transcripts where applicable. If no MANE Select transcript was available, an Ensembl Canonical transcript was used. Variants which had no impact on the protein or splicing after re-annotation (i.e. annotated as synonymous, intronic, upstream or downstream variants) were omitted.</p>
+<p class="nhsuk-body-s">Tumour types with less than 5 cases were omitted from the analysis.</p>
+<p class="nhsuk-body-s">Please note that HGVSp. predictions were generated automatically and should be double-checked, especially for small insertion or deletion variants where a minority of variants may have complex nomenclature varying between prediction tools. Inserted protein sequence for complex insertions (inframe_insertions resulting in a delins of amino acids) in this data set were re-annotated using VariantValidator version 3.0.2.dev143+g6213c80fe.</p>
     </div>
 </div>
 {% endblock %}
