@@ -1,4 +1,8 @@
-
+{% from 'checkboxes/macro.njk' import checkboxes %} {% from
+'tables/macro.njk' import table %} {% from 'select/macro.njk' import select %}
+{% extends 'layout.html' %} {% block pageTitle %} Variant search results {%
+endblock %} {% set cancerPatientData = true %} {% block beforeContent %} {%
+endblock %} {% block outerContent %} {% endblock %} 
 
 {% block content %} 
 
@@ -8,7 +12,6 @@
   <div class="nhsuk-grid-column-full">
     <h1 class="nhsuk-heading-l">
       heading
-      No results
     </h1>
 
     <p>
