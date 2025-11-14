@@ -1,0 +1,142 @@
+{#
+<tr class="nhsuk-table__row">
+  <td class="nhsuk-table__cell">
+    {%- for genomicPosition in genomicPositions %}
+    <div>{{ genomicPosition }}</div>
+    {%- endfor %}
+  </td>
+  <td
+    class="nhsuk-table__cell {{ 'nhsuk-table__middle' if variants | length == 0 }}"
+  >
+    {%- if variants | length == 0 %} No variants {%- else %}{%- for variant in
+    variants %}
+    <div><a href="" class="nhsuk-link">{{ variant }}</a></div>
+    {%- endfor %}{% endif %}
+  </td>
+  <td
+    class="nhsuk-table__cell {{ 'nhsuk-table__middle' if cases | length == 0 }} nhsuk-table__cell--numeric"
+  >
+    {%- if cases | length == 0 %} - {%- else %}{%- for case in cases %}
+    <div style="margin-bottom: 50px">{{ case }}</div>
+    {%- endfor %}{% endif %}
+  </td>
+  <td class="nhsuk-table__cell nhsuk-u-text-break-word">
+    {% for case in cases -%}
+    <div style="{{'width:530px;' if case >= 90 }}">
+      {% for c in range(0, case) -%}|{%- endfor %}
+    </div>
+    {%- endfor %}&nbsp;
+  </td>
+</tr>
+#} {% from 'checkboxes/macro.njk' import checkboxes %} {% from
+'tables/macro.njk' import table %} {% from 'select/macro.njk' import select %}
+{% extends 'layout.html' %} {% block pageTitle %} Variant search results {%
+endblock %} {% set cancerPatientData = true %} {% block beforeContent %} {%
+endblock %} {% block outerContent %} {% endblock %} 
+
+{% block content %} 
+
+{% macro
+tableFiller(genomicPositions=[], variants=[], cases=[], isSearched=false) %}
+<tr
+  class="nhsuk-table__row"
+  style="{{ 'background: #005EB8; color: #fff' if isSearched }}"
+>
+  <td class="nhsuk-table__cell" style="width: 200px; padding-left: 16px">
+    {%- for genomicPosition in genomicPositions %}
+    <div>
+      {% if isSearched %}
+      <strong class="nhsuk-tag nhsuk-tag--white"> Searched </strong> {% endif
+      %}{{ genomicPosition }}
+    </div>
+    {%- endfor %}
+  </td>
+  <td
+    class="nhsuk-table__cell {{ 'nhsuk-table__middle' if variants | length == 0 }}"
+    colspan="3"
+  >
+    {% if variants | length == 0 %}
+    <div style="display: flex">
+      <div style="width: 210px">No variants</div>
+      <div style="width: 120px">-</div>
+      <div style="width: 520px" class="nhsuk-u-text-break-word">&nbsp;</div>
+    </div>
+    {% else %} {%- for variant in variants %}
+    <div style="display: flex">
+      <div style="width: 190px;  line-height: 99%;" class="{{ 'nhsuk-u-margin-bottom-3' if not loop.last }}">
+        <a href="#" class="nhsuk-link{{ ' nhsuk-link--reverse' if isSearched }} nhsuk-u-text-break-word">{{ variant }}</a>
+      </div>
+      <div style="width: 100px; text-align: left; padding-left: 14px; line-height: 0.952em;" class="{{ 'nhsuk-u-margin-bottom-3' if not loop.last }}">
+        {{ cases[loop.index0] }}
+      </div>
+      <div style="width: 520px; line-height: 0.952em;" class="nhsuk-u-text-break-word{{ ' nhsuk-u-margin-bottom-3' if not loop.last }}">
+        {% for c in range(0, cases[loop.index0]) -%}|{%- endfor %}
+      </div>
+    </div>
+    {% endfor %} {% endif %}
+  </td>
+</tr>
+{% endmacro %}
+
+<div class="nhsuk-grid-row nhsuk-u-margin-bottom-6">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-warning-callout">
+      <h3 class="nhsuk-warning-callout__label">
+        <span role="text">
+          <span class="nhsuk-u-visually-hidden">Important: </span>
+          For research use only
+        </span>
+      </h3>
+      <p>
+        The data shown is not verified and must not be used to make medical
+        decisions or diagnoses.
+      </p>
+    </div>
+    <h1 class="nhsuk-heading-l">
+      No results
+    </h1>
+    <p>No Colon Adenocarcinoma cases with genomic position variant 9:20414356:C:T </p>
+    <p class="nhsuk-u-margin-bottom-6">No cases with any tumour at position 9:20414356:C:T</p>
+    
+    <h3 class="nhsuk-heading-m">Variants in the region of 9:20414356:C:T</h3>
+
+    <ul>
+      <li><a href=" " class="nhsuk-link">9:20414350:C:T</a> 3 cases</li>
+      <li><a href=" " class="nhsuk-link">9:20414350:A:T</a> 1 case</li>
+      <li><a href=" " class="nhsuk-link">9:20414365:CAAT:C</a> 1 case</li>
+      <li><a href=" " class="nhsuk-link">9:20414365:C:T</a> 1 case</li>
+      <li><a href=" " class="nhsuk-link">9:20414365:G:A</a> 3 cases</li>
+      <li><a href=" " class="nhsuk-link">9:20414366:C:T</a> 2 cases</li>
+    </ul>
+
+
+  </div>
+  </div>
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+<div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
+  <button
+    class="nhsuk-button nhsuk-button--secondary"
+    data-module="nhsuk-button"
+    type="submit"
+  >
+    Edit this search
+  </button>
+</div>
+<div class="nhsuk-form-group nhsuk-u-margin-bottom-6">
+  <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+    Start a new search
+  </button>
+</div>
+<h3 class="nhsuk-heading-s">Data sources</h3>
+<p>
+  100K Genomes Project Pan-Cancer data is from "<a href="#"
+    >Table S1: Somatic small variant protein changes</a
+  >", Sosinsky et al., Nat Med 30, 279-289 (2024)
+</p>
+
+</div>
+</div>
+
+{% endblock %}
